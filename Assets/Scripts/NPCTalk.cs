@@ -5,17 +5,16 @@ using UnityEngine;
 public class NPCTalk : MonoBehaviour
 {
     public string NPCName;
-    public string Talk;
+    public int Talk;
 
 
     public void TalkNPC()
     {
-        if (NPCName == "NPC_1")
+        Canva_UI ui_ = GetComponent<Canva_UI>();
+        if (NPCName == "Doll")
         {
-            if (Talk == "1")
-            {
-                Debug.Log("說說1");
-            }
+            Debug.Log("11");
+            ui_.Canva();
         }
 
         if (NPCName == "NPC_2")

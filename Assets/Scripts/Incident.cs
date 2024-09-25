@@ -1,17 +1,20 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Incident : MonoBehaviour
+public class Incident : MonoBehaviour//撿取物件 //附加在物件上
 {
     private PlayerControls inputActions; // Input Actions 資源
     
-    public string ItemName; // 道具名稱
+    public string Name; // 道具名稱
     public AudioClip IncidentSound; // 撿取音效
     
     public Camera mainCamera;  // 直接引用你的摄像機對象
     private GameObject currentItem;  // 當前檢查的物品
     public float raycastDistance = 3f; // 射線檢測距離
     public float requiredPrecision = 5f; // 需要的精確度，越小越精確
+
+    public int EndObject_ = 0;
+    public int TrueEndObject_ = 0;
 
     private void Awake()
     {
@@ -79,7 +82,7 @@ public class Incident : MonoBehaviour
         }
         else
         {
-            Debug.Log("未對準任何物品"); // 如果沒有對準物品，輸出調試信息
+            //Debug.Log("未對準任何物品"); // 如果沒有對準物品，輸出調試信息
         }
     }
 
@@ -88,25 +91,43 @@ public class Incident : MonoBehaviour
     {
         if (item.CompareTag("Item")) // 撿起物品
         {
-            Debug.Log("撿起物品");
-            //Destroy(item); // 刪除當前物件
             AudioSource.PlayClipAtPoint(IncidentSound, item.transform.position);
+            CheckObject();
         }
+        //Debug.Log("撿起物品");
+        //Destroy(item); // 刪除當前物件
 
         if (item.CompareTag("SavePoint")) // 存檔點
         {
-            Debug.Log("開啟選單");
+            Debug.Log("開啟存檔點選單");
+        }
+        
+        if (item.CompareTag("Door")) // 開門
+        {
+            Debug.Log("開門");
         }
 
         if (item.CompareTag("NPC")) // 開啟對話
         {
             Debug.Log("對話");
             NPCTalk npcTalk = item.GetComponent<NPCTalk>();
-
             if (npcTalk != null)
             {
                 npcTalk.TalkNPC();
             }
+        }
+    }
+
+    void CheckObject()
+    {
+        if (Name == "EndObject")
+        {
+            EndObject_++;
+        }
+
+        if (Name == "TrueEndObject_")
+        {
+            TrueEndObject_++;
         }
     }
 }
