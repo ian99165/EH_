@@ -10,8 +10,8 @@ public class Incident : MonoBehaviour
     
     public Camera mainCamera;  // 直接引用你的摄像機對象
     private GameObject currentItem;  // 當前檢查的物品
-    public float raycastDistance = 5f; // 射線檢測距離
-    public float requiredPrecision = 0.1f; // 需要的精確度，越小越精確
+    public float raycastDistance = 3f; // 射線檢測距離
+    public float requiredPrecision = 5f; // 需要的精確度，越小越精確
 
     private void Awake()
     {
@@ -71,7 +71,7 @@ public class Incident : MonoBehaviour
 
     private void OnIncident(InputAction.CallbackContext context) // 當按下 "E" 鍵時
     {
-        Debug.Log("按下 E 鍵"); // 確認按鍵事件是否被觸發
+        //Debug.Log("按下 E 鍵"); // 確認按鍵事件是否被觸發
 
         if (currentItem != null) // 檢查是否有對準物體
         {
@@ -100,6 +100,7 @@ public class Incident : MonoBehaviour
 
         if (item.CompareTag("NPC")) // 開啟對話
         {
+            Debug.Log("對話");
             NPCTalk npcTalk = item.GetComponent<NPCTalk>();
 
             if (npcTalk != null)
