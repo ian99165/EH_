@@ -3,14 +3,13 @@ using UnityEngine.UI;
 
 public class CanvaUI : MonoBehaviour
 {
-    
     [SerializeField] 
     private Button Exit;
     
-    public GameObject KeyBoard;
-    public GameObject SavePoint;
+    public GameObject OpenUI;
     public GameObject player;
     public GameObject Camera;
+    
     private ControllerMovement3D MoveSp;
     private CameraController CameraSp;
 
@@ -27,7 +26,7 @@ public class CanvaUI : MonoBehaviour
     public void OpenCanva()
     {
         // 打開UI
-        KeyBoard.SetActive(true);
+        OpenUI.SetActive(true);
         Exit.gameObject.SetActive(true);
 
         // 停止角色移動，禁用B腳本
@@ -41,7 +40,7 @@ public class CanvaUI : MonoBehaviour
     public void CloseCanva()
     {
         // 關閉UI
-        KeyBoard.SetActive(false);
+        OpenUI.SetActive(false);
         Exit.gameObject.SetActive(false);
 
         // 重新啟用角色移動

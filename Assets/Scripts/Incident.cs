@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,7 +8,8 @@ public class Incident : MonoBehaviour//撿取物件 //附加在物件上
     
     public string Name; // 道具名稱
     public AudioClip IncidentSound; // 撿取音效
-    
+    public GameObject Mask; // 使用更规范的变量命名
+
     public Camera mainCamera;  // 直接引用你的摄像機對象
     private GameObject currentItem;  // 當前檢查的物品
     public float raycastDistance = 3f; // 射線檢測距離
@@ -15,6 +17,21 @@ public class Incident : MonoBehaviour//撿取物件 //附加在物件上
 
     public int EndObject_ = 0;
     public int TrueEndObject_ = 0;
+    
+    private bool isMask;
+    public GameObject player;
+    public GameObject Camera;
+    
+    private ControllerMovement3D MoveSp;
+    private CameraController CameraSp;
+    private Animator _anim;
+
+    private void Start()
+    {
+        MoveSp = player.GetComponent<ControllerMovement3D>();
+        CameraSp = Camera.GetComponent<CameraController>();
+        
+    }
 
     private void Awake()
     {
@@ -36,6 +53,18 @@ public class Incident : MonoBehaviour//撿取物件 //附加在物件上
     private void Update()
     {
         CheckForItemWithRay(); // 檢測射線是否命中道具
+        
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Mask != null && isMask)
+            {
+                Mask.SetActive(false); // 关闭指定的 GameObject
+                isMask = false;
+                
+                MoveSp.enabled = true;
+                CameraSp.enabled = true;
+            }
+        }
     }
 
     // 使用射線檢測物品
@@ -92,6 +121,15 @@ public class Incident : MonoBehaviour//撿取物件 //附加在物件上
         if (item.CompareTag("Item")) // 撿起物品
         {
             AudioSource.PlayClipAtPoint(IncidentSound, item.transform.position);
+            if (Mask != null && !isMask)
+            {
+                Mask.SetActive(true);
+                isMask = true;
+                
+                MoveSp.enabled = false;
+                CameraSp.enabled = false;
+            }
+            
             CheckObject();
         }
         //Debug.Log("撿起物品");
@@ -118,7 +156,7 @@ public class Incident : MonoBehaviour//撿取物件 //附加在物件上
         }
     }
 
-    void CheckObject()
+    void CheckObject()//偵測結局物件
     {
         if (Name == "EndObject")
         {

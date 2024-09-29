@@ -58,6 +58,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "close",
+                    "type": "Button",
+                    "id": "dd07785b-67f1-4f85-a045-dcb4ce1166dd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -366,6 +375,17 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Incident",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2689dcd3-bf10-4fa4-a173-1615447cfc35",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "close",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

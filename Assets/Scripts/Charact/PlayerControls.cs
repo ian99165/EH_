@@ -80,6 +80,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""close"",
+                    ""type"": ""Button"",
+                    ""id"": ""dd07785b-67f1-4f85-a045-dcb4ce1166dd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -390,6 +399,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Incident"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2689dcd3-bf10-4fa4-a173-1615447cfc35"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""close"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -465,6 +485,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         m_Player_Run = m_Player.FindAction("Run", throwIfNotFound: true);
         m_Player_Incident = m_Player.FindAction("Incident", throwIfNotFound: true);
+        m_Player_close = m_Player.FindAction("close", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -532,6 +553,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Crouch;
     private readonly InputAction m_Player_Run;
     private readonly InputAction m_Player_Incident;
+    private readonly InputAction m_Player_close;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -542,6 +564,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
         public InputAction @Run => m_Wrapper.m_Player_Run;
         public InputAction @Incident => m_Wrapper.m_Player_Incident;
+        public InputAction @close => m_Wrapper.m_Player_close;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -569,6 +592,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Incident.started += instance.OnIncident;
             @Incident.performed += instance.OnIncident;
             @Incident.canceled += instance.OnIncident;
+            @close.started += instance.OnClose;
+            @close.performed += instance.OnClose;
+            @close.canceled += instance.OnClose;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -591,6 +617,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Incident.started -= instance.OnIncident;
             @Incident.performed -= instance.OnIncident;
             @Incident.canceled -= instance.OnIncident;
+            @close.started -= instance.OnClose;
+            @close.performed -= instance.OnClose;
+            @close.canceled -= instance.OnClose;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -661,5 +690,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnCrouch(InputAction.CallbackContext context);
         void OnRun(InputAction.CallbackContext context);
         void OnIncident(InputAction.CallbackContext context);
+        void OnClose(InputAction.CallbackContext context);
     }
 }
