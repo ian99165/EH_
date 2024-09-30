@@ -22,9 +22,8 @@ public class Incident : MonoBehaviour//撿取物件 //附加在物件上
     public GameObject player;
     public GameObject Camera;
     
-    private ControllerMovement3D MoveSp;
-    private CameraController CameraSp;
-    private Animator _anim;
+    private ControllerMovement3D MoveSp; 
+    private CameraController CameraSp; 
 
     private void Start()
     {
