@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Incident : MonoBehaviour//撿取物件 //附加在物件上
+public class Incident : MonoBehaviour // 撿取物件，附加在物件上
 {
     private PlayerControls inputActions; // Input Actions 資源
     
@@ -10,26 +10,25 @@ public class Incident : MonoBehaviour//撿取物件 //附加在物件上
     public AudioClip IncidentSound; // 撿取音效
     public GameObject Mask; // 使用更规范的变量命名
 
-    public Camera mainCamera;  // 直接引用你的摄像機對象
-    private GameObject currentItem;  // 當前檢查的物品
+    public Camera mainCamera; // 直接引用你的攝像機對象
+    private GameObject currentItem; // 當前檢查的物品
     public float raycastDistance = 3f; // 射線檢測距離
     public float requiredPrecision = 5f; // 需要的精確度，越小越精確
 
     public int EndObject_ = 0;
     public int TrueEndObject_ = 0;
-    
+
     private bool isMask;
     public GameObject player;
     public GameObject Camera;
     
-    private ControllerMovement3D MoveSp; 
-    private CameraController CameraSp; 
+    private ControllerMovement3D MoveSp;
+    private CameraController CameraSp;
 
     private void Start()
     {
         MoveSp = player.GetComponent<ControllerMovement3D>();
         CameraSp = Camera.GetComponent<CameraController>();
-        
     }
 
     private void Awake()
@@ -52,12 +51,12 @@ public class Incident : MonoBehaviour//撿取物件 //附加在物件上
     private void Update()
     {
         CheckForItemWithRay(); // 檢測射線是否命中道具
-        
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (Mask != null && isMask)
             {
-                Mask.SetActive(false); // 关闭指定的 GameObject
+                Mask.SetActive(false); // 關閉指定的 GameObject
                 isMask = false;
                 
                 MoveSp.enabled = true;
@@ -102,15 +101,9 @@ public class Incident : MonoBehaviour//撿取物件 //附加在物件上
 
     private void OnIncident(InputAction.CallbackContext context) // 當按下 "E" 鍵時
     {
-        //Debug.Log("按下 E 鍵"); // 確認按鍵事件是否被觸發
-
         if (currentItem != null) // 檢查是否有對準物體
         {
             PerformIncident(currentItem); // 執行事件處理
-        }
-        else
-        {
-            //Debug.Log("未對準任何物品"); // 如果沒有對準物品，輸出調試信息
         }
     }
 
@@ -122,17 +115,16 @@ public class Incident : MonoBehaviour//撿取物件 //附加在物件上
             AudioSource.PlayClipAtPoint(IncidentSound, item.transform.position);
             if (Mask != null && !isMask)
             {
-                Mask.SetActive(true);
+                
+                Mask.SetActive(true); // 顯示檢查界面
                 isMask = true;
                 
-                MoveSp.enabled = false;
-                CameraSp.enabled = false;
+                MoveSp.enabled = false; // 禁用玩家移動
+                CameraSp.enabled = false; // 禁用攝像機移動
             }
             
-            CheckObject();
+            CheckObject(); // 檢查是否是結局道具
         }
-        //Debug.Log("撿起物品");
-        //Destroy(item); // 刪除當前物件
 
         if (item.CompareTag("SavePoint")) // 存檔點
         {
@@ -150,12 +142,13 @@ public class Incident : MonoBehaviour//撿取物件 //附加在物件上
             NPCTalk npcTalk = item.GetComponent<NPCTalk>();
             if (npcTalk != null)
             {
-                npcTalk.TalkNPC();
+                npcTalk.TalkNPC(); // 開啟 NPC 對話
             }
         }
     }
 
-    void CheckObject()//偵測結局物件
+    // 檢查結局道具
+    void CheckObject()
     {
         if (Name == "EndObject")
         {
