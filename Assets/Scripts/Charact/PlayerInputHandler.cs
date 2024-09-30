@@ -16,13 +16,13 @@ public class PlayerInputHandler : MonoBehaviour
         _controllerMovement = GetComponent<ControllerMovement3D>();
         if (_controllerMovement == null)
         {
-            Debug.LogWarning("ControllerMovement3D is not assigned.");
+            Debug.Log("ControllerMovement3D is not assigned.");
         }
 
         _cameraController = FindObjectOfType<CameraController>();
         if (_cameraController == null)
         {
-            Debug.LogWarning("CameraController is not assigned.");
+            Debug.Log("CameraController is not assigned.");
         }
     }
 
@@ -61,7 +61,7 @@ public class PlayerInputHandler : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("CameraController is not assigned.");
+            Debug.Log("CameraController is not assigned.");
         }
     }
 }
