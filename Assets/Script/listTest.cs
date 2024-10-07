@@ -8,8 +8,8 @@ public class listTest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        txtList.Add("洋娃娃");
-        txtList.Add("呀！");
+        txtList.Add("洋娃娃:");
+        txtList.Add("你好呀！");
         foreach (var line in txtList)
         {
             Debug.Log(line);
