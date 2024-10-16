@@ -8,43 +8,35 @@ using Fungus;
 public class Fungus_Sp : MonoBehaviour
 {
     public string PlayerName = "Player";
-    private bool hasTalk = false;
+    public bool hasTalk = false;
     
-    private bool isDollTalk;
-    private bool isLaydTalk_I;
-    private bool isLaydTalk_II;
+    public bool isDollTalk;
+    public bool isLaydTalk_I;
+    public bool isLaydTalk_II;
     
     public Flowchart flowchart;
-
-    private void Start()
-    {
-        isDollTalk = true;
-    }
-
-    private void Update()
-    {
-        //Talking();
-    }
-
-    private void Talking()
+    public void Talking_D()
     {
         if(!hasTalk)
         {
             hasTalk = true;
-            if (isDollTalk)
-            {
-                flowchart.ExecuteBlock("Doll_I_I");
-            }
-            
-            if (isLaydTalk_I)
-            {
-                flowchart.ExecuteBlock("Layd_I_I");
-            }
-            
-            if (isLaydTalk_II)
-            {
-                flowchart.ExecuteBlock("Layd_I_I");
-            }
+            flowchart.ExecuteBlock("Doll_I_I");
+        }
+    }
+    public void Talking_L_I()
+    {
+        if(!hasTalk)
+        { 
+            hasTalk = true;
+            flowchart.ExecuteBlock("Layd_I_I");
+        }
+    }
+    public void Talking_L_II()
+    {
+        if(!hasTalk)
+        {
+            hasTalk = true;
+            flowchart.ExecuteBlock("Layd_I_I");
         }
     }
 }

@@ -11,10 +11,11 @@ public class NPCTalk : MonoBehaviour
     public void TalkNPC()
     {
         CanvaUI ui_ = GetComponent<CanvaUI>();
+        Fungus_Sp fungusSp_ = GetComponent<Fungus_Sp>();
         if (NPCName == "Doll")
         {
-            Debug.Log("11");
             ui_.OpenCanva();
+            fungusSp_.Talking_D();
         }
 
         if (NPCName == "NPC_2")
