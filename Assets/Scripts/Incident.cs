@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class Incident : MonoBehaviour // 撿取物件，附加在物件上
 {
     private PlayerControls inputActions; // Input Actions 資源
-    
+
     public string Name; // 道具名稱
     public AudioClip IncidentSound; // 撿取音效
     public GameObject Mask; // 使用更规范的变量命名
@@ -21,7 +21,7 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
     private bool isMask;
     public GameObject player;
     public GameObject Camera;
-    
+
     private ControllerMovement3D MoveSp;
     private CameraController CameraSp;
 
@@ -58,7 +58,7 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
             {
                 Mask.SetActive(false); // 關閉指定的 GameObject
                 isMask = false;
-                
+
                 MoveSp.enabled = true;
                 CameraSp.enabled = true;
             }
@@ -73,7 +73,8 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
 
         if (Physics.Raycast(ray, out hit, raycastDistance)) // 發射射線並檢測物體
         {
-            if (hit.collider.CompareTag("Item") || hit.collider.CompareTag("NPC") || hit.collider.CompareTag("SavePoint")) // 如果射線命中道具
+            if (hit.collider.CompareTag("Item") || hit.collider.CompareTag("NPC") ||
+                hit.collider.CompareTag("SavePoint")) // 如果射線命中道具
             {
                 // 確認命中點是否接近物體的中心
                 Vector3 itemCenter = hit.collider.bounds.center; // 物體的中心
@@ -115,14 +116,14 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
             AudioSource.PlayClipAtPoint(IncidentSound, item.transform.position);
             if (Mask != null && !isMask)
             {
-                
+
                 Mask.SetActive(true); // 顯示檢查界面
                 isMask = true;
-                
+
                 MoveSp.enabled = false; // 禁用玩家移動
                 CameraSp.enabled = false; // 禁用攝像機移動
             }
-            
+
             CheckObject(); // 檢查是否是結局道具
         }
 
@@ -130,7 +131,7 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
         {
             Debug.Log("開啟存檔點選單");
         }
-        
+
         if (item.CompareTag("Door")) // 開門
         {
             Debug.Log("開門");
@@ -161,3 +162,4 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
         }
     }
 }
+
