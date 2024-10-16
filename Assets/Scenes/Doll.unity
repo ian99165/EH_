@@ -1659,8 +1659,8 @@ MonoBehaviour:
   resizeScale: 0.6
   moveDuration: 0.2
   mainCamera: {fileID: 1231300161}
-  playerCameraScript: {fileID: 541065879}
-  playerMovementScript: {fileID: 1168916776}
+  playerCameraScript: {fileID: 1168916776}
+  playerMovementScript: {fileID: 541065879}
 --- !u!108 &1181401288 stripped
 Light:
   m_CorrespondingSourceObject: {fileID: 508005255349054947, guid: 1c7cf4776f1481442b0933f5d1a85387, type: 3}
@@ -2020,6 +2020,7 @@ GameObject:
   - component: {fileID: 1429450965}
   - component: {fileID: 1429450966}
   - component: {fileID: 1429450967}
+  - component: {fileID: 1429450968}
   m_Layer: 0
   m_Name: Doll
   m_TagString: NPC
@@ -2120,7 +2121,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1429450959}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 946c693294919f244b846e9300b5d967, type: 3}
   m_Name: 
@@ -2133,8 +2134,8 @@ MonoBehaviour:
   requiredPrecision: 5
   EndObject_: 0
   TrueEndObject_: 0
-  player: {fileID: 1168916767}
-  Camera: {fileID: 296590763}
+  player: {fileID: 0}
+  Camera: {fileID: 0}
 --- !u!114 &1429450965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2178,6 +2179,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 200
+--- !u!54 &1429450968
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429450959}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1687119305
 GameObject:
   m_ObjectHideFlags: 0
