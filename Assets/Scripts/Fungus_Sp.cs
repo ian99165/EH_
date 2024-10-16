@@ -23,7 +23,7 @@ public class Fungus_Sp : MonoBehaviour
 
     private void Update()
     {
-        Talking();
+        //Talking();
     }
 
     private void Talking()
