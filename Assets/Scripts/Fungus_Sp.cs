@@ -15,7 +15,7 @@ public class Fungus_Sp : MonoBehaviour
     public bool isLaydTalk_II;
     
     public Flowchart flowchart;
-    public void Talking_D()
+    public void Talking_Doll()
     {
         if(!hasTalk)
         {

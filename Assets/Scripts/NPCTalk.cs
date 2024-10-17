@@ -15,7 +15,7 @@ public class NPCTalk : MonoBehaviour
         if (NPCName == "Doll")
         {
             ui_.OpenCanva();
-            fungusSp_.Talking_D();
+            fungusSp_.Talking_Doll();
         }
 
         if (NPCName == "NPC_2")
