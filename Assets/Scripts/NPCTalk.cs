@@ -1,12 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fungus;
 
 public class NPCTalk : MonoBehaviour
 {
     public string NPCName;
-    public int Talk;
-
+    public bool isTalking = false;
 
     public void TalkNPC()
     {
@@ -14,13 +15,22 @@ public class NPCTalk : MonoBehaviour
         Fungus_Sp fungusSp_ = GetComponent<Fungus_Sp>();
         if (NPCName == "Doll")
         {
-            ui_.OpenCanva();
+            ui_.MsOFF();
             fungusSp_.Talking_Doll();
+            isTalking = true;
         }
 
         if (NPCName == "NPC_2")
         {
             
         }
+    }
+    
+    public void EndTalking()
+    {
+        CanvaUI ui_ = GetComponent<CanvaUI>();
+
+        //isTalking = false;
+        ui_.MsON();
     }
 }
