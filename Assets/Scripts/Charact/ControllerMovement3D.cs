@@ -24,6 +24,7 @@ public class ControllerMovement3D : MonoBehaviour
     private bool _isStop = false;
     private bool _isCrouch = false;
     private bool _isGrounded;
+    public bool isTalk = false;
 
     private CharacterController _characterController;
     private Animator _anim;
@@ -32,13 +33,16 @@ public class ControllerMovement3D : MonoBehaviour
 
     private void Awake()
     {
-        _controls = new PlayerControls();
+        if (!isTalk)
+        {
+            _controls = new PlayerControls();
 
-        // 綁定輸入動作到方法
-        _controls.Player.Move.performed += ctx => SetMoveInput(ctx.ReadValue<Vector2>());
-        _controls.Player.Move.canceled += ctx => SetMoveInput(Vector2.zero);
-        _controls.Player.Run.performed += ctx => HandleRun(ctx);
-        _controls.Player.Crouch.performed += ctx => HandleCrouch(ctx);
+            // 綁定輸入動作到方法
+            _controls.Player.Move.performed += ctx => SetMoveInput(ctx.ReadValue<Vector2>());
+            _controls.Player.Move.canceled += ctx => SetMoveInput(Vector2.zero);
+            _controls.Player.Run.performed += ctx => HandleRun(ctx);
+            _controls.Player.Crouch.performed += ctx => HandleCrouch(ctx);
+        }
     }
 
 
@@ -67,37 +71,40 @@ public class ControllerMovement3D : MonoBehaviour
     {
         _isGrounded = _characterController.isGrounded; // 檢查是否在地面上
 
-        // 跑步邏輯
-        if (_hasMoveInput)
+        if (!isTalk)
         {
-            if (_isRunning)
+            // 跑步邏輯
+            if (_hasMoveInput)
             {
-                _anim.SetBool("running", true);
+                if (_isRunning)
+                {
+                    _anim.SetBool("running", true);
+                }
+                else
+                {
+                    _anim.SetBool("running", false);
+                }
             }
-            else
+            else if (_isRunning)
             {
+                _isRunning = false;
                 _anim.SetBool("running", false);
+                _isStop = true; // 停止移動邏輯
+                StartCoroutine(DelayCheckSpeed()); // 延遲1秒後重啟移動邏輯
             }
-        }
-        else if(_isRunning)
-        {
-            _isRunning = false;
-            _anim.SetBool("running", false);
-            _isStop = true; // 停止移動邏輯
-            StartCoroutine(DelayCheckSpeed()); // 延遲1秒後重啟移動邏輯
-        }
 
-        // 蹲下邏輯
-        if (_isGrounded)
-        {
-            if (_isCrouch)
+            // 蹲下邏輯
+            if (_isGrounded)
             {
-                _anim.SetBool("crouch", true);
-                _currentSpeed = 0f; // 速度歸零
-            }
-            else
-            {
-                _anim.SetBool("crouch", false);
+                if (_isCrouch)
+                {
+                    _anim.SetBool("crouch", true);
+                    _currentSpeed = 0f; // 速度歸零
+                }
+                else
+                {
+                    _anim.SetBool("crouch", false);
+                }
             }
         }
     }
@@ -133,72 +140,88 @@ public class ControllerMovement3D : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_isGrounded && _velocity.y < 0)
+        if (!isTalk)
         {
-            _velocity.y = -2f;
-        }
-        else
-        {
-            _velocity.y += _gravity * Time.fixedDeltaTime;
-        }
+            if (_isGrounded && _velocity.y < 0)
+            {
+                _velocity.y = -2f;
+            }
+            else
+            {
+                _velocity.y += _gravity * Time.fixedDeltaTime;
+            }
 
-        _characterController.Move(_velocity * Time.fixedDeltaTime);
-        HandleMovement();
+            _characterController.Move(_velocity * Time.fixedDeltaTime);
+            HandleMovement();
+        }
     }
 
     private void HandleMovement()
     {
-        if (_isCrouch || _isStop)
-        {
-            if (_isStop)
+            if (_isCrouch || _isStop)
             {
+                if (_isStop)
+                {
+                    _currentSpeed = Mathf.Lerp(_currentSpeed, 0f, _deceleration * Time.fixedDeltaTime);
+                    if (Mathf.Approximately(_currentSpeed, 0f) || _currentSpeed < 0.01f) // 檢查非常小的速度
+                    {
+                        _isStop = false;
+                        _currentSpeed = 0f;
+                    }
+                }
+
+                return;
+            }
+
+            if (_moveInput.magnitude < 0.1f)
+            {
+                _targetSpeed = 0f;
                 _currentSpeed = Mathf.Lerp(_currentSpeed, 0f, _deceleration * Time.fixedDeltaTime);
+
+                // 如果當前速度接近零，將其設置為零
                 if (Mathf.Approximately(_currentSpeed, 0f) || _currentSpeed < 0.01f) // 檢查非常小的速度
                 {
-                    _isStop = false;
                     _currentSpeed = 0f;
                 }
             }
-            return;
-        }
-
-        if (_moveInput.magnitude < 0.1f)
-        {
-            _targetSpeed = 0f;
-            _currentSpeed = Mathf.Lerp(_currentSpeed, 0f, _deceleration * Time.fixedDeltaTime);
-
-            // 如果當前速度接近零，將其設置為零
-            if (Mathf.Approximately(_currentSpeed, 0f) || _currentSpeed < 0.01f) // 檢查非常小的速度
+            else
             {
-                _currentSpeed = 0f;
-            }
-        }
-        else
-        {
-            _targetSpeed = _isRunning ? 20f : _moveSpeed;
+                _targetSpeed = _isRunning ? 20f : _moveSpeed;
 
-            // 根據角色的當前朝向調整移動方向
-            Vector3 moveDirection = (transform.forward * _moveInput.z) + (transform.right * _moveInput.x);
+                // 根據角色的當前朝向調整移動方向
+                Vector3 moveDirection = (transform.forward * _moveInput.z) + (transform.right * _moveInput.x);
 
-            // 調整當前速度以匹配目標速度
-            if (_currentSpeed < _targetSpeed)
-            {
-                _currentSpeed += _acceleration * Time.fixedDeltaTime;
-                if (_currentSpeed > _targetSpeed) _currentSpeed = _targetSpeed;
-            }
-            else if (_currentSpeed > _targetSpeed)
-            {
-                _currentSpeed -= _deceleration * Time.fixedDeltaTime;
-                if (_currentSpeed < _targetSpeed) _currentSpeed = _targetSpeed;
-            }
+                // 調整當前速度以匹配目標速度
+                if (_currentSpeed < _targetSpeed)
+                {
+                    _currentSpeed += _acceleration * Time.fixedDeltaTime;
+                    if (_currentSpeed > _targetSpeed) _currentSpeed = _targetSpeed;
+                }
+                else if (_currentSpeed > _targetSpeed)
+                {
+                    _currentSpeed -= _deceleration * Time.fixedDeltaTime;
+                    if (_currentSpeed < _targetSpeed) _currentSpeed = _targetSpeed;
+                }
 
-            // 確保 _currentSpeed 不會低於零
-            _currentSpeed = Mathf.Max(0, _currentSpeed);
+                // 確保 _currentSpeed 不會低於零
+                _currentSpeed = Mathf.Max(0, _currentSpeed);
 
-            _characterController.Move(moveDirection.normalized * _currentSpeed * Time.fixedDeltaTime);
+                _characterController.Move(moveDirection.normalized * _currentSpeed * Time.fixedDeltaTime);
         }
 
         // 更新動畫參數
         _anim.SetFloat("Speed", _currentSpeed);
+    }
+
+    public void SetSpeedZreo()
+    {
+            _currentSpeed = 0f;
+            isTalk = true;   
+            _anim.SetFloat("Speed", _currentSpeed);
+    }
+
+    public void SetMs()
+    {
+            isTalk = false;
     }
 }

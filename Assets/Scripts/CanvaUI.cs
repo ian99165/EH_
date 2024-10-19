@@ -17,7 +17,6 @@ public class CanvaUI : MonoBehaviour
     void Start()
     {
         // 獲取 ControllerMovement3D 腳本的實例
-        MoveSp = player.GetComponent<ControllerMovement3D>();
         CameraSp = Camera.GetComponent<CameraController>();
         
         Exit.onClick.AddListener(CloseCanva);
@@ -31,7 +30,6 @@ public class CanvaUI : MonoBehaviour
 
     public void MsOFF()            // 停止角色移動，禁用B腳本
     {
-        MoveSp.enabled = false;
         CameraSp.enabled = false;
         
         Cursor.visible = true;
@@ -40,15 +38,12 @@ public class CanvaUI : MonoBehaviour
 
     public void CloseCanva()
     {
-        // 關閉UI
         OpenUI.SetActive(false);
         Exit.gameObject.SetActive(false);
     }
 
     public void MsON()
     {
-        // 重新啟用角色移動
-        MoveSp.enabled = true;
         CameraSp.enabled = true;
         
         Cursor.visible = false;

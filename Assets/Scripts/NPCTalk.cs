@@ -7,7 +7,6 @@ using Fungus;
 public class NPCTalk : MonoBehaviour
 {
     public string NPCName;
-    public bool isTalking = false;
 
     public void TalkNPC()
     {
@@ -17,7 +16,6 @@ public class NPCTalk : MonoBehaviour
         {
             ui_.MsOFF();
             fungusSp_.Talking_Doll();
-            isTalking = true;
         }
 
         if (NPCName == "NPC_2")
