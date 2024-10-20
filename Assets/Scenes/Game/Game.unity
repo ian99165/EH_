@@ -4732,6 +4732,8 @@ GameObject:
   - component: {fileID: 1759874005}
   - component: {fileID: 1759874006}
   - component: {fileID: 1759874007}
+  - component: {fileID: 1759874009}
+  - component: {fileID: 1759874008}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -6669,7 +6671,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 207.09186
-    y: -13.187424
+    y: -14.663439
     width: 104.612564
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -6681,6 +6683,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 1759874003}
   - {fileID: 1759874006}
+  - {fileID: 1759874008}
   - {fileID: 1759873930}
   suppressAllAutoSelections: 0
 --- !u!114 &1759873970
@@ -8246,6 +8249,7 @@ MonoBehaviour:
   eventHandler: {fileID: 0}
   commandList:
   - {fileID: 1759874005}
+  - {fileID: 1759874009}
   - {fileID: 1759873972}
   - {fileID: 1759873992}
   - {fileID: 1759873999}
@@ -8282,7 +8286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 174.66968, y: 262.53488}
+  scrollPos: {x: 233.71028, y: 181.35403}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 566
@@ -8294,9 +8298,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 1759873979}
+  - {fileID: 1759873969}
   selectedCommands:
-  - {fileID: 1759874007}
+  - {fileID: 1759874008}
   variables:
   - {fileID: 1759873977}
   - {fileID: 1759873976}
@@ -8400,7 +8404,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &1759874007
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8419,6 +8423,40 @@ MonoBehaviour:
     stringVal: 
   startIndex: 0
   callMode: 0
+--- !u!114 &1759874008
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759873928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 103
+  indentLevel: 0
+  targetObject: {fileID: 296590763}
+  methodName: ResumeCamera
+  delay: 0
+--- !u!114 &1759874009
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759873928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 102
+  indentLevel: 0
+  targetObject: {fileID: 296590763}
+  methodName: StopCamera
+  delay: 0
 --- !u!1 &1803209714
 GameObject:
   m_ObjectHideFlags: 0

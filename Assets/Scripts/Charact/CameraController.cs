@@ -12,6 +12,8 @@ public class CameraController : MonoBehaviour
 
     private PlayerControls _controls;
     private Vector2 _cameraInput;
+    
+    public bool canRotate = true;
 
     private void Awake()
     {
@@ -30,7 +32,7 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked; // 锁定鼠标
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void HandleLook(InputAction.CallbackContext context)
@@ -42,9 +44,11 @@ public class CameraController : MonoBehaviour
     {
         HandleCamera();
     }
-
+    
     private void HandleCamera()
     {
+        if (!canRotate) return; // 如果不允许旋转，直接返回
+
         float mouseX = _cameraInput.x * mouseSensitivity * Time.deltaTime;
         float mouseY = _cameraInput.y * mouseSensitivity * Time.deltaTime;
 
@@ -53,5 +57,17 @@ public class CameraController : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
+    }
+
+    // 停止相机旋转的方法
+    public void StopCamera()
+    {
+        canRotate = false;
+    }
+
+    // 恢复相机旋转的方法
+    public void ResumeCamera()
+    {
+        canRotate = true;
     }
 }
