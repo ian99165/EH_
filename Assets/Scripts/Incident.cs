@@ -6,7 +6,7 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
 {
     private PlayerControls inputActions; // Input Actions 資源
 
-    public string Name; // 道具名稱
+    public string ItemName; // 道具名稱
     public AudioClip IncidentSound; // 撿取音效
     public GameObject Mask; // 使用更规范的变量命名
 
@@ -56,11 +56,11 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
         {
             if (Mask != null && isMask)
             {
-                Mask.SetActive(false); // 關閉指定的 GameObject
+                //Mask.SetActive(false); // 關閉指定的 GameObject
                 isMask = false;
 
-                MoveSp.enabled = true;
-                CameraSp.enabled = true;
+                //MoveSp.enabled = true;
+                //CameraSp.enabled = true;
             }
         }
     }
@@ -117,14 +117,13 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
             if (Mask != null && !isMask)
             {
 
-                Mask.SetActive(true); // 顯示檢查界面
+                //Mask.SetActive(true); // 顯示檢查界面
                 isMask = true;
 
-                MoveSp.enabled = false; // 禁用玩家移動
-                CameraSp.enabled = false; // 禁用攝像機移動
+                //MoveSp.enabled = false; // 禁用玩家移動
+                //CameraSp.enabled = false; // 禁用攝像機移動
             }
-
-            CheckObject(); // 檢查是否是結局道具
+            CheckObject(); // 檢查道具
         }
 
         if (item.CompareTag("SavePoint")) // 存檔點
@@ -148,18 +147,27 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
         }
     }
 
-    // 檢查結局道具
+    
     void CheckObject()
     {
-        if (Name == "EndObject")
+        Check_Object check_object_ = GetComponent<Check_Object>();
+        if (ItemName == "EndObject")
         {
             EndObject_++;
         }
 
-        if (Name == "TrueEndObject_")
+        if (ItemName == "TrueEndObject_")
         {
             TrueEndObject_++;
         }
+
+        if (ItemName == "Clockwork")
+        {
+            hasClockwork = true;
+            Destroy(gameObject);//刪除物件
+        }
     }
+    //物件管理
+    public bool hasClockwork = false;//發條
 }
 

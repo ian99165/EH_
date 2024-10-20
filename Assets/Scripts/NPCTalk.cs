@@ -2,11 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Fungus;
 
 public class NPCTalk : MonoBehaviour
 {
     public string NPCName;
+
 
     public void TalkNPC()
     {
@@ -18,7 +18,7 @@ public class NPCTalk : MonoBehaviour
             fungusSp_.Talking_Doll();
         }
 
-        if (NPCName == "NPC_2")
+        if (NPCName == "Layd")
         {
             
         }
@@ -31,4 +31,5 @@ public class NPCTalk : MonoBehaviour
         //isTalking = false;
         ui_.MsON();
     }
+
 }
