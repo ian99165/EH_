@@ -3715,6 +3715,7 @@ GameObject:
   - component: {fileID: 1429450966}
   - component: {fileID: 1429450967}
   - component: {fileID: 1429450968}
+  - component: {fileID: 1429450969}
   m_Layer: 0
   m_Name: Doll
   m_TagString: NPC
@@ -3889,6 +3890,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16af312284f0a5349991f11ca79aa532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1429450969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429450959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be33754516b2bef4a8c5c1e7e6e54434, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1455464010
@@ -4928,6 +4941,7 @@ GameObject:
   - component: {fileID: 1759874008}
   - component: {fileID: 1759874011}
   - component: {fileID: 1759874010}
+  - component: {fileID: 1759874012}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -7887,6 +7901,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 1759873929}
   - {fileID: 1759873978}
+  - {fileID: 1759874012}
   - {fileID: 1759873960}
   - {fileID: 1759873961}
   - {fileID: 1759874007}
@@ -8695,6 +8710,23 @@ MonoBehaviour:
   commandList:
   - {fileID: 1759874010}
   suppressAllAutoSelections: 0
+--- !u!114 &1759874012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759873928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 106
+  indentLevel: 0
+  targetObject: {fileID: 1429450959}
+  methodName: SI_Door_I
+  delay: 0
 --- !u!1 &1803209714
 GameObject:
   m_ObjectHideFlags: 0
