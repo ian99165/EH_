@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Fungus;
 
 public class Incident : MonoBehaviour // 撿取物件，附加在物件上
 {
@@ -24,6 +25,8 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
 
     private ControllerMovement3D MoveSp;
     private CameraController CameraSp;
+    
+    public Flowchart flowchart;
 
     private void Start()
     {
@@ -138,11 +141,12 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
 
         if (item.CompareTag("NPC")) // 開啟對話
         {
-            Debug.Log("對話");
+            //Debug.Log("對話");
             NPCTalk npcTalk = item.GetComponent<NPCTalk>();
             if (npcTalk != null)
             {
                 npcTalk.TalkNPC(); // 開啟 NPC 對話
+                Set_State();
             }
         }
     }
@@ -150,7 +154,6 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
     
     void CheckObject()
     {
-        Check_Object check_object_ = GetComponent<Check_Object>();
         if (ItemName == "EndObject")
         {
             EndObject_++;
@@ -163,11 +166,27 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
 
         if (ItemName == "Clockwork")
         {
-            hasClockwork = true;
+            flowchart.ExecuteBlock("State_Doll");
             Destroy(gameObject);//刪除物件
         }
     }
     //物件管理
     public bool hasClockwork = false;//發條
+
+    private void Set_State()
+    {       
+        State_Object state_object_ = GetComponent<State_Object>();
+
+        if (hasClockwork)
+        {
+            state_object_.Set_State_Doll();
+            hasClockwork = false;
+        }
+    }
+    //fungus處理變數
+    public void _hasClockwork()
+    {
+        hasClockwork = true;
+    }
 }
 

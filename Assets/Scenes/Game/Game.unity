@@ -3714,6 +3714,7 @@ GameObject:
   - component: {fileID: 1429450965}
   - component: {fileID: 1429450966}
   - component: {fileID: 1429450967}
+  - component: {fileID: 1429450968}
   m_Layer: 0
   m_Name: Doll
   m_TagString: NPC
@@ -3829,6 +3830,8 @@ MonoBehaviour:
   TrueEndObject_: 0
   player: {fileID: 1168916767}
   Camera: {fileID: 296590763}
+  flowchart: {fileID: 1759874001}
+  hasClockwork: 0
 --- !u!114 &1429450965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3876,6 +3879,18 @@ MonoBehaviour:
   isLaydTalk_II: 0
   Doll_State: 0
   flowchart: {fileID: 1759874001}
+--- !u!114 &1429450968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429450959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16af312284f0a5349991f11ca79aa532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1455464010
 GameObject:
   m_ObjectHideFlags: 0
@@ -4069,6 +4084,8 @@ MonoBehaviour:
   TrueEndObject_: 0
   player: {fileID: 1168916767}
   Camera: {fileID: 296590763}
+  flowchart: {fileID: 1759874001}
+  hasClockwork: 0
 --- !u!65 &1534338939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4152,7 +4169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16af312284f0a5349991f11ca79aa532, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hasClockwork: 0
 --- !u!1 &1542093479
 GameObject:
   m_ObjectHideFlags: 0
@@ -4910,6 +4926,8 @@ GameObject:
   - component: {fileID: 1759874007}
   - component: {fileID: 1759874009}
   - component: {fileID: 1759874008}
+  - component: {fileID: 1759874011}
+  - component: {fileID: 1759874010}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -8462,7 +8480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 275.0387, y: 264.0109}
+  scrollPos: {x: 161.38557, y: 277.295}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 566
@@ -8473,8 +8491,10 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
-  selectedCommands: []
+  selectedBlocks:
+  - {fileID: 1759874011}
+  selectedCommands:
+  - {fileID: 1759874010}
   variables:
   - {fileID: 1759873977}
   - {fileID: 1759873976}
@@ -8631,6 +8651,50 @@ MonoBehaviour:
   targetObject: {fileID: 296590763}
   methodName: StopCamera
   delay: 0
+--- !u!114 &1759874010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759873928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17a200dbd67304446a3019434503338a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 105
+  indentLevel: 0
+  targetObject: {fileID: 1429450959}
+  methodName: _hasClockwork
+  delay: 0
+--- !u!114 &1759874011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759873928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodeRect:
+    serializedVersion: 2
+    x: 27.544373
+    y: -137.07364
+    width: 107.56459
+    height: 40
+  tint: {r: 1, g: 1, b: 1, a: 1}
+  useCustomTint: 0
+  itemId: 104
+  blockName: State_Doll
+  description: 
+  eventHandler: {fileID: 0}
+  commandList:
+  - {fileID: 1759874010}
+  suppressAllAutoSelections: 0
 --- !u!1 &1803209714
 GameObject:
   m_ObjectHideFlags: 0

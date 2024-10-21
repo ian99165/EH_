@@ -26,6 +26,7 @@ public class Fungus_Sp : MonoBehaviour
         {
             flowchart.ExecuteBlock("Doll_I_I");
         }
+        
     }
     public void Talking_L_I()
     {
