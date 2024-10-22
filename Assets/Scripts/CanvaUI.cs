@@ -41,6 +41,5 @@ public class CanvaUI : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        
     }
 }

@@ -18,15 +18,10 @@ public class Fungus_Sp : MonoBehaviour
     public Flowchart flowchart;
     public void Talking_Doll()
     {
-        /*物件狀態控制 程式呼叫方式
-            Fungus_Sp fungusSp_ = GetComponent<Fungus_Sp>();
-            fungusSp_.ChangeState_D();
-        */
         if (Doll_State)
         {
             flowchart.ExecuteBlock("Doll_I_I");
         }
-        
     }
     public void Talking_L_I()
     {
