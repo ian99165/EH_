@@ -1,7 +1,5 @@
 //物件平移功能(機關)
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Object_Move_ : MonoBehaviour
