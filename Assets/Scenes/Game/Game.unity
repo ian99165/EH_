@@ -977,17 +977,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameObject
       objectReference: {fileID: 0}
+    - target: {fileID: 127564870352566038, guid: 1c7cf4776f1481442b0933f5d1a85387, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1331532018008897235, guid: 1c7cf4776f1481442b0933f5d1a85387, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1331532018008897235, guid: 1c7cf4776f1481442b0933f5d1a85387, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.904
+      value: -0.9
       objectReference: {fileID: 0}
     - target: {fileID: 1331532018008897235, guid: 1c7cf4776f1481442b0933f5d1a85387, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.13299999
+      value: 7.298
       objectReference: {fileID: 0}
     - target: {fileID: 1331532018008897235, guid: 1c7cf4776f1481442b0933f5d1a85387, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1021,6 +1025,10 @@ PrefabInstance:
       propertyPath: lampLight
       value: 
       objectReference: {fileID: 1181401288}
+    - target: {fileID: 1950154138443240039, guid: 1c7cf4776f1481442b0933f5d1a85387, type: 3}
+      propertyPath: maxEnergy
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 1950154138443240039, guid: 1c7cf4776f1481442b0933f5d1a85387, type: 3}
       propertyPath: lampRenderer
       value: 
@@ -1554,7 +1562,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &612997184
 Transform:
   m_ObjectHideFlags: 0
@@ -8668,7 +8676,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &1759874010
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8685,7 +8693,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &1759874011
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -8712,7 +8720,7 @@ MonoBehaviour:
   suppressAllAutoSelections: 0
 --- !u!114 &1759874012
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
