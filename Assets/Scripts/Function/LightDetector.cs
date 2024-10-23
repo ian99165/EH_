@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LightDetector : MonoBehaviour
 {
-    public Light targetLight; // 需要检测的光源
+    public Light targetLight; // 需要檢測的光源
 
     public float GetLightIntensity()
     {
