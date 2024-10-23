@@ -8,6 +8,7 @@ TagManager:
   - SavePoint
   - NPC
   - Door
+  - Object
   layers:
   - Default
   - TransparentFX

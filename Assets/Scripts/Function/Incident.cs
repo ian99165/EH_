@@ -128,6 +128,11 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
             CheckObject(); // 檢查道具
         }
 
+        if (item.CompareTag("Object"))
+        {
+            
+        }
+
         if (item.CompareTag("SavePoint")) // 存檔點
         {
             Debug.Log("開啟存檔點選單");
