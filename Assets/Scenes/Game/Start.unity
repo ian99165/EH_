@@ -1018,7 +1018,7 @@ MonoBehaviour:
   indentLevel: 0
   _sceneName:
     stringRef: {fileID: 0}
-    stringVal: Game
+    stringVal: Game_S1
   loadingImage: {fileID: 0}
   sceneNameOLD: 
 --- !u!114 &1421312070
@@ -1129,8 +1129,10 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks: []
-  selectedCommands: []
+  selectedBlocks:
+  - {fileID: 1421312072}
+  selectedCommands:
+  - {fileID: 1421312069}
   variables: []
   description: 
   stepPause: 0

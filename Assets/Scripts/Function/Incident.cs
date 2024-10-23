@@ -76,7 +76,7 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
         if (Physics.Raycast(ray, out hit, raycastDistance)) // 發射射線並檢測物體
         {
             if (hit.collider.CompareTag("Item") || hit.collider.CompareTag("NPC") ||
-                hit.collider.CompareTag("SavePoint")) // 如果射線命中道具
+                hit.collider.CompareTag("SavePoint") || hit.collider.CompareTag("Res") || hit.collider.CompareTag("Door")) // 如果射線命中道具
             {
                 // 確認命中點是否接近物體的中心
                 Vector3 itemCenter = hit.collider.bounds.center; // 物體的中心
@@ -115,7 +115,7 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
     {
         if (item.CompareTag("Item")) // 撿起物品
         {
-            AudioSource.PlayClipAtPoint(IncidentSound, item.transform.position);
+            //AudioSource.PlayClipAtPoint(IncidentSound, item.transform.position);
             if (Mask != null && !isMask)
             {
 
@@ -128,9 +128,17 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
             CheckObject(); // 檢查道具
         }
 
-        if (item.CompareTag("Object"))
+        if (item.CompareTag("Res"))
         {
-            
+            Object_Move_ object_move_ = item.GetComponent<Object_Move_>(); // 使用選中物件
+            if (ItemName == "drawer_R")
+            {
+                if (!_lock)
+                {
+                    Debug.Log("drawer_R");
+                    StartCoroutine(object_move_.Move_R());
+                }
+            }
         }
 
         if (item.CompareTag("SavePoint")) // 存檔點
@@ -145,7 +153,7 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
 
         if (item.CompareTag("NPC")) // 開啟對話
         {
-            //Debug.Log("對話");
+            Debug.Log("對話");
             NPCTalk npcTalk = item.GetComponent<NPCTalk>();
             if (npcTalk != null)
             {
@@ -176,6 +184,7 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
     }
     //物件管理
     public bool hasClockwork = false;//發條
+    public bool _lock;
 
     private void Set_State()
     {       
