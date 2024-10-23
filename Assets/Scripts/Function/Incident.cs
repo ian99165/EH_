@@ -115,7 +115,6 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
     {
         if (item.CompareTag("Item")) // 撿起物品
         {
-            //AudioSource.PlayClipAtPoint(IncidentSound, item.transform.position);
             if (Mask != null && !isMask)
             {
 
@@ -148,7 +147,14 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
 
         if (item.CompareTag("Door")) // 開門
         {
-            Debug.Log("開門");
+            if (ItemName == "1F_Button")
+            {
+                flowchart.ExecuteBlock("1F_Button");
+            }
+            if (ItemName == "1F_Button_X")
+            {
+                flowchart.ExecuteBlock("1F_Button_X");
+            }
         }
 
         if (item.CompareTag("NPC")) // 開啟對話
