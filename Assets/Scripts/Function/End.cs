@@ -1,36 +1,58 @@
 using UnityEngine;
-using UnityEngine.Video;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class End : MonoBehaviour
 {
-    public VideoPlayer videoPlayer; // 影片播放器
-    public GameObject videoCanvas; // 用來顯示影片的UI Canvas
+    [SerializeField] private string targetTag = "Player"; 
+    [SerializeField] private Image endImage; 
+    [SerializeField] private float fadeDuration = 1f; 
 
     private void Start()
     {
-        videoCanvas.SetActive(false); // 開始時隱藏Canvas
+        if (endImage != null)
+        {
+            endImage.color = new Color(endImage.color.r, endImage.color.g, endImage.color.b, 0);
+            endImage.gameObject.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) // 確保是角色
+        if (other.CompareTag(targetTag))
         {
-            PlayVideo();
+            ExecuteEnd();
         }
     }
 
-    private void PlayVideo()
+    private void ExecuteEnd()
     {
-        videoCanvas.SetActive(true); // 顯示Canvas
-        videoPlayer.Play(); // 播放影片
+        if (endImage != null)
+        {
+            endImage.gameObject.SetActive(true);
+            StartCoroutine(FadeIn());
+            
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 
-    private void Update()
+    private IEnumerator FadeIn()
     {
-        // 當影片播放結束時隱藏Canvas
-        if (videoPlayer.isPlaying == false && videoCanvas.activeSelf)
+        float elapsedTime = 0f;
+
+        while (elapsedTime < fadeDuration)
         {
-            videoCanvas.SetActive(false);
+            elapsedTime += Time.deltaTime;
+            float alpha = Mathf.Clamp01(elapsedTime / fadeDuration);
+            endImage.color = new Color(endImage.color.r, endImage.color.g, endImage.color.b, alpha); // 更新 alpha 值
+            yield return null;
         }
+
+        endImage.color = new Color(endImage.color.r, endImage.color.g, endImage.color.b, 1);
+
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Start"); 
     }
 }
