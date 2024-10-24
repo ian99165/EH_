@@ -134,7 +134,6 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
             {
                 if (!_lock)
                 {
-                    Debug.Log("drawer_R");
                     StartCoroutine(object_move_.Move_R());
                 }
             }
