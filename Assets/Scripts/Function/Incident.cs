@@ -114,6 +114,7 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
     void PerformIncident(GameObject item) // 將物品作為參數傳入
     {            
         Object_Move_ object_move_ = item.GetComponent<Object_Move_>();
+        Object_Rotate_ _objects_rotate = item.GetComponent<Object_Rotate_>();
         if (item.CompareTag("Item")) // 撿起物品
         {
             if (Mask != null && !isMask)
@@ -137,8 +138,14 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
                 if (!_lock)
                 {
                     StartCoroutine(object_move_.Move_R());
-                    return;
-                    ;
+                }
+            }
+            if (ItemName == "drawer_RO")
+            {
+                if (!_lock)
+                {
+                    StartCoroutine(_objects_rotate.Rotate_L());
+                    _lock = true;
                 }
             }
         }

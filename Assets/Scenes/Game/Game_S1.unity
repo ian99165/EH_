@@ -12430,7 +12430,7 @@ PrefabInstance:
       addedObject: {fileID: 1238569507}
     - targetCorrespondingSourceObject: {fileID: -1143424520121810816, guid: f92fe3d5820a26b4e9b53b120536d1be, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1382180055}
+      addedObject: {fileID: 1382180059}
     - targetCorrespondingSourceObject: {fileID: -4880141259318555340, guid: f92fe3d5820a26b4e9b53b120536d1be, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1199090342}
@@ -12508,7 +12508,7 @@ PrefabInstance:
       addedObject: {fileID: 1410444819}
     - targetCorrespondingSourceObject: {fileID: 6202829162518932377, guid: f92fe3d5820a26b4e9b53b120536d1be, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1410444828}
+      addedObject: {fileID: 1410444832}
     - targetCorrespondingSourceObject: {fileID: -3834878119391327248, guid: f92fe3d5820a26b4e9b53b120536d1be, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2009589522}
@@ -13492,6 +13492,9 @@ MonoBehaviour:
   _turnSpeed: 5
   _gravity: -20
   _jumpHeight: 2.5
+  _cameraTransform: {fileID: 1497379925}
+  crouchCameraHeight: 0.5
+  standCameraHeight: 1.8
   isTalk: 0
 --- !u!1 &1165082091 stripped
 GameObject:
@@ -14298,8 +14301,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: -1143424520121810816, guid: f92fe3d5820a26b4e9b53b120536d1be, type: 3}
   m_PrefabInstance: {fileID: 1052161898}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1382180055
-MeshCollider:
+--- !u!65 &1382180059
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -14316,10 +14319,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -4797718389997163445, guid: f92fe3d5820a26b4e9b53b120536d1be, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 1.555932, y: 0.0255602, z: 3.404417}
+  m_Center: {x: -5.9489045, y: 0.04479751, z: 10.591474}
 --- !u!1 &1388911070 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1821216393397388715, guid: f92fe3d5820a26b4e9b53b120536d1be, type: 3}
@@ -14485,7 +14487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 946c693294919f244b846e9300b5d967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: drawer_R
+  ItemName: drawer_RO
   IncidentSound: {fileID: 0}
   Mask: {fileID: 1440878360}
   mainCamera: {fileID: 1360179914}
@@ -14498,8 +14500,8 @@ MonoBehaviour:
   flowchart: {fileID: 1549749980}
   hasClockwork: 0
   _lock: 1
---- !u!64 &1410444828
-MeshCollider:
+--- !u!65 &1410444832
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -14516,10 +14518,9 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8712393378800034753, guid: f92fe3d5820a26b4e9b53b120536d1be, type: 3}
+  serializedVersion: 3
+  m_Size: {x: 1.2768178, y: 1.5883368, z: 0.24697492}
+  m_Center: {x: 0.62681985, y: 0, z: 0.08826059}
 --- !u!1 &1421448055 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6300738554989378820, guid: f92fe3d5820a26b4e9b53b120536d1be, type: 3}

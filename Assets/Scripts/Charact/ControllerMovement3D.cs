@@ -18,6 +18,11 @@ public class ControllerMovement3D : MonoBehaviour
     [SerializeField] private float _gravity = -20f;
     [SerializeField] private float _jumpHeight = 2.5f;
     private Vector3 _velocity;
+    
+    [Header("Camera")]
+    [SerializeField] private Transform _cameraTransform; // 相機的 Transform
+    [SerializeField] private float crouchCameraHeight = 0.5f; // 蹲下時相機高度
+    [SerializeField] private float standCameraHeight = 1.8f;  // 站立時相機高度
 
     private bool _isRunning = false;
     private bool _isStop = false;
@@ -59,6 +64,10 @@ public class ControllerMovement3D : MonoBehaviour
     {
         _characterController = GetComponent<CharacterController>();
         _anim = GetComponent<Animator>();
+        if (_cameraTransform == null)
+        {
+            _cameraTransform = Camera.main.transform; // 取得主相機的 Transform
+        }
     }
 
     private void Update()
@@ -93,16 +102,27 @@ public class ControllerMovement3D : MonoBehaviour
             }
 
             // 蹲下邏輯
-            if (_isGrounded)
+            if (!isTalk)
             {
-                if (_isCrouch)
+                // 跑步邏輯...
+                // 當在地面且蹲下時，移動相機
+                if (_isGrounded)
                 {
-                    _anim.SetBool("crouch", true);
-                    _currentSpeed = 0f; // 速度歸零
-                }
-                else
-                {
-                    _anim.SetBool("crouch", false);
+                    if (_isCrouch)
+                    {
+                        _anim.SetBool("crouch", true);
+                        _currentSpeed = 0f; // 速度歸零
+
+                        // 移動相機往下
+                        _cameraTransform.localPosition = new Vector3(_cameraTransform.localPosition.x, crouchCameraHeight, _cameraTransform.localPosition.z);
+                    }
+                    else
+                    {
+                        _anim.SetBool("crouch", false);
+
+                        // 恢復相機到站立的高度
+                        _cameraTransform.localPosition = new Vector3(_cameraTransform.localPosition.x, standCameraHeight, _cameraTransform.localPosition.z);
+                    }
                 }
             }
         }
