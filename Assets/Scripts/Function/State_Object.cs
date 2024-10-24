@@ -5,9 +5,16 @@ public class State_Object : MonoBehaviour
 {
     public GameObject Object;
     
-    public float speed = 1f;
+    public float speed = 0.5f;
     public float movementDuration = 0.5f; // 可控變數，默認為3秒
     private Coroutine moveCoroutine;
+    private Collider objectCollider;
+    
+    void Start()
+    {
+        objectCollider = GetComponent<Collider>();
+    }
+    
     public void Set_State_Doll()
     {
             Debug.Log("Set_State_Doll");
@@ -31,5 +38,7 @@ public class State_Object : MonoBehaviour
 
         transform.position = startPosition + Vector3.up * speed * movementDuration;
         moveCoroutine = null;
+        
+        objectCollider.enabled = false;
     }
 }

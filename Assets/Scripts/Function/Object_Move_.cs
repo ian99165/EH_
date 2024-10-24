@@ -7,6 +7,7 @@ public class Object_Move_ : MonoBehaviour
     public float movementDuration = 3f; // 可控變數，默認為3秒
     private Coroutine moveCoroutine;
     private bool canMove;
+    private bool _open;
     
     private void Start()
     {
@@ -32,6 +33,15 @@ public class Object_Move_ : MonoBehaviour
             transform.position = startPosition + Vector3.up * speed * movementDuration;
             moveCoroutine = null;
             canMove = false;
+            _open = true;
+        }
+
+        if (_open)
+        {
+            
+        }
+        {
+            
         }
     }
 
@@ -54,6 +64,7 @@ public class Object_Move_ : MonoBehaviour
             transform.position = startPosition + Vector3.down * speed * movementDuration;
             moveCoroutine = null;
             canMove = false;
+            _open = true;
         }
     }
 
@@ -76,6 +87,7 @@ public class Object_Move_ : MonoBehaviour
             transform.position = startPosition + Vector3.right * speed * movementDuration;
             moveCoroutine = null;
             canMove = false;
+            _open = true;
         }
     }
 
@@ -98,6 +110,7 @@ public class Object_Move_ : MonoBehaviour
             transform.position = startPosition + Vector3.left * speed * movementDuration;
             moveCoroutine = null;
             canMove = false;
+            _open = true;
         }
     }
 
@@ -120,6 +133,7 @@ public class Object_Move_ : MonoBehaviour
             transform.position = startPosition + Vector3.forward * speed * movementDuration;
             moveCoroutine = null;
             canMove = false;
+            _open = true;
         }
     }
 
@@ -142,6 +156,7 @@ public class Object_Move_ : MonoBehaviour
             transform.position = startPosition + Vector3.back * speed * movementDuration;
             moveCoroutine = null;
             canMove = false;
+            _open = true;
         }
     }
 
@@ -155,6 +170,7 @@ public class Object_Move_ : MonoBehaviour
         if (canMove)
         {
             canMove = false;
+            _open = true;
 
             Debug.Log("Move_Pull");
             float elapsedTime = 0f;

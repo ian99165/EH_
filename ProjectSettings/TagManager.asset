@@ -9,6 +9,7 @@ TagManager:
   - NPC
   - Door
   - Res
+  - Drawer
   layers:
   - Default
   - TransparentFX

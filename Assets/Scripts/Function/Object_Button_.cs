@@ -23,28 +23,32 @@ public class Object_Button_ : MonoBehaviour
         _button_I.onClick.AddListener(OnButtonClick);
     }
 
+    void Update()
+    {
+        variable.ExecuteBlock("SI_I");
+    }
+    
     private void OnButtonClick()
     {
         if (!isRotating) // 檢查是否正在旋轉
         {
             StartCoroutine(RotateObject());
-            variable.ExecuteBlock("SI_I");
+            if (ObjectName == "SI_I")
+            {
+                if (Number == "I")
+                {
+                    variable.ExecuteBlock("SI_I_1");
+                }
+                if (Number == "II")
+                {
+                    variable.ExecuteBlock("SI_I_2");
+                }
+                if (Number == "III")
+                {
+                    variable.ExecuteBlock("SI_I_3");
+                }
+            }
         }
-        /*Variable_Answer_ variable_answer_ = GetComponent<Variable_Answer_>();
-        if (ObjectName == "SI_I")
-        {
-            if (Number == "I")
-            {
-            }
-
-            if(Number == "II")
-            {
-            }
-
-            if (Number == "III")
-            {
-            }
-        }*/
     }
 
     private IEnumerator RotateObject()

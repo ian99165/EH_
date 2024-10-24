@@ -17,12 +17,18 @@ public class CanvaUI : MonoBehaviour
     void Start()
     {
         Exit.onClick.AddListener(CloseCanva);
+        
+        MoveSp = player.GetComponent<ControllerMovement3D>();
+        CameraSp = Camera.GetComponent<CameraController>();
     }
 
     public void OpenCanva()        // 打開UI
     {
         OpenUI.SetActive(true);
         Exit.gameObject.SetActive(true);
+        MsOFF();
+        MoveSp.SetSpeedZreo();
+        CameraSp.StopCamera();
     }
 
     public void MsOFF()            // 停止角色移動，禁用B腳本
@@ -35,6 +41,9 @@ public class CanvaUI : MonoBehaviour
     {
         OpenUI.SetActive(false);
         Exit.gameObject.SetActive(false);
+        MsON();
+        MoveSp.SetMs();
+        CameraSp.ResumeCamera();
     }
 
     public void MsON()

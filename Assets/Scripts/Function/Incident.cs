@@ -76,7 +76,7 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
         if (Physics.Raycast(ray, out hit, raycastDistance)) // 發射射線並檢測物體
         {
             if (hit.collider.CompareTag("Item") || hit.collider.CompareTag("NPC") ||
-                hit.collider.CompareTag("SavePoint") || hit.collider.CompareTag("Res") || hit.collider.CompareTag("Door")) // 如果射線命中道具
+                hit.collider.CompareTag("SavePoint") || hit.collider.CompareTag("Res") || hit.collider.CompareTag("Door") || hit.collider.CompareTag("Drawer")) // 如果射線命中道具
             {
                 // 確認命中點是否接近物體的中心
                 Vector3 itemCenter = hit.collider.bounds.center; // 物體的中心
@@ -113,12 +113,11 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
     // 事件處理
     void PerformIncident(GameObject item) // 將物品作為參數傳入
     {            
-        Object_Move_ object_move_ = item.GetComponent<Object_Move_>(); // 使用選中物件
+        Object_Move_ object_move_ = item.GetComponent<Object_Move_>();
         if (item.CompareTag("Item")) // 撿起物品
         {
             if (Mask != null && !isMask)
             {
-
                 //Mask.SetActive(true); // 顯示檢查界面
                 isMask = true;
 
@@ -127,15 +126,32 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
             }
             CheckObject(); // 檢查道具
         }
-
-        if (item.CompareTag("Res"))
+        
+        State_Object state_object = GetComponent<State_Object>();
+        ControllerMovement3D controller_movement_3D = GetComponent<ControllerMovement3D>();
+        CameraController camera_controller = GetComponent<CameraController>();
+        if (item.CompareTag("Drawer"))
         {
             if (ItemName == "drawer_R")
             {
                 if (!_lock)
                 {
                     StartCoroutine(object_move_.Move_R());
+                    return;
+                    ;
                 }
+            }
+        }
+
+        if (item.CompareTag("Res")) 
+        {
+            if (ItemName == "SI_I_Lock")
+            {
+                CanvaUI canvaUI = GetComponent<CanvaUI>();
+                
+                canvaUI.OpenCanva();
+                controller_movement_3D.SetMs();
+                camera_controller.ResumeCamera();
             }
         }
 
@@ -206,6 +222,10 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
     public void _hasClockwork()
     {
         hasClockwork = true;
+    }
+    public void _has_lock()
+    {
+        _lock = false;
     }
 }
 
