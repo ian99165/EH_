@@ -112,7 +112,8 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
 
     // 事件處理
     void PerformIncident(GameObject item) // 將物品作為參數傳入
-    {
+    {            
+        Object_Move_ object_move_ = item.GetComponent<Object_Move_>(); // 使用選中物件
         if (item.CompareTag("Item")) // 撿起物品
         {
             if (Mask != null && !isMask)
@@ -129,7 +130,6 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
 
         if (item.CompareTag("Res"))
         {
-            Object_Move_ object_move_ = item.GetComponent<Object_Move_>(); // 使用選中物件
             if (ItemName == "drawer_R")
             {
                 if (!_lock)
@@ -149,11 +149,12 @@ public class Incident : MonoBehaviour // 撿取物件，附加在物件上
         {
             if (ItemName == "1F_Button")
             {
+                StartCoroutine(object_move_._Button());
                 flowchart.ExecuteBlock("1F_Button");
             }
             if (ItemName == "1F_Button_X")
             {
-                flowchart.ExecuteBlock("1F_Button_X");
+                StartCoroutine(object_move_._Button());
             }
         }
 

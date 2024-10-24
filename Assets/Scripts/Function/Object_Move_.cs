@@ -149,4 +149,43 @@ public class Object_Move_ : MonoBehaviour
     {
         canMove = true;
     }
+    
+    public IEnumerator _Button()
+    {
+        if (canMove)
+        {
+            canMove = false;
+
+            Debug.Log("Move_Pull");
+            float elapsedTime = 0f;
+            Vector3 startPosition = transform.position;
+
+            while (elapsedTime < movementDuration)
+            {
+                transform.position = Vector3.Lerp(startPosition,
+                    startPosition + Vector3.back * speed * movementDuration, elapsedTime / movementDuration);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+            transform.position = startPosition + Vector3.back * speed * movementDuration;
+            
+            yield return new WaitForSeconds(0.2f);
+
+            Debug.Log("Move_Push");
+            startPosition = transform.position;
+
+            while (elapsedTime < movementDuration)
+            {
+                transform.position = Vector3.Lerp(startPosition,
+                    startPosition + Vector3.forward * speed * movementDuration, elapsedTime / movementDuration);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+            transform.position = startPosition + Vector3.forward * speed * movementDuration;
+
+            yield return new WaitForSeconds(0.2f);
+
+            canMove = true;
+        }
+    }
 }
