@@ -526,12 +526,16 @@ MonoBehaviour:
   IncidentSound: {fileID: 0}
   Mask: {fileID: 1440878360}
   mainCamera: {fileID: 1360179914}
+  currentItem: {fileID: 0}
   raycastDistance: 3
   requiredPrecision: 5
   EndObject_: 0
   TrueEndObject_: 0
+  isMask: 0
   player: {fileID: 1163403447}
   Camera: {fileID: 1922262074}
+  MoveSp: {fileID: 0}
+  CameraSp: {fileID: 0}
   flowchart: {fileID: 1549749980}
   hasClockwork: 0
   _lock: 0
@@ -549,6 +553,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   movementDuration: 0.7
+  canMove: 0
+  _open: 0
 --- !u!65 &44833501
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2311,6 +2317,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   movementDuration: 1.4
+  canMove: 0
+  _open: 0
 --- !u!1 &347573464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2425,6 +2433,8 @@ MonoBehaviour:
   OpenUI: {fileID: 112419549}
   player: {fileID: 1163403447}
   Camera: {fileID: 1922262074}
+  MoveSp: {fileID: 0}
+  CameraSp: {fileID: 0}
 --- !u!4 &361026749
 Transform:
   m_ObjectHideFlags: 0
@@ -2456,12 +2466,16 @@ MonoBehaviour:
   IncidentSound: {fileID: 8300000, guid: 08f839f57dab0524a946e40e5f168420, type: 3}
   Mask: {fileID: 1440878360}
   mainCamera: {fileID: 1360179914}
+  currentItem: {fileID: 0}
   raycastDistance: 3
   requiredPrecision: 5
   EndObject_: 0
   TrueEndObject_: 0
+  isMask: 0
   player: {fileID: 1163403447}
   Camera: {fileID: 1922262074}
+  MoveSp: {fileID: 0}
+  CameraSp: {fileID: 0}
   flowchart: {fileID: 1549749980}
   hasClockwork: 0
   _lock: 0
@@ -2525,6 +2539,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   movementDuration: 3
+  canMove: 0
+  _open: 0
 --- !u!1 &364873881 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -9209340820129003354, guid: f92fe3d5820a26b4e9b53b120536d1be, type: 3}
@@ -3315,12 +3331,16 @@ MonoBehaviour:
   IncidentSound: {fileID: 0}
   Mask: {fileID: 1440878360}
   mainCamera: {fileID: 1360179914}
+  currentItem: {fileID: 0}
   raycastDistance: 3
   requiredPrecision: 5
   EndObject_: 0
   TrueEndObject_: 0
+  isMask: 0
   player: {fileID: 1163403447}
   Camera: {fileID: 1922262074}
+  MoveSp: {fileID: 0}
+  CameraSp: {fileID: 0}
   flowchart: {fileID: 1549749980}
   hasClockwork: 0
   _lock: 0
@@ -3338,6 +3358,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   movementDuration: 0.7
+  canMove: 0
+  _open: 0
 --- !u!65 &524059598
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4641,12 +4663,16 @@ MonoBehaviour:
   IncidentSound: {fileID: 0}
   Mask: {fileID: 1440878360}
   mainCamera: {fileID: 1360179914}
+  currentItem: {fileID: 0}
   raycastDistance: 3
   requiredPrecision: 5
   EndObject_: 0
   TrueEndObject_: 0
+  isMask: 0
   player: {fileID: 1163403447}
   Camera: {fileID: 1922262074}
+  MoveSp: {fileID: 0}
+  CameraSp: {fileID: 0}
   flowchart: {fileID: 1549749980}
   hasClockwork: 0
   _lock: 0
@@ -4664,6 +4690,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   movementDuration: 0.7
+  canMove: 0
+  _open: 0
 --- !u!65 &746235740
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5033,9 +5061,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6476ff9ab3f1a1b46b965c3f41c69d92, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1163403454}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6476ff9ab3f1a1b46b965c3f41c69d92, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1163403453}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6476ff9ab3f1a1b46b965c3f41c69d92, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1163403452}
@@ -9745,6 +9770,7 @@ MonoBehaviour:
   ObjectName: SI_I
   Number: I
   gameobject: {fileID: 459656589}
+  isRotating: 0
   _button_I: {fileID: 900263344}
   variable: {fileID: 887751317}
 --- !u!114 &900263344
@@ -10058,12 +10084,16 @@ MonoBehaviour:
   IncidentSound: {fileID: 0}
   Mask: {fileID: 1440878360}
   mainCamera: {fileID: 1360179914}
+  currentItem: {fileID: 0}
   raycastDistance: 3
   requiredPrecision: 5
   EndObject_: 0
   TrueEndObject_: 0
+  isMask: 0
   player: {fileID: 1163403447}
   Camera: {fileID: 1922262074}
+  MoveSp: {fileID: 0}
+  CameraSp: {fileID: 0}
   flowchart: {fileID: 1549749980}
   hasClockwork: 0
   _lock: 0
@@ -10102,6 +10132,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   movementDuration: 0.7
+  canMove: 0
+  _open: 0
 --- !u!1 &974896272
 GameObject:
   m_ObjectHideFlags: 0
@@ -13676,19 +13708,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1163403453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1163403447}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 483ecad8cfd0db74bb5b143fa8620723, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetLight: {fileID: 0}
 --- !u!114 &1163403454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13705,12 +13724,23 @@ MonoBehaviour:
   _acceleration: 5
   _deceleration: 5
   _turnSpeed: 5
+  _currentSpeed: 0
+  _targetSpeed: 0
+  _hasMoveInput: 0
+  _moveInput: {x: 0, y: 0, z: 0}
   _gravity: -20
   _jumpHeight: 2.5
+  _velocity: {x: 0, y: 0, z: 0}
   _cameraTransform: {fileID: 1497379925}
   crouchCameraHeight: 0.5
   standCameraHeight: 1.8
+  _isRunning: 0
+  _isStop: 0
+  _isCrouch: 0
+  _isGrounded: 0
   isTalk: 0
+  _characterController: {fileID: 0}
+  _anim: {fileID: 0}
 --- !u!1 &1165082091 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3504588915279708099, guid: f92fe3d5820a26b4e9b53b120536d1be, type: 3}
@@ -14690,6 +14720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 100
+  duration: 1
 --- !u!114 &1410444821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14706,12 +14737,16 @@ MonoBehaviour:
   IncidentSound: {fileID: 0}
   Mask: {fileID: 1440878360}
   mainCamera: {fileID: 1360179914}
+  currentItem: {fileID: 0}
   raycastDistance: 3
   requiredPrecision: 5
   EndObject_: 0
   TrueEndObject_: 0
+  isMask: 0
   player: {fileID: 1163403447}
   Camera: {fileID: 1922262074}
+  MoveSp: {fileID: 0}
+  CameraSp: {fileID: 0}
   flowchart: {fileID: 1549749980}
   hasClockwork: 0
   _lock: 1
@@ -14874,6 +14909,7 @@ MonoBehaviour:
   ObjectName: SI_I
   Number: III
   gameobject: {fileID: 898081774}
+  isRotating: 0
   _button_I: {fileID: 1432858093}
   variable: {fileID: 887751317}
 --- !u!222 &1432858096
@@ -20812,6 +20848,7 @@ MonoBehaviour:
   Object: {fileID: 0}
   speed: 0.1
   movementDuration: 0.1
+  objectCollider: {fileID: 0}
 --- !u!1 &1602115137 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5722927317497906724, guid: f92fe3d5820a26b4e9b53b120536d1be, type: 3}
@@ -21434,12 +21471,16 @@ MonoBehaviour:
   IncidentSound: {fileID: 8300000, guid: 08f839f57dab0524a946e40e5f168420, type: 3}
   Mask: {fileID: 1440878360}
   mainCamera: {fileID: 1360179914}
+  currentItem: {fileID: 0}
   raycastDistance: 3
   requiredPrecision: 5
   EndObject_: 0
   TrueEndObject_: 0
+  isMask: 0
   player: {fileID: 1163403447}
   Camera: {fileID: 1922262074}
+  MoveSp: {fileID: 0}
+  CameraSp: {fileID: 0}
   flowchart: {fileID: 1549749980}
   hasClockwork: 0
   _lock: 0
@@ -21478,6 +21519,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.1
   movementDuration: 0.1
+  canMove: 0
+  _open: 0
 --- !u!1 &1696279612 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 67d5f7c814b4cd249b4e9e45d45227d1, type: 3}
@@ -21499,12 +21542,16 @@ MonoBehaviour:
   IncidentSound: {fileID: 8300000, guid: 08f839f57dab0524a946e40e5f168420, type: 3}
   Mask: {fileID: 1440878360}
   mainCamera: {fileID: 1360179914}
+  currentItem: {fileID: 0}
   raycastDistance: 3
   requiredPrecision: 5
   EndObject_: 0
   TrueEndObject_: 0
+  isMask: 0
   player: {fileID: 1163403447}
   Camera: {fileID: 1922262074}
+  MoveSp: {fileID: 0}
+  CameraSp: {fileID: 0}
   flowchart: {fileID: 1549749980}
   hasClockwork: 0
   _lock: 0
@@ -21545,6 +21592,8 @@ MonoBehaviour:
   OpenUI: {fileID: 1611017364}
   player: {fileID: 1163403447}
   Camera: {fileID: 1922262074}
+  MoveSp: {fileID: 0}
+  CameraSp: {fileID: 0}
 --- !u!1 &1700516574 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7361664599879573757, guid: f92fe3d5820a26b4e9b53b120536d1be, type: 3}
@@ -21757,6 +21806,7 @@ MonoBehaviour:
   Object: {fileID: 837620305}
   speed: 1
   movementDuration: 0.5
+  objectCollider: {fileID: 0}
 --- !u!114 &1794275542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21804,6 +21854,8 @@ MonoBehaviour:
   OpenUI: {fileID: 867606138}
   player: {fileID: 1163403447}
   Camera: {fileID: 1922262074}
+  MoveSp: {fileID: 0}
+  CameraSp: {fileID: 0}
 --- !u!114 &1794275545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21820,12 +21872,16 @@ MonoBehaviour:
   IncidentSound: {fileID: 8300000, guid: 08f839f57dab0524a946e40e5f168420, type: 3}
   Mask: {fileID: 1440878360}
   mainCamera: {fileID: 1360179914}
+  currentItem: {fileID: 0}
   raycastDistance: 3
   requiredPrecision: 5
   EndObject_: 0
   TrueEndObject_: 0
+  isMask: 0
   player: {fileID: 1163403447}
   Camera: {fileID: 1922262074}
+  MoveSp: {fileID: 0}
+  CameraSp: {fileID: 0}
   flowchart: {fileID: 1549749980}
   hasClockwork: 0
   _lock: 0
@@ -22154,6 +22210,7 @@ MonoBehaviour:
   ObjectName: SI_I
   Number: II
   gameobject: {fileID: 73260114}
+  isRotating: 0
   _button_I: {fileID: 1854520413}
   variable: {fileID: 887751317}
 --- !u!114 &1854520413
@@ -22584,12 +22641,16 @@ MonoBehaviour:
   IncidentSound: {fileID: 0}
   Mask: {fileID: 1440878360}
   mainCamera: {fileID: 1360179914}
+  currentItem: {fileID: 0}
   raycastDistance: 3
   requiredPrecision: 5
   EndObject_: 0
   TrueEndObject_: 0
+  isMask: 0
   player: {fileID: 1163403447}
   Camera: {fileID: 1922262074}
+  MoveSp: {fileID: 0}
+  CameraSp: {fileID: 0}
   flowchart: {fileID: 1549749980}
   hasClockwork: 0
   _lock: 0
@@ -22607,6 +22668,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   movementDuration: 0.7
+  canMove: 0
+  _open: 0
 --- !u!65 &1961555165
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23288,12 +23351,16 @@ MonoBehaviour:
   IncidentSound: {fileID: 8300000, guid: 08f839f57dab0524a946e40e5f168420, type: 3}
   Mask: {fileID: 1440878360}
   mainCamera: {fileID: 1360179914}
+  currentItem: {fileID: 0}
   raycastDistance: 3
   requiredPrecision: 5
   EndObject_: 0
   TrueEndObject_: 0
+  isMask: 0
   player: {fileID: 1163403447}
   Camera: {fileID: 1922262074}
+  MoveSp: {fileID: 0}
+  CameraSp: {fileID: 0}
   flowchart: {fileID: 1549749980}
   hasClockwork: 0
   _lock: 0
@@ -23311,6 +23378,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.1
   movementDuration: 0.1
+  canMove: 0
+  _open: 0
 --- !u!65 &2050307471
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23484,6 +23553,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   movementDuration: 0.7
+  canMove: 0
+  _open: 0
 --- !u!114 &2073392636
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23500,12 +23571,16 @@ MonoBehaviour:
   IncidentSound: {fileID: 0}
   Mask: {fileID: 1440878360}
   mainCamera: {fileID: 1360179914}
+  currentItem: {fileID: 0}
   raycastDistance: 3
   requiredPrecision: 5
   EndObject_: 0
   TrueEndObject_: 0
+  isMask: 0
   player: {fileID: 1163403447}
   Camera: {fileID: 1922262074}
+  MoveSp: {fileID: 0}
+  CameraSp: {fileID: 0}
   flowchart: {fileID: 1549749980}
   hasClockwork: 0
   _lock: 0
@@ -23549,6 +23624,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   movementDuration: 1.4
+  canMove: 0
+  _open: 0
 --- !u!1 &2081329626
 GameObject:
   m_ObjectHideFlags: 0
@@ -23787,6 +23864,7 @@ MonoBehaviour:
   ObjectName: SI_I
   Number: I
   gameobject: {fileID: 459656589}
+  isRotating: 0
   _button_I: {fileID: 2134706373}
   variable: {fileID: 887751317}
 --- !u!114 &2134706373
@@ -23939,6 +24017,7 @@ MonoBehaviour:
   Object: {fileID: 0}
   speed: 1
   movementDuration: 0.5
+  objectCollider: {fileID: 0}
 --- !u!114 &2144891015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23955,12 +24034,16 @@ MonoBehaviour:
   IncidentSound: {fileID: 8300000, guid: 08f839f57dab0524a946e40e5f168420, type: 3}
   Mask: {fileID: 1440878360}
   mainCamera: {fileID: 1360179914}
+  currentItem: {fileID: 0}
   raycastDistance: 3
   requiredPrecision: 5
   EndObject_: 0
   TrueEndObject_: 0
+  isMask: 0
   player: {fileID: 1163403447}
   Camera: {fileID: 1922262074}
+  MoveSp: {fileID: 0}
+  CameraSp: {fileID: 0}
   flowchart: {fileID: 1549749980}
   hasClockwork: 0
   _lock: 0
