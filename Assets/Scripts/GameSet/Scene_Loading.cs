@@ -1,7 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Scene_Loading : MonoBehaviour
 {
@@ -12,20 +10,27 @@ public class Scene_Loading : MonoBehaviour
         switch (_scene)
         {
             case 1:
-                //載入S1
-            break;
+                SceneManager.LoadScene("S1"); 
+                break;
             case 2:
-                //載入S2
-            break;
+                SceneManager.LoadScene("S2");
+                break;
             case 3:
-                //載入S3
-            break;
+                SceneManager.LoadScene("S3");
+                break;
+            case 4:
+                SceneManager.LoadScene("S4");
+                break;
+            case 5:
+                SceneManager.LoadScene("S5");
+                break;
             default:
                 Debug.Log("無法載入場景");
+                break;
         }
     }
 
-    public Void SetScene()
+    public void SetScene()
     {
         _scene++;
     }
