@@ -1,18 +1,32 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Scene_Loading : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private int _scene = 0;
+
+    public void LoadScene()
     {
-        
+        switch (_scene)
+        {
+            case 1:
+                //載入S1
+            break;
+            case 2:
+                //載入S2
+            break;
+            case 3:
+                //載入S3
+            break;
+            default:
+                Debug.Log("無法載入場景");
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public Void SetScene()
     {
-        
+        _scene++;
     }
 }
