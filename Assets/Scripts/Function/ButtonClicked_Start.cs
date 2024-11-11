@@ -14,11 +14,16 @@ public class ButtonClicked_Start : MonoBehaviour
 
     private void Button_Start() //開始遊戲
     {
-        Debug.Log("Button_Start");
+        Scene_Loading  scene_loading= GetComponent<Scene_Loading>();
+        scene_loading.SetScene();
+        scene_loading.LoadScene();
     }
 
     private void Button_Exit() //離開遊戲
     {
-        Debug.Log("Button_Exit");
+        Application.Quit();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 }

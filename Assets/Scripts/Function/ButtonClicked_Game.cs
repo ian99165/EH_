@@ -25,7 +25,10 @@ public class ButtonClick_Game : MonoBehaviour
 
     private void Button_Exit() //離開遊戲
     {
-        Debug.Log("Button_Exit");
+        Application.Quit();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 
     private void Button_Back() //返回遊戲
