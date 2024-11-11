@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonClick : MonoBehaviour
+public class ButtonClick_Game : MonoBehaviour
 {
     [SerializeField]private Button _button_start;
     [SerializeField]private Button _button_Exit;
@@ -18,27 +18,27 @@ public class ButtonClick : MonoBehaviour
         _button_Save.onClick.AddListener(Button_Save);
     }
 
-    private void Button_Start()
+    private void Button_Start() //開始遊戲
     {
         Debug.Log("Button_Start");
     }
 
-    private void Button_Exit()
+    private void Button_Exit() //離開遊戲
     {
         Debug.Log("Button_Exit");
     }
 
-    private void Button_Back()
+    private void Button_Back() //返回遊戲
     {
         Debug.Log("Button_Back");
     }
 
-    private void Button_Settings()
+    private void Button_Settings() //設定
     {
         Debug.Log("Button_Settings");
     }
 
-    private void Button_Save()
+    private void Button_Save() //存檔
     {
         Debug.Log("Button_Save");
     }
