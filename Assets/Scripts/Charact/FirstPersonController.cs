@@ -16,7 +16,7 @@ public class FirstPersonController : MonoBehaviour
     private Vector2 inputLook;
     private Vector2 inputMove;
     private bool isRunning = false;
-    private const float lookThreshold = 0.01f; // 用於忽略細微輸入
+    private const float lookThreshold = 0.01f;
 
     private PlayerControls controls;
 
@@ -33,10 +33,6 @@ public class FirstPersonController : MonoBehaviour
     private void Start()
     {
         controller = GetComponent<CharacterController>();
-
-        // 鎖定滑鼠指針並隱藏
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     private void Update()
@@ -55,20 +51,16 @@ public class FirstPersonController : MonoBehaviour
 
     private void RotateCamera()
     {
-        // 當滑鼠輸入超過閾值時才進行相機旋轉
         if (Mathf.Abs(inputLook.x) > lookThreshold || Mathf.Abs(inputLook.y) > lookThreshold)
         {
             float mouseX = inputLook.x * rotationSpeed * Time.deltaTime;
             float mouseY = inputLook.y * rotationSpeed * Time.deltaTime;
 
-            // 旋轉角色的水平角度
             transform.Rotate(Vector3.up * mouseX);
 
-            // 更新 X 軸旋轉並限制範圍
             xRotation -= mouseY;
             xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-            // 應用 X 軸旋轉到相機
             playerCamera.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         }
     }
