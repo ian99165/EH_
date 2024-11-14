@@ -18,6 +18,10 @@ public class FirstPersonController : MonoBehaviour
     private bool isRunning = false;
     private const float lookThreshold = 0.01f;
 
+    [Header("Interaction Settings")]
+    public float interactionDistance = 3f;
+    public LayerMask interactableLayer; // 定義互動層
+
     private PlayerControls controls;
 
     private void Awake()
@@ -28,6 +32,7 @@ public class FirstPersonController : MonoBehaviour
         controls.Player.Look.performed += ctx => inputLook = ctx.ReadValue<Vector2>();
         controls.Player.Look.canceled += ctx => inputLook = Vector2.zero;
         controls.Player.Run.performed += ctx => isRunning = !isRunning;
+        controls.Player.Interact.performed += ctx => Interact(); // 新增互動輸入
     }
 
     private void Start()
@@ -64,6 +69,44 @@ public class FirstPersonController : MonoBehaviour
             playerCamera.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         }
     }
+
+    private void Interact()
+    {
+        Ray ray = new Ray(playerCamera.position, playerCamera.forward);
+        Debug.DrawRay(playerCamera.position, playerCamera.forward * interactionDistance, Color.red, 1f);
+    
+        if (Physics.Raycast(ray, out RaycastHit hit, interactionDistance))
+        {
+            if (hit.collider.CompareTag("Item"))
+            {
+                Debug.Log("Detected an Item");
+                var interactionScript = hit.collider.GetComponent<Interaction>();
+                if (interactionScript != null)
+                {
+                    interactionScript.Interact_Item();
+                }
+                else
+                {
+                    Debug.LogWarning("沒有 Item");
+                }
+            }
+
+            if (hit.collider.CompareTag("NPC"))
+            {
+                Debug.Log("Detected an NPC");
+                var interactionScript = hit.collider.GetComponent<Interaction>();
+                if (interactionScript != null)
+                {
+                    interactionScript.Interact_NPC();
+                }
+                else
+                {
+                    Debug.LogWarning("沒有 NPC");
+                }
+            }
+        }
+    }
+
 
     private void OnEnable()
     {
