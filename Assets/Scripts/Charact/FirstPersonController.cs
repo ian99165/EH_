@@ -94,12 +94,32 @@ public class FirstPersonController : MonoBehaviour
                     }
                     break;
                 case "Devices":
+                    var devicesInteractionScript = hit.collider.GetComponent<DevicesInteraction>();
+                    if (devicesInteractionScript != null)
+                    {
+                        //devicesInteractionScript.Interact_Devices();
+                    }
                     break;
                 case "Key":
+                    var keyInteractionScript = hit.collider.GetComponent<KeyInteraction>();
+                    if (keyInteractionScript != null)
+                    {
+                        //keyInteractionScript.Interact_Key();
+                    }
                     break;
                 case "Door":
+                    var doorInteractionScript = hit.collider.GetComponent<DoorInteraction>();
+                    if (doorInteractionScript != null)
+                    {
+                        //doorInteractionScript.Interact_Door();
+                    }
                     break;
                 case "SavePoint":
+                    var saveInteractionScript = hit.collider.GetComponent<SaveInteraction>();
+                    if (saveInteractionScript != null)
+                    {
+                        //saveInteractionScript.Interact_Save();
+                    }
                     break;
                 default:
                     Debug.Log("未識別的物件");
