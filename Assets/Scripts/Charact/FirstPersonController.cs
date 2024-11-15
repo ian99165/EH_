@@ -77,32 +77,33 @@ public class FirstPersonController : MonoBehaviour
     
         if (Physics.Raycast(ray, out RaycastHit hit, interactionDistance))
         {
-            if (hit.collider.CompareTag("Item"))
+            switch (hit.collider.tag)
             {
-                Debug.Log("Detected an Item");
-                var interactionScript = hit.collider.GetComponent<Interaction>();
-                if (interactionScript != null)
-                {
-                    interactionScript.Interact_Item();
-                }
-                else
-                {
-                    Debug.LogWarning("沒有 Item");
-                }
-            }
-
-            if (hit.collider.CompareTag("NPC"))
-            {
-                Debug.Log("Detected an NPC");
-                var interactionScript = hit.collider.GetComponent<Interaction>();
-                if (interactionScript != null)
-                {
-                    interactionScript.Interact_NPC();
-                }
-                else
-                {
-                    Debug.LogWarning("沒有 NPC");
-                }
+                case "Item":
+                    var itemInteractionScript = hit.collider.GetComponent<ItemInteraction>();
+                    if (itemInteractionScript != null)
+                    {
+                        itemInteractionScript.Interact_Item();
+                    }
+                    break;
+                case "NPC":
+                    var npcInteractionScript = hit.collider.GetComponent<NPCInteraction>();
+                    if (npcInteractionScript != null)
+                    {
+                        npcInteractionScript.Interact_NPC();
+                    }
+                    break;
+                case "Devices":
+                    break;
+                case "Key":
+                    break;
+                case "Door":
+                    break;
+                case "SavePoint":
+                    break;
+                default:
+                    Debug.Log("未識別的物件");
+                    break;
             }
         }
     }
