@@ -51,7 +51,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "close",
+                    "name": "Close",
                     "type": "Button",
                     "id": "dd07785b-67f1-4f85-a045-dcb4ce1166dd",
                     "expectedControlType": "Button",
@@ -354,7 +354,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "close",
+                    "action": "Close",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

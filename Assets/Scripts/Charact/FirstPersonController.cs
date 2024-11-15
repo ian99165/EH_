@@ -32,7 +32,8 @@ public class FirstPersonController : MonoBehaviour
         controls.Player.Look.performed += ctx => inputLook = ctx.ReadValue<Vector2>();
         controls.Player.Look.canceled += ctx => inputLook = Vector2.zero;
         controls.Player.Run.performed += ctx => isRunning = !isRunning;
-        controls.Player.Interact.performed += ctx => Interact(); // 新增互動輸入
+        controls.Player.Interact.performed += ctx => Interact();
+        controls.Player.Close.performed += ctx => ToggleMenu();
     }
 
     private void Start()
@@ -128,6 +129,10 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
+    private void ToggleMenu()
+    {
+        Debug.Log("呼叫選單");
+    }
 
     private void OnEnable()
     {

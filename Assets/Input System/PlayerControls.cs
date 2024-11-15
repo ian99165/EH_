@@ -73,7 +73,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""close"",
+                    ""name"": ""Close"",
                     ""type"": ""Button"",
                     ""id"": ""dd07785b-67f1-4f85-a045-dcb4ce1166dd"",
                     ""expectedControlType"": ""Button"",
@@ -376,7 +376,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""close"",
+                    ""action"": ""Close"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -453,7 +453,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Crouch = m_Player.FindAction("Crouch", throwIfNotFound: true);
         m_Player_Run = m_Player.FindAction("Run", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
-        m_Player_close = m_Player.FindAction("close", throwIfNotFound: true);
+        m_Player_Close = m_Player.FindAction("Close", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -520,7 +520,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Crouch;
     private readonly InputAction m_Player_Run;
     private readonly InputAction m_Player_Interact;
-    private readonly InputAction m_Player_close;
+    private readonly InputAction m_Player_Close;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -530,7 +530,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Crouch => m_Wrapper.m_Player_Crouch;
         public InputAction @Run => m_Wrapper.m_Player_Run;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
-        public InputAction @close => m_Wrapper.m_Player_close;
+        public InputAction @Close => m_Wrapper.m_Player_Close;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -555,9 +555,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
-            @close.started += instance.OnClose;
-            @close.performed += instance.OnClose;
-            @close.canceled += instance.OnClose;
+            @Close.started += instance.OnClose;
+            @Close.performed += instance.OnClose;
+            @Close.canceled += instance.OnClose;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -577,9 +577,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
-            @close.started -= instance.OnClose;
-            @close.performed -= instance.OnClose;
-            @close.canceled -= instance.OnClose;
+            @Close.started -= instance.OnClose;
+            @Close.performed -= instance.OnClose;
+            @Close.canceled -= instance.OnClose;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)

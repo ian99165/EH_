@@ -3,22 +3,19 @@ using UnityEngine;
 public class ItemInteraction : MonoBehaviour
 {
     public string Name = "Name";
+    private bool _check = false;
 
     public void Interact_Item()
     {
-        switch (Name)
-        {
-            case "Key":
-                Debug.Log("123");
-                break;
-            default:
-                Debug.Log("無互動事件");
-                break;
-        }
+        //物件旋轉查看
+        _check = true;
     }
-
-    public void VarAdd()
+    
+    public void Interact_Item_Exit()
     {
-        
+        if(_check)
+        {
+            //關閉物件
+        }
     }
 }
