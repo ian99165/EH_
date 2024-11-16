@@ -7,7 +7,6 @@ public class ItemInteraction : MonoBehaviour
 
     public void Interact_Item()
     {
-        //物件旋轉查看
         _check = true;
     }
     
@@ -15,7 +14,7 @@ public class ItemInteraction : MonoBehaviour
     {
         if(_check)
         {
-            //關閉物件
+            _check = false;
         }
     }
 }

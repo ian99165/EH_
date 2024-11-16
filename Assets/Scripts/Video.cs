@@ -3,7 +3,7 @@ using UnityEngine.Video;
 using UnityEngine.UI;
 using System.Collections;
 
-public class Test : MonoBehaviour
+public class Video : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
     public RawImage rawImage;  // 引用 RawImage

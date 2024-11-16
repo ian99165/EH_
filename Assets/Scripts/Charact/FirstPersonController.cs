@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class FirstPersonController : MonoBehaviour
 {
@@ -20,9 +20,17 @@ public class FirstPersonController : MonoBehaviour
 
     [Header("Interaction Settings")]
     public float interactionDistance = 3f;
-    public LayerMask interactableLayer; // 定義互動層
+    
+    [Header("UI Settings")]
+    public Image reticle; // 圓點圖案
+    public Sprite defaultReticle;
+    public Sprite handReticle; // 小手圖案
 
+    [Header("Mouse Settings")]
+    public GameObject mouseState;
+    
     private PlayerControls controls;
+    private bool _menu = false;
 
     private void Awake()
     {
@@ -75,7 +83,8 @@ public class FirstPersonController : MonoBehaviour
     {
         Ray ray = new Ray(playerCamera.position, playerCamera.forward);
         Debug.DrawRay(playerCamera.position, playerCamera.forward * interactionDistance, Color.red, 1f);
-    
+        
+        MouseState mousestate = mouseState.GetComponent<MouseState>();
         if (Physics.Raycast(ray, out RaycastHit hit, interactionDistance))
         {
             switch (hit.collider.tag)
@@ -92,6 +101,7 @@ public class FirstPersonController : MonoBehaviour
                     if (npcInteractionScript != null)
                     {
                         npcInteractionScript.Interact_NPC();
+                        mousestate.MouseMode_II();
                     }
                     break;
                 case "Devices":
@@ -131,7 +141,19 @@ public class FirstPersonController : MonoBehaviour
 
     private void ToggleMenu()
     {
-        Debug.Log("呼叫選單");
+        MouseState mousestate = mouseState.GetComponent<MouseState>();
+        if (!_menu)
+        {
+            _menu = true;
+            Debug.Log("呼叫選單");
+            mousestate.MouseMode_II();
+        }
+        else
+        {
+            _menu = false;
+            Debug.Log("關閉選單");
+            mousestate.MouseMode_I();
+        }
     }
 
     private void OnEnable()

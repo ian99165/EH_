@@ -80,6 +80,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""test"",
+                    ""type"": ""Button"",
+                    ""id"": ""b429b34c-ab74-4342-afd7-7f61a44b51f5"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -372,11 +381,33 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""2689dcd3-bf10-4fa4-a173-1615447cfc35"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""path"": ""<Gamepad>/start"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Close"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0bde38bf-3946-4fdf-ad1a-eef42baa6d6a"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Close"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""263984fd-918d-4b48-9734-9e688b26e4d9"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""test"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -454,6 +485,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Run = m_Player.FindAction("Run", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Close = m_Player.FindAction("Close", throwIfNotFound: true);
+        m_Player_test = m_Player.FindAction("test", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -521,6 +553,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Run;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Close;
+    private readonly InputAction m_Player_test;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -531,6 +564,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Run => m_Wrapper.m_Player_Run;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Close => m_Wrapper.m_Player_Close;
+        public InputAction @test => m_Wrapper.m_Player_test;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -558,6 +592,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Close.started += instance.OnClose;
             @Close.performed += instance.OnClose;
             @Close.canceled += instance.OnClose;
+            @test.started += instance.OnTest;
+            @test.performed += instance.OnTest;
+            @test.canceled += instance.OnTest;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -580,6 +617,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Close.started -= instance.OnClose;
             @Close.performed -= instance.OnClose;
             @Close.canceled -= instance.OnClose;
+            @test.started -= instance.OnTest;
+            @test.performed -= instance.OnTest;
+            @test.canceled -= instance.OnTest;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -650,5 +690,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnRun(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnClose(InputAction.CallbackContext context);
+        void OnTest(InputAction.CallbackContext context);
     }
 }
