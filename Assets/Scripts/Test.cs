@@ -1,43 +1,71 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class test : MonoBehaviour
 {
-    public RectTransform mousePointer; // 滑鼠指針的 UI 元素
-    public float speed = 1000f;        // 移動速度
-
+    public RectTransform mousePointer; // 虛擬滑鼠指針
+    public Sprite defaultIcon;         // 預設圖標
+    public Sprite interactIcon;        // 互動圖標
+    public float speed = 500f;         // 控制滑鼠移動速度
     private Vector2 moveInput;
+    private Image pointerImage;
+
+    void Start()
+    {
+        // 獲取指針圖標的 Image 組件
+        pointerImage = mousePointer.GetComponent<Image>();
+        pointerImage.sprite = defaultIcon; // 初始化為預設圖標
+    }
 
     void Update()
     {
         if (Gamepad.current != null)
         {
-            moveInput = Gamepad.current.rightStick.ReadValue(); // 讀取右搖桿的輸入
+            moveInput = Gamepad.current.rightStick.ReadValue();
         }
 
-        // 將輸入轉換為屏幕座標的移動
         Vector3 newPos = mousePointer.position;
         newPos.x += moveInput.x * speed * Time.deltaTime;
         newPos.y += moveInput.y * speed * Time.deltaTime;
-
-        // 限制滑鼠指針在屏幕內
         newPos.x = Mathf.Clamp(newPos.x, 0, Screen.width);
         newPos.y = Mathf.Clamp(newPos.y, 0, Screen.height);
-
         mousePointer.position = newPos;
+
+        CheckUIUnderPointer();
     }
 
-    public void OnClick(InputAction.CallbackContext context)
+    void CheckUIUnderPointer()
     {
-        if (context.performed)
+        PointerEventData pointerData = new PointerEventData(EventSystem.current)
         {
-            // 模擬滑鼠點擊事件
-            PointerEventData pointerData = new PointerEventData(EventSystem.current)
+            position = mousePointer.position
+        };
+
+        List<RaycastResult> raycastResults = new List<RaycastResult>();
+        EventSystem.current.RaycastAll(pointerData, raycastResults);
+
+        bool isHoveringInteractable = false;
+
+        foreach (var result in raycastResults)
+        {
+            if (result.gameObject.CompareTag("UI"))
             {
-                position = mousePointer.position
-            };
-            // 可用於觸發點擊事件的代碼，具體實現需根據 UI 元素或物件調整
+                isHoveringInteractable = true;
+                break;
+            }
+        }
+
+        // 改變圖標
+        if (isHoveringInteractable)
+        {
+            pointerImage.sprite = interactIcon;
+        }
+        else
+        {
+            pointerImage.sprite = defaultIcon;
         }
     }
 }

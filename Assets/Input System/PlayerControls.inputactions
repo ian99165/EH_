@@ -60,7 +60,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "test",
+                    "name": "Click",
                     "type": "Button",
                     "id": "b429b34c-ab74-4342-afd7-7f61a44b51f5",
                     "expectedControlType": "Button",
@@ -385,7 +385,29 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "test",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c94062a3-89d6-42cb-a774-8f5ea8f75022",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bf8cc9ae-05f8-4160-9c38-cc9791a255b0",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
