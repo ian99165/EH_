@@ -32,7 +32,7 @@ public class MouseState : MonoBehaviour
         }
         if (_mouse_state == 1) //滑鼠模式
         {
-            Cursor.visible = false;
+            Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         }
     }

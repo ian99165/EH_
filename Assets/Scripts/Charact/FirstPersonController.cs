@@ -57,84 +57,99 @@ public class FirstPersonController : MonoBehaviour
 
     private void Move()
     {
-        Vector3 move = transform.right * inputMove.x + transform.forward * inputMove.y;
-        float currentSpeed = isRunning ? runSpeed : moveSpeed;
+        if (!_menu)
+        {
+            Vector3 move = transform.right * inputMove.x + transform.forward * inputMove.y;
+            float currentSpeed = isRunning ? runSpeed : moveSpeed;
 
-        controller.Move(move * currentSpeed * Time.deltaTime);
+            controller.Move(move * currentSpeed * Time.deltaTime);
+        }
     }
 
     private void RotateCamera()
     {
-        if (Mathf.Abs(inputLook.x) > lookThreshold || Mathf.Abs(inputLook.y) > lookThreshold)
+        if (!_menu)
         {
-            float mouseX = inputLook.x * rotationSpeed * Time.deltaTime;
-            float mouseY = inputLook.y * rotationSpeed * Time.deltaTime;
+            if (Mathf.Abs(inputLook.x) > lookThreshold || Mathf.Abs(inputLook.y) > lookThreshold)
+            {
+                float mouseX = inputLook.x * rotationSpeed * Time.deltaTime;
+                float mouseY = inputLook.y * rotationSpeed * Time.deltaTime;
 
-            transform.Rotate(Vector3.up * mouseX);
+                transform.Rotate(Vector3.up * mouseX);
 
-            xRotation -= mouseY;
-            xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+                xRotation -= mouseY;
+                xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
-            playerCamera.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+                playerCamera.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+            }
         }
     }
 
     private void Interact()
     {
-        Ray ray = new Ray(playerCamera.position, playerCamera.forward);
-        Debug.DrawRay(playerCamera.position, playerCamera.forward * interactionDistance, Color.red, 1f);
-        
-        MouseState mousestate = mouseState.GetComponent<MouseState>();
-        if (Physics.Raycast(ray, out RaycastHit hit, interactionDistance))
+        if (!_menu)
         {
-            switch (hit.collider.tag)
+            Ray ray = new Ray(playerCamera.position, playerCamera.forward);
+            Debug.DrawRay(playerCamera.position, playerCamera.forward * interactionDistance, Color.red, 1f);
+            
+            MouseState mousestate = mouseState.GetComponent<MouseState>();
+            if (Physics.Raycast(ray, out RaycastHit hit, interactionDistance))
             {
-                case "Item":
-                    var itemInteractionScript = hit.collider.GetComponent<ItemInteraction>();
-                    if (itemInteractionScript != null)
-                    {
-                        itemInteractionScript.Interact_Item();
-                    }
-                    break;
-                case "NPC":
-                    var npcInteractionScript = hit.collider.GetComponent<NPCInteraction>();
-                    if (npcInteractionScript != null)
-                    {
-                        npcInteractionScript.Interact_NPC();
-                        mousestate.MouseMode_II();
-                    }
-                    break;
-                case "Devices":
-                    var devicesInteractionScript = hit.collider.GetComponent<DevicesInteraction>();
-                    if (devicesInteractionScript != null)
-                    {
-                        //devicesInteractionScript.Interact_Devices();
-                    }
-                    break;
-                case "Key":
-                    var keyInteractionScript = hit.collider.GetComponent<KeyInteraction>();
-                    if (keyInteractionScript != null)
-                    {
-                        //keyInteractionScript.Interact_Key();
-                    }
-                    break;
-                case "Door":
-                    var doorInteractionScript = hit.collider.GetComponent<DoorInteraction>();
-                    if (doorInteractionScript != null)
-                    {
-                        //doorInteractionScript.Interact_Door();
-                    }
-                    break;
-                case "SavePoint":
-                    var saveInteractionScript = hit.collider.GetComponent<SaveInteraction>();
-                    if (saveInteractionScript != null)
-                    {
-                        //saveInteractionScript.Interact_Save();
-                    }
-                    break;
-                default:
-                    Debug.Log("未識別的物件");
-                    break;
+                switch (hit.collider.tag)
+                {
+                    case "Item":
+                        var itemInteractionScript = hit.collider.GetComponent<ItemInteraction>();
+                        if (itemInteractionScript != null)
+                        {
+                            itemInteractionScript.Interact_Item();
+                        }
+
+                        break;
+                    case "NPC":
+                        var npcInteractionScript = hit.collider.GetComponent<NPCInteraction>();
+                        if (npcInteractionScript != null)
+                        {
+                            npcInteractionScript.Interact_NPC();
+                            mousestate.MouseMode_II();
+                        }
+
+                        break;
+                    case "Devices":
+                        var devicesInteractionScript = hit.collider.GetComponent<DevicesInteraction>();
+                        if (devicesInteractionScript != null)
+                        {
+                            //devicesInteractionScript.Interact_Devices();
+                        }
+
+                        break;
+                    case "Key":
+                        var keyInteractionScript = hit.collider.GetComponent<KeyInteraction>();
+                        if (keyInteractionScript != null)
+                        {
+                            //keyInteractionScript.Interact_Key();
+                        }
+
+                        break;
+                    case "Door":
+                        var doorInteractionScript = hit.collider.GetComponent<DoorInteraction>();
+                        if (doorInteractionScript != null)
+                        {
+                            //doorInteractionScript.Interact_Door();
+                        }
+
+                        break;
+                    case "SavePoint":
+                        var saveInteractionScript = hit.collider.GetComponent<SaveInteraction>();
+                        if (saveInteractionScript != null)
+                        {
+                            //saveInteractionScript.Interact_Save();
+                        }
+
+                        break;
+                    default:
+                        Debug.Log("未識別的物件");
+                        break;
+                }
             }
         }
     }

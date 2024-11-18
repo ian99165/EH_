@@ -14,7 +14,7 @@ public class NPCInteraction : MonoBehaviour
                 Doll();
                 break;
             default:
-                Debug.Log("No NPC");
+                Debug.Log("No thing");
                 break;
         }
     }
