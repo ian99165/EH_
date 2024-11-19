@@ -5,6 +5,8 @@ using UnityEngine;
 public class MouseState : MonoBehaviour
 {
     private int _mouse_state = 0 ;
+    public GameObject CanvaMode_I;
+    public GameObject CanvaMode_II;
     void Start()
     {
         Cursor.visible = false;
@@ -15,12 +17,16 @@ public class MouseState : MonoBehaviour
     {
         _mouse_state = 0;
         Mode_state();
+        CanvaMode_I.SetActive(true);
+        CanvaMode_II.SetActive(false);
     }
 
     public void MouseMode_II()
     {
         _mouse_state = 1;
         Mode_state();
+        CanvaMode_I.SetActive(false);
+        CanvaMode_II.SetActive(true);
     }
 
     public void Mode_state()
@@ -32,7 +38,7 @@ public class MouseState : MonoBehaviour
         }
         if (_mouse_state == 1) //滑鼠模式
         {
-            Cursor.visible = true;
+            Cursor.visible = false;
             Cursor.lockState = CursorLockMode.None;
         }
     }

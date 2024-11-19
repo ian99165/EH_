@@ -20,14 +20,14 @@ public class FirstPersonController : MonoBehaviour
 
     [Header("Interaction Settings")]
     public float interactionDistance = 3f;
-    
-    [Header("UI Settings")]
-    public Image reticle; // 圓點圖案
-    public Sprite defaultReticle;
-    public Sprite handReticle; // 小手圖案
 
     [Header("Mouse Settings")]
     public GameObject mouseState;
+    
+    [Header("Cursor Settings")]
+    public Image cursor; // 準心圖案
+    public Sprite defaultCursor; // 預設準心圖案
+    public Sprite interactableCursor; 
     
     private PlayerControls controls;
     private bool _menu = false;
@@ -53,6 +53,7 @@ public class FirstPersonController : MonoBehaviour
     {
         Move();
         RotateCamera();
+        UpdateCursor();
     }
 
     private void Move()
@@ -102,6 +103,8 @@ public class FirstPersonController : MonoBehaviour
                         if (itemInteractionScript != null)
                         {
                             itemInteractionScript.Interact_Item();
+                            mousestate.MouseMode_II();
+                            _menu = true;
                         }
 
                         break;
@@ -111,6 +114,7 @@ public class FirstPersonController : MonoBehaviour
                         {
                             npcInteractionScript.Interact_NPC();
                             mousestate.MouseMode_II();
+                            _menu = true;
                         }
 
                         break;
@@ -179,5 +183,38 @@ public class FirstPersonController : MonoBehaviour
     private void OnDisable()
     {
         controls.Disable();
+    }
+    
+    private void UpdateCursor()
+    {
+        if (!_menu)
+        {
+            Ray ray = new Ray(playerCamera.position, playerCamera.forward);
+
+            if (Physics.Raycast(ray, out RaycastHit hit, interactionDistance))
+            {
+                // 防止未定義的 Tag 報錯
+                if (IsInteractableTag(hit.collider.tag))
+                {
+                    cursor.sprite = interactableCursor; // 更改為可互動圖案
+                }
+                else
+                {
+                    cursor.sprite = defaultCursor; // 恢復為預設圖案
+                }
+            }
+            else
+            {
+                cursor.sprite = defaultCursor; // 恢復為預設圖案
+            }
+        }
+    }
+
+// 判斷是否為可互動的 Tag
+    private bool IsInteractableTag(string tag)
+    {
+        return tag == "Item" || tag == "NPC" || 
+               tag == "Devices" || tag == "Key" || 
+               tag == "Door" || tag == "SavePoint";
     }
 }
