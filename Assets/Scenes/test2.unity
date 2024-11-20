@@ -1041,7 +1041,7 @@ GameObject:
   - component: {fileID: 1051520030}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1609,7 +1609,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   virtualCursor: {fileID: 1587180909}
   canvas: {fileID: 1396049827}
-  cursorSpeed: 1000
+  cursorSpeed: 120
 --- !u!114 &1587180915
 MonoBehaviour:
   m_ObjectHideFlags: 0
