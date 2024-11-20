@@ -61,8 +61,6 @@ public class Mouse : MonoBehaviour
         // 更新滑鼠位置
         Vector2 input = moveAction.ReadValue<Vector2>();
         cursorPos += input * cursorSpeed * Time.deltaTime;
-        
-        Debug.Log($"搖桿輸入值: {input}");
 
         // 限制滑鼠位置在螢幕內
         cursorPos.x = Mathf.Clamp(cursorPos.x, 0, Screen.width);
@@ -74,6 +72,7 @@ public class Mouse : MonoBehaviour
         // 模擬滑鼠點擊
         if (clickAction.triggered)
         {
+            Debug.Log("triggered !!");
             SimulateMouseClick();
         }
     }
@@ -96,7 +95,17 @@ public class Mouse : MonoBehaviour
 
     private void SimulateMouseClick()
     {
+        Debug.Log($"cursorPos:{cursorPos}");
+        Ray ray = Camera.main.ScreenPointToRay(cursorPos);
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            Debug.Log(hit.collider.gameObject.name);
+            //hit.collider.gameObject.SendMessage("OnMouseDown", SendMessageOptions.DontRequireReceiver);
+        }
+
+
         // 檢查 EventSystem 是否存在
+        /*
         if (EventSystem.current == null)
         {
             Debug.LogError("EventSystem 不存在！請確保場景中有一個 EventSystem。");
@@ -125,8 +134,10 @@ public class Mouse : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(cursorPos);
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                hit.collider.gameObject.SendMessage("OnMouseDown", SendMessageOptions.DontRequireReceiver);
+                Debug.Log(hit.collider.gameObject.name);
+                //hit.collider.gameObject.SendMessage("OnMouseDown", SendMessageOptions.DontRequireReceiver);
             }
         }
+        */
     }
 }
