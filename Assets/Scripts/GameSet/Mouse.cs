@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class Mouse : MonoBehaviour
@@ -20,7 +19,6 @@ public class Mouse : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         if (playerInput == null)
         {
-            Debug.LogError("PlayerInput 未綁定！請確保已正確添加 PlayerInput 組件。");
             enabled = false; // 停止腳本執行
             return;
         }
@@ -30,7 +28,6 @@ public class Mouse : MonoBehaviour
         clickAction = playerInput.actions["Click"];
         if (moveAction == null || clickAction == null)
         {
-            Debug.LogError("行為 'AsMouse' 或 'Click' 未在 Input Actions 中正確配置！");
             enabled = false;
             return;
         }
@@ -42,14 +39,12 @@ public class Mouse : MonoBehaviour
         // 檢查 Canvas 和虛擬滑鼠
         if (virtualCursor == null)
         {
-            Debug.LogError("虛擬滑鼠未設置！請將虛擬滑鼠拖入 Inspector 中的 Virtual Cursor 欄位。");
             enabled = false;
             return;
         }
 
         if (canvas == null)
         {
-            Debug.LogError("Canvas 未設置！請將 UI Canvas 拖入 Inspector 中的 Canvas 欄位。");
             enabled = false;
             return;
         }
@@ -72,7 +67,6 @@ public class Mouse : MonoBehaviour
         // 模擬滑鼠點擊
         if (clickAction.triggered)
         {
-            Debug.Log("triggered !!");
             SimulateMouseClick();
         }
     }
@@ -95,49 +89,24 @@ public class Mouse : MonoBehaviour
 
     private void SimulateMouseClick()
     {
-        Debug.Log($"cursorPos:{cursorPos}");
+        //Debug.Log($"cursorPos:{cursorPos}");
         Ray ray = Camera.main.ScreenPointToRay(cursorPos);
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
             Debug.Log(hit.collider.gameObject.name);
+            switch (hit.collider.gameObject.name)
+            {
+                case "Button_Back":
+                    Debug.Log("Button_Back");
+                    break;
+                case "Button_Exit":
+                    Debug.Log("Button_Exit");
+                    break;
+                default:
+                    Debug.Log("Nothing");
+                    break;
+            }
             //hit.collider.gameObject.SendMessage("OnMouseDown", SendMessageOptions.DontRequireReceiver);
         }
-
-
-        // 檢查 EventSystem 是否存在
-        /*
-        if (EventSystem.current == null)
-        {
-            Debug.LogError("EventSystem 不存在！請確保場景中有一個 EventSystem。");
-            return;
-        }
-
-        // 檢測滑鼠下方的物件
-        PointerEventData pointerData = new PointerEventData(EventSystem.current)
-        {
-            position = cursorPos
-        };
-
-        // 將滑鼠點擊發送到 UI
-        var results = new System.Collections.Generic.List<RaycastResult>();
-        EventSystem.current.RaycastAll(pointerData, results);
-
-        if (results.Count > 0)
-        {
-            // 點擊第一個檢測到的 UI 元素
-            var clickedObject = results[0].gameObject;
-            ExecuteEvents.Execute(clickedObject, pointerData, ExecuteEvents.pointerClickHandler);
-        }
-        else
-        {
-            // 如果沒有檢測到 UI，檢測 3D 世界
-            Ray ray = Camera.main.ScreenPointToRay(cursorPos);
-            if (Physics.Raycast(ray, out RaycastHit hit))
-            {
-                Debug.Log(hit.collider.gameObject.name);
-                //hit.collider.gameObject.SendMessage("OnMouseDown", SendMessageOptions.DontRequireReceiver);
-            }
-        }
-        */
     }
 }
