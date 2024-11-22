@@ -31,6 +31,7 @@ public class FirstPersonController : MonoBehaviour
     
     private PlayerControls controls;
     private bool _menu = false;
+    private bool _talk = false;
 
     private void Awake()
     {
@@ -58,7 +59,7 @@ public class FirstPersonController : MonoBehaviour
 
     private void Move()
     {
-        if (!_menu)
+        if (!_menu || !_talk)
         {
             Vector3 move = transform.right * inputMove.x + transform.forward * inputMove.y;
             float currentSpeed = isRunning ? runSpeed : moveSpeed;
@@ -69,7 +70,7 @@ public class FirstPersonController : MonoBehaviour
 
     private void RotateCamera()
     {
-        if (!_menu)
+        if (!_menu || !_talk)
         {
             if (Mathf.Abs(inputLook.x) > lookThreshold || Mathf.Abs(inputLook.y) > lookThreshold)
             {
@@ -88,7 +89,7 @@ public class FirstPersonController : MonoBehaviour
 
     private void Interact()
     {
-        if (!_menu)
+        if (!_menu || !_talk)
         {
             Ray ray = new Ray(playerCamera.position, playerCamera.forward);
             Debug.DrawRay(playerCamera.position, playerCamera.forward * interactionDistance, Color.red, 1f);
@@ -114,6 +115,7 @@ public class FirstPersonController : MonoBehaviour
                         {
                             npcInteractionScript.Interact_NPC();
                             mousestate.MouseMode_II();
+                            _talk = true;
                             _menu = true;
                         }
 
@@ -161,17 +163,20 @@ public class FirstPersonController : MonoBehaviour
     private void ToggleMenu()
     {
         MouseState mousestate = mouseState.GetComponent<MouseState>();
-        if (!_menu)
+        if (!_talk)
         {
-            _menu = true;
-            Debug.Log("呼叫選單");
-            mousestate.MouseMode_II();
-        }
-        else
-        {
-            _menu = false;
-            Debug.Log("關閉選單");
-            mousestate.MouseMode_I();
+            if (!_menu)
+            {
+                _menu = true;
+                Debug.Log("呼叫選單");
+                mousestate.MouseMode_II();
+            }
+            else
+            {
+                _menu = false;
+                Debug.Log("關閉選單");
+                mousestate.MouseMode_I();
+            }
         }
     }
 
@@ -187,7 +192,7 @@ public class FirstPersonController : MonoBehaviour
     
     private void UpdateCursor()
     {
-        if (!_menu)
+        if (!_menu || !_talk)
         {
             Ray ray = new Ray(playerCamera.position, playerCamera.forward);
 
@@ -216,5 +221,10 @@ public class FirstPersonController : MonoBehaviour
         return tag == "Item" || tag == "NPC" || 
                tag == "Devices" || tag == "Key" || 
                tag == "Door" || tag == "SavePoint";
+    }
+
+    public void TalkingSet()
+    {
+        _talk = false;
     }
 }

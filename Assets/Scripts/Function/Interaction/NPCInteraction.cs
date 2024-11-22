@@ -1,10 +1,14 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Fungus;
 
 public class NPCInteraction : MonoBehaviour
 {
     public string Name = "Name";
     public int _talk;
+    
+    public Flowchart flowchart;
 
     public void Interact_NPC()
     {
@@ -25,7 +29,7 @@ public class NPCInteraction : MonoBehaviour
         switch (_talk)
         {
             case 0:
-                VarAdd();
+                flowchart.ExecuteBlock("Doll_I_I");
                 break;
             case 1:
                 
