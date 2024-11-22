@@ -3976,7 +3976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -64.19516
+    x: -65.8345
     y: -20.232773
     width: 87.704895
     height: 40
@@ -4021,8 +4021,7 @@ MonoBehaviour:
     height: 859
   selectedBlocks:
   - {fileID: 985533560}
-  selectedCommands:
-  - {fileID: 985533553}
+  selectedCommands: []
   variables: []
   description: fungus
   stepPause: 0
