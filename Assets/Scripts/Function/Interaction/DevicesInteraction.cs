@@ -11,8 +11,16 @@ public class DevicesInteraction : MonoBehaviour
         switch (Name)
         {
             case "書桌抽屜" :
-                Debug.Log("書桌抽屜");
+                Debug.Log("物件移動");
                 StartCoroutine(Move_Up());
+                break;
+            case "物件旋轉_上":
+                Debug.Log("物件旋轉");
+                StartCoroutine(Rotate_Up());
+                break;
+            case "物件旋轉_右":
+                Debug.Log("物件旋轉");
+                StartCoroutine(Rotate_Right());
                 break;
             default:
                 Debug.Log("No thing");
@@ -149,6 +157,102 @@ public class DevicesInteraction : MonoBehaviour
         if (_open)
         {
             yield return StartCoroutine(Move(Vector3.forward));
+            _open = false;
+        }
+    }
+    
+    //旋轉
+    public float rotationSpeed = 45f; // 每秒旋轉的角度
+
+    private IEnumerator Rotate(Vector3 rotationAxis, float angle)
+    {
+        if (_can_move)
+        {
+            _can_move = false;
+
+            Debug.Log($"Rotate {rotationAxis} by {angle} degrees");
+
+            float elapsedTime = 0f;
+            Quaternion startRotation = transform.rotation;
+
+            Quaternion targetRotation = startRotation * Quaternion.Euler(rotationAxis * angle);
+
+            while (elapsedTime < movementDuration)
+            {
+                float t = elapsedTime / movementDuration;
+                transform.rotation = Quaternion.Lerp(startRotation, targetRotation, t);
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+
+            transform.rotation = targetRotation;
+
+            _can_move = true;
+        }
+    }
+
+    public IEnumerator Rotate_Left()
+    {
+        if (!_open)
+        {
+            Debug.Log("旋轉物件到左邊");
+            yield return StartCoroutine(Rotate(Vector3.up, -rotationSpeed * movementDuration)); // Y軸反向旋轉
+            _open = true;
+            yield break;
+        }
+
+        if (_open)
+        {
+            yield return StartCoroutine(Rotate(Vector3.up, rotationSpeed * movementDuration)); // Y軸正向旋轉
+            _open = false;
+        }
+    }
+
+    public IEnumerator Rotate_Right()
+    {
+        if (!_open)
+        {
+            Debug.Log("旋轉物件到右邊");
+            yield return StartCoroutine(Rotate(Vector3.up, rotationSpeed * movementDuration)); // Y軸正向旋轉
+            _open = true;
+            yield break;
+        }
+
+        if (_open)
+        {
+            yield return StartCoroutine(Rotate(Vector3.up, -rotationSpeed * movementDuration)); // Y軸反向旋轉
+            _open = false;
+        }
+    }
+
+    public IEnumerator Rotate_Up()
+    {
+        if (!_open)
+        {
+            Debug.Log("旋轉物件到上面");
+            yield return StartCoroutine(Rotate(Vector3.right, -rotationSpeed * movementDuration)); // X軸反向旋轉
+            _open = true;
+            yield break;
+        }
+        if (_open)
+        {
+            yield return StartCoroutine(Rotate(Vector3.right, rotationSpeed * movementDuration)); // X軸正向旋轉
+            _open = false;
+        }
+    }
+
+    public IEnumerator Rotate_Down()
+    {
+        if (!_open)
+        {
+            Debug.Log("旋轉物件到下面");
+            yield return StartCoroutine(Rotate(Vector3.right, rotationSpeed * movementDuration)); // X軸正向旋轉
+            _open = true;
+            yield break;
+        }
+        if (_open)
+        {
+            yield return StartCoroutine(Rotate(Vector3.right, -rotationSpeed * movementDuration)); // X軸反向旋轉
             _open = false;
         }
     }
