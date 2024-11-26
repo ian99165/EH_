@@ -1353,16 +1353,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 110
-  currentMode: 0
-  anyJoystickAction:
-    m_Name: Any Joystick
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 206076b6-07ad-4d5d-baa6-614a8c64d44b
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
+  currentMode: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
