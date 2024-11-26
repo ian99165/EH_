@@ -98,6 +98,24 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""anyKey"",
+                    ""type"": ""Button"",
+                    ""id"": ""f8083f4c-0b49-4883-89b8-0c8b3322e1a0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""anyJoystick"",
+                    ""type"": ""Button"",
+                    ""id"": ""ffb0870b-1b2a-4bb8-996f-f51ec19b8d1f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -422,11 +440,11 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""c94062a3-89d6-42cb-a774-8f5ea8f75022"",
-                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""id"": ""5eda2a13-74a2-4e93-80db-13e76bdb4c28"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad"",
                     ""action"": ""Click"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -446,6 +464,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""e2d76c0c-0e19-413d-8565-c9a241277283"",
                     ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""55325725-30aa-42bd-9b52-1663c15be778"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -628,6 +657,259 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""AsMouse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f069dc06-ba26-4103-bc80-c5a0492cce15"",
+                    ""path"": ""<Gamepad>/rightStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""anyJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a25dc574-48bd-4b7e-bddb-03b5d863d11d"",
+                    ""path"": ""<Gamepad>/rightStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""anyJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""49bec145-bd00-4bc8-9cfb-f8514bf0726f"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""anyJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""537e23c4-482a-4d32-bca4-f2e85f0ac28f"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""anyJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""77b5bd4b-3c3e-4132-9150-16b0a17e310a"",
+                    ""path"": ""<Gamepad>/rightStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""anyJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""264e06b4-3160-400d-a84c-8d34c257012e"",
+                    ""path"": ""<Gamepad>/leftStickPress"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""anyJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4f1a7795-f152-418e-8c07-c2d062f31199"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""anyJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1015addf-aa2b-4f77-afd5-68e8adb77f30"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""anyJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e4d4a207-4397-4332-a1cb-39539bdd8d66"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""anyJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b344aac7-0e11-4ce2-bcf1-73d68a0ec4f5"",
+                    ""path"": ""<Gamepad>/leftStick/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""anyJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4ea0700d-06c8-4e51-ad9c-933c47d1ecf4"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""anyJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""77160444-86c5-403d-9abe-7eff7bfc21c2"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""anyJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""25abf225-e9a1-46b2-950a-5921609856cf"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""anyJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2f124887-e19a-4e24-b703-9cb528d0a52c"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""anyJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c128732b-cc1e-40a5-800b-ca5eb6fc3586"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""anyJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e9771e32-1a08-4c12-ba2b-dbb16e6dd1bd"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""anyJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a2fb4147-6e40-4d3e-9d9f-75f7887f4084"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""anyJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dc30ecca-a4b8-475b-9609-846baf674bf5"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""anyJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""45bab62c-42f7-4a3e-b920-6b80b6caf53c"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""anyJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f17c5934-6864-451c-afe9-fc87312cdbd0"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""anyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e6c128eb-c107-4c20-83fd-d93c4becaae7"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""anyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b20b68a9-26e4-49aa-b2ae-5cfc52ef3e55"",
+                    ""path"": ""<Mouse>/middleButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""anyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2c1f6f48-0c51-4814-b240-d9335179785a"",
+                    ""path"": ""<Keyboard>/anyKey"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""anyKey"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -705,6 +987,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_Close = m_Player.FindAction("Close", throwIfNotFound: true);
         m_Player_Click = m_Player.FindAction("Click", throwIfNotFound: true);
         m_Player_AsMouse = m_Player.FindAction("AsMouse", throwIfNotFound: true);
+        m_Player_anyKey = m_Player.FindAction("anyKey", throwIfNotFound: true);
+        m_Player_anyJoystick = m_Player.FindAction("anyJoystick", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -774,6 +1058,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Close;
     private readonly InputAction m_Player_Click;
     private readonly InputAction m_Player_AsMouse;
+    private readonly InputAction m_Player_anyKey;
+    private readonly InputAction m_Player_anyJoystick;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -786,6 +1072,8 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Close => m_Wrapper.m_Player_Close;
         public InputAction @Click => m_Wrapper.m_Player_Click;
         public InputAction @AsMouse => m_Wrapper.m_Player_AsMouse;
+        public InputAction @anyKey => m_Wrapper.m_Player_anyKey;
+        public InputAction @anyJoystick => m_Wrapper.m_Player_anyJoystick;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -819,6 +1107,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @AsMouse.started += instance.OnAsMouse;
             @AsMouse.performed += instance.OnAsMouse;
             @AsMouse.canceled += instance.OnAsMouse;
+            @anyKey.started += instance.OnAnyKey;
+            @anyKey.performed += instance.OnAnyKey;
+            @anyKey.canceled += instance.OnAnyKey;
+            @anyJoystick.started += instance.OnAnyJoystick;
+            @anyJoystick.performed += instance.OnAnyJoystick;
+            @anyJoystick.canceled += instance.OnAnyJoystick;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -847,6 +1141,12 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @AsMouse.started -= instance.OnAsMouse;
             @AsMouse.performed -= instance.OnAsMouse;
             @AsMouse.canceled -= instance.OnAsMouse;
+            @anyKey.started -= instance.OnAnyKey;
+            @anyKey.performed -= instance.OnAnyKey;
+            @anyKey.canceled -= instance.OnAnyKey;
+            @anyJoystick.started -= instance.OnAnyJoystick;
+            @anyJoystick.performed -= instance.OnAnyJoystick;
+            @anyJoystick.canceled -= instance.OnAnyJoystick;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -919,5 +1219,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnClose(InputAction.CallbackContext context);
         void OnClick(InputAction.CallbackContext context);
         void OnAsMouse(InputAction.CallbackContext context);
+        void OnAnyKey(InputAction.CallbackContext context);
+        void OnAnyJoystick(InputAction.CallbackContext context);
     }
 }

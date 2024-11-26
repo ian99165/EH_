@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class Mouse : MonoBehaviour
 {
-    [Header("滑鼠設置")]
+    [Header("虛擬搖桿滑鼠設置")]
     public RectTransform virtualCursor; // 虛擬滑鼠的 UI 物件
     public Canvas canvas;               // UI 所在 Canvas
     public float cursorSpeed = 1000f;   // 滑鼠移動速度
@@ -15,11 +15,10 @@ public class Mouse : MonoBehaviour
 
     void Start()
     {
-        // 初始化 PlayerInput
         playerInput = GetComponent<PlayerInput>();
         if (playerInput == null)
         {
-            enabled = false; // 停止腳本執行
+            enabled = false;
             return;
         }
 
@@ -32,11 +31,9 @@ public class Mouse : MonoBehaviour
             return;
         }
 
-        // 初始化虛擬滑鼠位置
         cursorPos = new Vector2(Screen.width / 2f, Screen.height / 2f);
         UpdateCursorPos();
 
-        // 檢查 Canvas 和虛擬滑鼠
         if (virtualCursor == null)
         {
             enabled = false;
@@ -52,19 +49,15 @@ public class Mouse : MonoBehaviour
 
     void Update()
     {
-
-        // 更新滑鼠位置
         Vector2 input = moveAction.ReadValue<Vector2>();
         cursorPos += input * cursorSpeed * Time.deltaTime;
 
         // 限制滑鼠位置在螢幕內
         cursorPos.x = Mathf.Clamp(cursorPos.x, 0, Screen.width);
         cursorPos.y = Mathf.Clamp(cursorPos.y, 0, Screen.height);
+        
+        UpdateCursorPos();// 更新滑鼠 UI 的位置
 
-        // 更新滑鼠 UI 的位置
-        UpdateCursorPos();
-
-        // 模擬滑鼠點擊
         if (clickAction.triggered)
         {
             SimulateMouseClick();
@@ -87,26 +80,33 @@ public class Mouse : MonoBehaviour
         }
     }
 
-    private void SimulateMouseClick()
+    private void SimulateMouseClick()//搖桿模擬鼠標
     {
-        //Debug.Log($"cursorPos:{cursorPos}");
         Ray ray = Camera.main.ScreenPointToRay(cursorPos);
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
             Debug.Log(hit.collider.gameObject.name);
-            switch (hit.collider.gameObject.name)
+            if (hit.collider.gameObject.CompareTag("UI_Meun"))//書本菜單點擊事件
             {
-                case "Button_Back":
-                    Debug.Log("Button_Back");
-                    break;
-                case "Button_Exit":
-                    Debug.Log("Button_Exit");
-                    break;
-                default:
-                    Debug.Log("Nothing");
-                    break;
+                Debug.Log("UI_Meun");
+                switch (hit.collider.gameObject.name)
+                {
+                    case "Button_Back":
+                        Debug.Log("Button_Back");
+                        break;
+                    case "Button_Exit":
+                        Debug.Log("Button_Exit");
+                        break;
+                    default:
+                        Debug.Log("Nothing");
+                        break;
+                }
             }
-            //hit.collider.gameObject.SendMessage("OnMouseDown", SendMessageOptions.DontRequireReceiver);
+            
+            if (hit.collider.gameObject.CompareTag("UI_Button"))//拾取物件點擊事件
+            {
+                Debug.Log("UI_Button");
+            }
         }
     }
 }

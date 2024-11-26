@@ -6,8 +6,10 @@ TagManager:
   tags:
   - Item
   - NPC
-  - UI
   - Devices
+  - UI_Meun
+  - UI_Object
+  - UI_Button
   layers:
   - Default
   - TransparentFX
