@@ -12,9 +12,19 @@ public class Mouse : MonoBehaviour
     private PlayerInput playerInput;    // 新的 Input System
     private InputAction moveAction;     // 右搖桿移動的 Action
     private InputAction clickAction;    // 按鍵點擊的 Action
+    private PlayerControls controls;
+
+    private void Awake()
+    {
+        controls = new PlayerControls();
+        controls.UI.anyKey.performed += ctx => KeyMod();
+        controls.UI.anyJoy.performed += ctx => JoyMod();
+    }
 
     void Start()
     {
+        controls.Enable();
+
         playerInput = GetComponent<PlayerInput>();
         if (playerInput == null)
         {
@@ -107,6 +117,32 @@ public class Mouse : MonoBehaviour
             {
                 Debug.Log("UI_Button");
             }
+        }
+    }
+    
+    private enum InputMode
+    {
+        _key_mod,
+        _joy_mod
+    }
+    
+    private InputMode currentMode = InputMode._joy_mod;
+
+    private void KeyMod()//搖桿模式
+    {
+        if (currentMode != InputMode._key_mod)
+        {
+            currentMode = InputMode._key_mod;
+            Debug.Log("KeyMod");
+        }
+    }
+    
+    private void JoyMod()//鼠鍵模式
+    {
+        if (currentMode != InputMode._joy_mod)
+        {
+            currentMode = InputMode._joy_mod;
+            Debug.Log("JoyMod");
         }
     }
 }
