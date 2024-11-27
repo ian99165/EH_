@@ -6,6 +6,11 @@ public class RotatableObject : MonoBehaviour
 {
     public float rotationSpeed = 300f;
 
+    void Update()
+    {
+        RotateWithMouse();
+        RotateWithJoystick();
+    }
     private Vector3 lastMousePosition;
 
     public void RotateWithMouse()//滑鼠旋轉物件

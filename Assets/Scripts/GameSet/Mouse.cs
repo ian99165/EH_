@@ -128,23 +128,7 @@ public class Mouse : MonoBehaviour
             if (hit.collider.gameObject.CompareTag("UI_Object"))
             {
                 var rotatableObject = hit.collider.GetComponent<RotatableObject>();
-                /*switch (_mode)
-                {
-                    case InputMode._key_mod:
-                        Debug.Log("KeyMod");
-                        if (rotatableObject !=null)
-                        {
-                            rotatableObject.RotateWithMouse();
-                        }
-                        break;
-                    case InputMode._joy_mod:
-                        Debug.Log("JoyMod");
-                        if (rotatableObject !=null)
-                        {
-                            rotatableObject.RotateWithJoystick();
-                        }
-                        break;
-                }*/
+                //開關RotatableObject
             }
         }
     }
