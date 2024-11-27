@@ -6,58 +6,9 @@ public class RotatableObject : MonoBehaviour
 {
     public float rotationSpeed = 300f;
 
-    public enum RotationMode
-    {
-        Mouse,
-        Joystick
-    }
-
-    public RotationMode currentMode = RotationMode.Mouse;
-
     private Vector3 lastMousePosition;
 
-    void Update()
-    {
-        DetectInputSource();
-
-        switch (currentMode)
-        {
-            case RotationMode.Mouse:
-                RotateWithMouse();
-                break;
-
-            case RotationMode.Joystick:
-                RotateWithJoystick();
-                break;
-        }
-    }
-
-    private void DetectInputSource()
-    {
-        if (Input.anyKey)
-        {
-            Debug.Log("Keyboard or mouse input detected.");
-            if (currentMode != RotationMode.Mouse)
-            {
-                currentMode = RotationMode.Mouse;
-                Debug.Log("Switched to Mouse mode");
-            }
-        }
-
-        if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0 ||
-            Input.GetButton("Fire1") || Input.GetButton("Fire2") ||
-            Input.GetButton("Fire3") || Input.GetButton("Jump"))
-        {
-            Debug.Log("Joystick input detected.");
-            if (currentMode != RotationMode.Joystick)
-            {
-                currentMode = RotationMode.Joystick;
-                Debug.Log("Switched to Joystick mode");
-            }
-        }
-    }
-
-    private void RotateWithMouse()
+    public void RotateWithMouse()//滑鼠旋轉物件
     {
         if (gameObject.CompareTag("UI_Object"))
         {
@@ -84,7 +35,7 @@ public class RotatableObject : MonoBehaviour
         }
     }
 
-    private void RotateWithJoystick()
+    public void RotateWithJoystick()//搖桿旋轉物件
     {
         if (gameObject.CompareTag("UI_Object"))
         {

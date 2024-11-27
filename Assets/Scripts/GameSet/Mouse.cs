@@ -13,6 +13,13 @@ public class Mouse : MonoBehaviour
     private InputAction moveAction;     // 右搖桿移動的 Action
     private InputAction clickAction;    // 按鍵點擊的 Action
     private PlayerControls controls;
+    
+    private enum InputMode
+    {
+        _key_mod,
+        _joy_mod
+    }
+    private InputMode _mode;
 
     private void Awake()
     {
@@ -117,13 +124,29 @@ public class Mouse : MonoBehaviour
             {
                 Debug.Log("UI_Button");
             }
+
+            if (hit.collider.gameObject.CompareTag("UI_Object"))
+            {
+                var rotatableObject = hit.collider.GetComponent<RotatableObject>();
+                /*switch (_mode)
+                {
+                    case InputMode._key_mod:
+                        Debug.Log("KeyMod");
+                        if (rotatableObject !=null)
+                        {
+                            rotatableObject.RotateWithMouse();
+                        }
+                        break;
+                    case InputMode._joy_mod:
+                        Debug.Log("JoyMod");
+                        if (rotatableObject !=null)
+                        {
+                            rotatableObject.RotateWithJoystick();
+                        }
+                        break;
+                }*/
+            }
         }
-    }
-    
-    private enum InputMode
-    {
-        _key_mod,
-        _joy_mod
     }
     
     private InputMode currentMode = InputMode._joy_mod;
@@ -133,7 +156,6 @@ public class Mouse : MonoBehaviour
         if (currentMode != InputMode._key_mod)
         {
             currentMode = InputMode._key_mod;
-            Debug.Log("KeyMod");
         }
     }
     
@@ -142,7 +164,6 @@ public class Mouse : MonoBehaviour
         if (currentMode != InputMode._joy_mod)
         {
             currentMode = InputMode._joy_mod;
-            Debug.Log("JoyMod");
         }
     }
 }
