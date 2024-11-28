@@ -127,12 +127,6 @@ public class Mouse : MonoBehaviour
                     {
                         Debug.Log("UI_Button");
                     }
-
-                    if (hit_j.collider.gameObject.CompareTag("UI_Object"))
-                    {
-                        var rotatableObject = hit_j.collider.GetComponent<RotatableObject>();
-                        //開關RotatableObject
-                    }
                 }
                 break;
             
@@ -162,12 +156,6 @@ public class Mouse : MonoBehaviour
                         if (hit_m.collider.gameObject.CompareTag("UI_Button")) //拾取物件點擊事件
                         {
                             Debug.Log("UI_Button");
-                        }
-
-                        if (hit_m.collider.gameObject.CompareTag("UI_Object"))
-                        {
-                            var rotatableObject = hit_m.collider.GetComponent<RotatableObject>();
-                            //開關RotatableObject
                         }
                     }
                 break;
