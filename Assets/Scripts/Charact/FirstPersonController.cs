@@ -29,6 +29,17 @@ public class FirstPersonController : MonoBehaviour
     public Sprite defaultCursor; // 預設準心圖案
     public Sprite interactableCursor; 
     
+    [Header("Audio Settings")]
+    public AudioSource music;
+    public AudioSource footstep;
+    public AudioSource interaction;
+    public AudioClip pickupSound;
+    public AudioClip moveSound;
+    public AudioClip runSound;
+    public AudioClip crouchmoveSound;
+    public AudioClip Sound;
+    public AudioClip standupSound;
+
     private PlayerControls controls;
     private bool _menu = false;
     private bool _talk = false;
@@ -111,6 +122,7 @@ public class FirstPersonController : MonoBehaviour
                             var itemInteractionScript = hit.collider.GetComponent<ItemInteraction>();
                             if (itemInteractionScript != null)
                             {
+                                AudioSource.PlayClipAtPoint(pickupSound, transform.position);
                                 itemInteractionScript.Interact_Item();
                                 mousestate.MouseMode_II();
                                 _menu = true;
