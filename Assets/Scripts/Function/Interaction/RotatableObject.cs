@@ -20,14 +20,12 @@ public class RotatableObject : MonoBehaviour
             // 檢測滑鼠按下事件
             if (Input.GetMouseButtonDown(0))
             {
-                Debug.Log("Mouse button pressed.");
                 lastMousePosition = Input.mousePosition;
             }
 
             // 檢測滑鼠拖動事件
             if (Input.GetMouseButton(0))
             {
-                Debug.Log("Mouse is dragging.");
                 Vector3 delta = Input.mousePosition - lastMousePosition;
                 float rotationX = delta.x * rotationSpeed * Time.deltaTime;
                 float rotationY = delta.y * rotationSpeed * Time.deltaTime;
@@ -55,3 +53,19 @@ public class RotatableObject : MonoBehaviour
         }
     }
 }
+
+/*if (gameObject.CompareTag("UI_Meun"))
+{
+    Debug.Log("UI_Meun");
+}
+
+if (gameObject.CompareTag("UI_Button"))
+{
+    Debug.Log("UI_Button");
+}
+
+if (gameObject.CompareTag("UI_Object"))
+{
+    var rotatableObject = GetComponent<RotatableObject>();
+    //開關RotatableObject
+}*/

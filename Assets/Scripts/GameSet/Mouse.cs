@@ -99,37 +99,78 @@ public class Mouse : MonoBehaviour
 
     private void SimulateMouseClick()//搖桿模擬鼠標
     {
-        Ray ray = Camera.main.ScreenPointToRay(cursorPos);
-        if (Physics.Raycast(ray, out RaycastHit hit))
-        {
-            Debug.Log(hit.collider.gameObject.name);
-            if (hit.collider.gameObject.CompareTag("UI_Meun"))//書本菜單點擊事件
-            {
-                Debug.Log("UI_Meun");
-                switch (hit.collider.gameObject.name)
+        switch (_mode)
+        { 
+            case InputMode._joy_mod:                
+                Ray ray_j = Camera.main.ScreenPointToRay(cursorPos);
+                if (Physics.Raycast(ray_j, out RaycastHit hit_j))
                 {
-                    case "Button_Back":
-                        Debug.Log("Button_Back");
-                        break;
-                    case "Button_Exit":
-                        Debug.Log("Button_Exit");
-                        break;
-                    default:
-                        Debug.Log("Nothing");
-                        break;
-                }
-            }
-            
-            if (hit.collider.gameObject.CompareTag("UI_Button"))//拾取物件點擊事件
-            {
-                Debug.Log("UI_Button");
-            }
+                    Debug.Log(hit_j.collider.gameObject.name);
+                    if (hit_j.collider.gameObject.CompareTag("UI_Meun")) //書本菜單點擊事件
+                    {
+                        Debug.Log("UI_Meun");
+                        switch (hit_j.collider.gameObject.name)
+                        {
+                            case "Button_Back":
+                                Debug.Log("Button_Back");
+                                break;
+                            case "Button_Exit":
+                                Debug.Log("Button_Exit");
+                                break;
+                            default:
+                                Debug.Log("Nothing");
+                                break;
+                        }
+                    }
 
-            if (hit.collider.gameObject.CompareTag("UI_Object"))
-            {
-                var rotatableObject = hit.collider.GetComponent<RotatableObject>();
-                //開關RotatableObject
-            }
+                    if (hit_j.collider.gameObject.CompareTag("UI_Button")) //拾取物件點擊事件
+                    {
+                        Debug.Log("UI_Button");
+                    }
+
+                    if (hit_j.collider.gameObject.CompareTag("UI_Object"))
+                    {
+                        var rotatableObject = hit_j.collider.GetComponent<RotatableObject>();
+                        //開關RotatableObject
+                    }
+                }
+                break;
+            
+            case InputMode._key_mod:
+                    Debug.Log("Mouse Button");
+                    Ray ray_m = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    if (Physics.Raycast(ray_m, out RaycastHit hit_m))
+                    {
+                        Debug.Log(hit_m.collider.gameObject.name);
+                        if (hit_m.collider.gameObject.CompareTag("UI_Meun")) //書本菜單點擊事件
+                        {
+                            Debug.Log("UI_Meun");
+                            switch (hit_m.collider.gameObject.name)
+                            {
+                                case "Button_Back":
+                                    Debug.Log("Button_Back");
+                                    break;
+                                case "Button_Exit":
+                                    Debug.Log("Button_Exit");
+                                    break;
+                                default:
+                                    Debug.Log("Nothing");
+                                    break;
+                            }
+                        }
+
+                        if (hit_m.collider.gameObject.CompareTag("UI_Button")) //拾取物件點擊事件
+                        {
+                            Debug.Log("UI_Button");
+                        }
+
+                        if (hit_m.collider.gameObject.CompareTag("UI_Object"))
+                        {
+                            var rotatableObject = hit_m.collider.GetComponent<RotatableObject>();
+                            //開關RotatableObject
+                        }
+                    }
+                break;
         }
     }
     
