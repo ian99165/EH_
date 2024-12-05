@@ -23,26 +23,20 @@ public class FirstPersonController : MonoBehaviour
 
     [Header("Mouse Settings")]
     public GameObject mouseState;
-    
+
     [Header("Cursor Settings")]
     public Image cursor; // 準心圖案
     public Sprite defaultCursor; // 預設準心圖案
-    public Sprite interactableCursor; 
-    
-    [Header("Audio Settings")]
-    public AudioSource music;
-    public AudioSource footstep;
-    public AudioSource interaction;
-    public AudioClip pickupSound;
-    public AudioClip moveSound;
-    public AudioClip runSound;
-    public AudioClip crouchmoveSound;
-    public AudioClip Sound;
-    public AudioClip standupSound;
+    public Sprite interactableCursor;
 
     private PlayerControls controls;
     private bool _menu = false;
     private bool _talk = false;
+
+    // Gravity Settings
+    private Vector3 velocity; // 角色速度
+    private float gravity = -9.81f; // 重力加速度
+    private bool isGrounded; // 是否在地面
 
     private void Awake()
     {
@@ -65,6 +59,7 @@ public class FirstPersonController : MonoBehaviour
     {
         Move();
         RotateCamera();
+        ApplyGravity();
         UpdateCursor();
     }
 
@@ -104,6 +99,22 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
+    private void ApplyGravity()
+    {
+        isGrounded = controller.isGrounded;
+
+        if (isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f; // 保持角色貼地
+        }
+
+        // Gravity calculation
+        velocity.y += gravity * Time.deltaTime;
+
+        // Apply gravity to the character
+        controller.Move(velocity * Time.deltaTime);
+    }
+
     private void Interact()
     {
         if (!_menu)
@@ -122,7 +133,6 @@ public class FirstPersonController : MonoBehaviour
                             var itemInteractionScript = hit.collider.GetComponent<ItemInteraction>();
                             if (itemInteractionScript != null)
                             {
-                                AudioSource.PlayClipAtPoint(pickupSound, transform.position);
                                 itemInteractionScript.Interact_Item();
                                 mousestate.MouseMode_II();
                                 _menu = true;
@@ -151,7 +161,7 @@ public class FirstPersonController : MonoBehaviour
                             var keyInteractionScript = hit.collider.GetComponent<KeyInteraction>();
                             if (keyInteractionScript != null)
                             {
-                                //keyInteractionScript.Interact_Key();
+                                // keyInteractionScript.Interact_Key();
                             }
 
                             break;
@@ -159,7 +169,7 @@ public class FirstPersonController : MonoBehaviour
                             var doorInteractionScript = hit.collider.GetComponent<DoorInteraction>();
                             if (doorInteractionScript != null)
                             {
-                                //doorInteractionScript.Interact_Door();
+                                // doorInteractionScript.Interact_Door();
                             }
 
                             break;
@@ -167,7 +177,7 @@ public class FirstPersonController : MonoBehaviour
                             var saveInteractionScript = hit.collider.GetComponent<SaveInteraction>();
                             if (saveInteractionScript != null)
                             {
-                                //saveInteractionScript.Interact_Save();
+                                // saveInteractionScript.Interact_Save();
                             }
 
                             break;
@@ -209,7 +219,7 @@ public class FirstPersonController : MonoBehaviour
     {
         controls.Disable();
     }
-    
+
     private void UpdateCursor()
     {
         if (!_menu)
@@ -238,11 +248,11 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
-// 判斷是否為可互動的 Tag
+    // 判斷是否為可互動的 Tag
     private bool IsInteractableTag(string tag)
     {
-        return tag == "Item" || tag == "NPC" || 
-               tag == "Devices" || tag == "Key" || 
+        return tag == "Item" || tag == "NPC" ||
+               tag == "Devices" || tag == "Key" ||
                tag == "Door" || tag == "SavePoint";
     }
 
