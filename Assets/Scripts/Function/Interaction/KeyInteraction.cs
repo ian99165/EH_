@@ -17,7 +17,5 @@ public class KeyInteraction : MonoBehaviour
 
     public void Interact_Key()
     {
-        Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
-        RaycastHit hit;
     }
 }
