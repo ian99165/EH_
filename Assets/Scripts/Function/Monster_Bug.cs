@@ -1,14 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Bug : MonoBehaviour
+public class Monster_Bug : MonoBehaviour
 {
     public enum MonsterState
     {
         Patrolling,
         Chasing
     }
+
+    private bool _is_player;
 
     public MonsterState currentState = MonsterState.Patrolling;
     public Transform player;
@@ -54,6 +54,13 @@ public class Bug : MonoBehaviour
             SwitchToPatrolling();
         }
 
+        if (_is_player)
+        {
+            // 停止移動，當碰觸到玩家時
+            rb.velocity = Vector3.zero;
+            return; // 當 _is_player 為 true 時不進行其他邏輯
+        }
+        
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
         if (isHostile && distanceToPlayer <= detectionRadius && currentState != MonsterState.Chasing)
@@ -141,7 +148,6 @@ public class Bug : MonoBehaviour
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360f * Time.deltaTime);
     }
 
-
     public void SwitchToChasing()
     {
         currentState = MonsterState.Chasing;
@@ -167,5 +173,23 @@ public class Bug : MonoBehaviour
     {
         isHostile = false;
         SwitchToPatrolling();
+    }
+
+    // 當觸發區域進入時，設置 _is_player 為 true 並停下怪物
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            _is_player = true;
+        }
+    }
+
+    // 當觸發區域退出時，恢復怪物的狀態
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            _is_player = false;
+        }
     }
 }

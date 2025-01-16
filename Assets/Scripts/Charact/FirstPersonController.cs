@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class FirstPersonController : MonoBehaviour
@@ -17,6 +18,7 @@ public class FirstPersonController : MonoBehaviour
     private Vector2 inputMove;
     private bool isRunning = false;
     private const float lookThreshold = 0.01f;
+    [SerializeField] private GameObject _mainCamera;
 
     [Header("Interaction Settings")]
     public float interactionDistance = 3f;
@@ -28,15 +30,18 @@ public class FirstPersonController : MonoBehaviour
     public Image cursor; // 準心圖案
     public Sprite defaultCursor; // 預設準心圖案
     public Sprite interactableCursor;
-
+    public GameObject menubook;
+    
+    // Gravity Settings
     private PlayerControls controls;
     private bool _menu = false;
     private bool _talk = false;
-
-    // Gravity Settings
     private Vector3 velocity; // 角色速度
     private float gravity = -9.81f; // 重力加速度
     private bool isGrounded; // 是否在地面
+    
+    private InteractionController _interactionController;
+    private MouseState _mousestate;
 
     private void Awake()
     {
@@ -46,8 +51,9 @@ public class FirstPersonController : MonoBehaviour
         controls.Player.Look.performed += ctx => inputLook = ctx.ReadValue<Vector2>();
         controls.Player.Look.canceled += ctx => inputLook = Vector2.zero;
         controls.Player.Run.performed += ctx => isRunning = !isRunning;
-        controls.Player.Interact.performed += ctx => Interact();
-        controls.Player.Close.performed += ctx => ToggleMenu();
+        
+        _interactionController = _mainCamera.GetComponent<InteractionController> ();
+        _mousestate = mouseState.GetComponent<MouseState>();
     }
 
     private void Start()
@@ -105,18 +111,16 @@ public class FirstPersonController : MonoBehaviour
 
         if (isGrounded && velocity.y < 0)
         {
-            velocity.y = -2f; // 保持角色貼地
+            velocity.y = -2f;
         }
 
-        // Gravity calculation
         velocity.y += gravity * Time.deltaTime;
 
-        // Apply gravity to the character
         controller.Move(velocity * Time.deltaTime);
     }
-
-    private void Interact()
-    {
+    
+    public void OnInteraction(InputValue value)
+    { 
         if (!_menu)
         {
             if (!_talk)
@@ -124,30 +128,21 @@ public class FirstPersonController : MonoBehaviour
                 Ray ray = new Ray(playerCamera.position, playerCamera.forward);
                 Debug.DrawRay(playerCamera.position, playerCamera.forward * interactionDistance, Color.red, 1f);
 
-                MouseState mousestate = mouseState.GetComponent<MouseState>();
                 if (Physics.Raycast(ray, out RaycastHit hit, interactionDistance))
                 {
                     switch (hit.collider.tag)
                     {
                         case "Item":
-                            var itemInteractionScript = hit.collider.GetComponent<ItemInteraction>();
-                            if (itemInteractionScript != null)
-                            {
-                                itemInteractionScript.Interact_Item();
-                                mousestate.MouseMode_II();
-                                _menu = true;
-                            }
-
+                            _interactionController.IsPickup = !_interactionController.IsPickup;
                             break;
                         case "NPC":
                             var npcInteractionScript = hit.collider.GetComponent<NPCInteraction>();
                             if (npcInteractionScript != null)
                             {
                                 npcInteractionScript.Interact_NPC();
-                                mousestate.MouseMode_II();
+                                _mousestate.MouseMode_II();
                                 _talk = true;
                             }
-
                             break;
                         case "Devices":
                             var devicesInteractionScript = hit.collider.GetComponent<DevicesInteraction>();
@@ -155,15 +150,8 @@ public class FirstPersonController : MonoBehaviour
                             {
                                 devicesInteractionScript.Interact_Devices();
                             }
-
                             break;
                         case "Key":
-                            var keyInteractionScript = hit.collider.GetComponent<KeyInteraction>();
-                            if (keyInteractionScript != null)
-                            {
-                                // keyInteractionScript.Interact_Key();
-                            }
-
                             break;
                         case "Door":
                             var doorInteractionScript = hit.collider.GetComponent<DoorInteraction>();
@@ -171,7 +159,6 @@ public class FirstPersonController : MonoBehaviour
                             {
                                 // doorInteractionScript.Interact_Door();
                             }
-
                             break;
                         case "SavePoint":
                             var saveInteractionScript = hit.collider.GetComponent<SaveInteraction>();
@@ -179,7 +166,6 @@ public class FirstPersonController : MonoBehaviour
                             {
                                 // saveInteractionScript.Interact_Save();
                             }
-
                             break;
                         default:
                             Debug.Log("未識別的物件");
@@ -190,22 +176,23 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
-    private void ToggleMenu()
+    public void OnMenu(InputValue value)
     {
-        MouseState mousestate = mouseState.GetComponent<MouseState>();
         if (!_talk)
         {
             if (!_menu)
             {
                 _menu = true;
                 Debug.Log("呼叫選單");
-                mousestate.MouseMode_II();
+                _mousestate.MouseMode_II();
+                menubook.SetActive(true);
             }
             else
             {
                 _menu = false;
                 Debug.Log("關閉選單");
-                mousestate.MouseMode_I();
+                _mousestate.MouseMode_I();
+                menubook.SetActive(false);
             }
         }
     }

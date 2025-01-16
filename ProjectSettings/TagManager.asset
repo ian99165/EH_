@@ -10,6 +10,8 @@ TagManager:
   - UI_Meun
   - UI_Object
   - UI_Button
+  - UI
+  - Key
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - Object Intercatable
   - 
   - 
   - 

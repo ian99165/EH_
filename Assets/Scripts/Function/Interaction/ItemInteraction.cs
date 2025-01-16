@@ -10,20 +10,12 @@ public class ItemInteraction : MonoBehaviour
         _check = true;
         switch (Name)
         {
-            case "Key" :
+            case "Key":
                 Debug.Log("Key");
                 break;
             default:
                 Debug.Log("No thing");
                 break;
-        }
-    }
-    
-    public void Interact_Item_Exit()
-    {
-        if(_check)
-        {
-            _check = false;
         }
     }
 }
