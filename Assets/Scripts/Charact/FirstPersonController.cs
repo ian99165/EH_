@@ -59,6 +59,8 @@ public class FirstPersonController : MonoBehaviour
     private void Start()
     {
         controller = GetComponent<CharacterController>();
+        
+        menubook.SetActive(false);
     }
 
     private void Update()

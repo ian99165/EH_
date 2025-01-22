@@ -13,7 +13,7 @@ public class InteractionController : MonoBehaviour
     [Header("Throw Setting")]
     [SerializeField]private Transform _target;
 
-    public bool IsPickup { get; set; } = true;
+    public bool IsPickup { get; set; }
     
     private Vector3 _origin;
     private Vector3 _direction;
