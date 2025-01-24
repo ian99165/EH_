@@ -217,7 +217,6 @@ GameObject:
   - component: {fileID: 27692872}
   - component: {fileID: 27692871}
   - component: {fileID: 27692870}
-  - component: {fileID: 27692874}
   - component: {fileID: 27692876}
   - component: {fileID: 27692875}
   m_Layer: 9
@@ -313,19 +312,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &27692874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 27692868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00a0603632dc28b499a935b56e551b3f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Key
 --- !u!114 &27692875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1512,7 +1498,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 79197ecfbc3a4294a89ce589dac02cf2, type: 3}
+    m_Font: {fileID: 12800000, guid: ba9f860afe1cdac439eaa3e36f17e8c9, type: 3}
     m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
@@ -1524,7 +1510,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Story text
+  m_Text: "Story text\u4E2D\u6587\u5B57"
 --- !u!222 &338369339
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5149,7 +5135,7 @@ GameObject:
   - component: {fileID: 1014650595}
   - component: {fileID: 1014650594}
   - component: {fileID: 1014650593}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Key
   m_TagString: Key
   m_Icon: {fileID: 0}
@@ -6450,7 +6436,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: bb145366ce7024469a5758b08d31802c, type: 3}
+    m_Font: {fileID: 12800000, guid: ba9f860afe1cdac439eaa3e36f17e8c9, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
