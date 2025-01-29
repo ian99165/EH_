@@ -42,6 +42,8 @@ public class FirstPersonController : MonoBehaviour
     
     private InteractionController _interactionController;
     private MouseState _mousestate;
+    
+    public Inventory inventory;
 
     private void Awake()
     {
@@ -154,6 +156,8 @@ public class FirstPersonController : MonoBehaviour
                             }
                             break;
                         case "Key":
+                            inventory.AddItem(gameObject);
+                            Destroy(hit.collider.gameObject);
                             break;
                         case "Door":
                             break;
