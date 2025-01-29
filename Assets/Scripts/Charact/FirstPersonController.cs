@@ -156,18 +156,8 @@ public class FirstPersonController : MonoBehaviour
                         case "Key":
                             break;
                         case "Door":
-                            var doorInteractionScript = hit.collider.GetComponent<DoorInteraction>();
-                            if (doorInteractionScript != null)
-                            {
-                                // doorInteractionScript.Interact_Door();
-                            }
                             break;
                         case "SavePoint":
-                            var saveInteractionScript = hit.collider.GetComponent<SaveInteraction>();
-                            if (saveInteractionScript != null)
-                            {
-                                // saveInteractionScript.Interact_Save();
-                            }
                             break;
                         default:
                             Debug.Log("未識別的物件");
