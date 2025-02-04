@@ -159,6 +159,14 @@ public class FirstPersonController : MonoBehaviour
                             inventory.AddItem("Key");
                             Destroy(hit.collider.gameObject);
                             break;
+                        case "Clockwork":
+                            inventory.AddItem("Clockwork");
+                            Destroy(hit.collider.gameObject);
+                            break;
+                        case "Pages":
+                            inventory.AddItem("Pages");
+                            Destroy(hit.collider.gameObject);
+                            break;
                         case "Door":
                             break;
                         case "SavePoint":
@@ -236,7 +244,7 @@ public class FirstPersonController : MonoBehaviour
     {
         return tag == "Item" || tag == "NPC" ||
                tag == "Devices" || tag == "Key" ||
-               tag == "Door" || tag == "SavePoint";
+               tag == "Door" || tag == "SavePoint"|| tag == "Clockwork"|| tag == "Pages";
     }
 
     public void TalkingSet()

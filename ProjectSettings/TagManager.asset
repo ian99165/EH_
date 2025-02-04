@@ -12,6 +12,8 @@ TagManager:
   - UI_Button
   - UI
   - Key
+  - Clockwork
+  - Pages
   layers:
   - Default
   - TransparentFX

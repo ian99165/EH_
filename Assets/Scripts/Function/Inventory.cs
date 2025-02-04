@@ -6,8 +6,12 @@ public class Inventory : MonoBehaviour
 {
     public Transform itemsContainer; // 物品欄容器
     private List<GameObject> itemList = new List<GameObject>(); // 存儲物品的列表
+    private Vector3 startPosition = new Vector3(0, 0.3f, 0); // 初始位置 (0, 0.3, 0)
     private Vector3 lastItemPosition; // 記錄上一個物品的位置
-    private float itemSpacing = 0.2f; // 物品之間的間距
+    private float itemSpacing = 0.15f; // 物品之間的水平間距
+    private float rowSpacing = -0.15f; // 物品之間的垂直間距
+    private int maxColumns = 3; // 每列最多 3 個圖標
+    private int currentColumn = 0; // 當前行內的物品數量
 
     [Header("Icon Prefabs")]
     public GameObject Key;
@@ -19,7 +23,7 @@ public class Inventory : MonoBehaviour
 
     void Start()
     {
-        lastItemPosition = Vector3.zero;
+        lastItemPosition = startPosition; // 初始化起始位置
 
         // 初始化物品對應的圖標
         itemIcons = new Dictionary<string, GameObject>
@@ -45,8 +49,20 @@ public class Inventory : MonoBehaviour
         // 設定物品的顯示位置
         newItem.transform.localPosition = lastItemPosition;
 
-        // 更新下個物品的位置
-        lastItemPosition = newItem.transform.localPosition + new Vector3(itemSpacing, 0, 0);
+        // 記錄當前行內的物品數量
+        currentColumn++;
+
+        if (currentColumn >= maxColumns)
+        {
+            // 換行：重置 X 軸，向下移動 Y 軸
+            lastItemPosition = new Vector3(startPosition.x, lastItemPosition.y + rowSpacing, startPosition.z);
+            currentColumn = 0; // 重置列計數
+        }
+        else
+        {
+            // 向右移動 X 軸
+            lastItemPosition += new Vector3(itemSpacing, 0, 0);
+        }
 
         // 將物品加入物品欄列表
         itemList.Add(newItem);
@@ -59,6 +75,7 @@ public class Inventory : MonoBehaviour
             Destroy(item);
         }
         itemList.Clear();
-        lastItemPosition = Vector3.zero; // 重置位置
+        lastItemPosition = startPosition; // 重置位置
+        currentColumn = 0; // 重置列數計數
     }
 }
