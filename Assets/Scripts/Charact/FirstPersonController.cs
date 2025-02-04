@@ -156,7 +156,7 @@ public class FirstPersonController : MonoBehaviour
                             }
                             break;
                         case "Key":
-                            inventory.AddItem(gameObject);
+                            inventory.AddItem("Key");
                             Destroy(hit.collider.gameObject);
                             break;
                         case "Door":
