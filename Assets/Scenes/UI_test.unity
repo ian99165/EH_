@@ -917,7 +917,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   virtualCursor: {fileID: 1587180909}
   canvas: {fileID: 1396049827}
-  cursorSpeed: 120
+  cursorSpeed: 200
 --- !u!114 &1587180915
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -22,14 +22,12 @@ public class Detect_Objects : MonoBehaviour
     private void CheckForObjectsInView()
     {
         Plane[] frustumPlanes = GeometryUtility.CalculateFrustumPlanes(playerCamera);
-        Debug.Log("正在計算相機視錐體內的物件...");
 
         Collider[] colliders = Physics.OverlapSphere(playerCamera.transform.position, detectionRadius, detectionLayer);
         foreach (var collider in colliders)
         {
             if (GeometryUtility.TestPlanesAABB(frustumPlanes, collider.bounds))
             {
-                Debug.Log($"物件 {collider.name} 位於玩家視錐範圍內");
 
                 Object_Transfer transferScript = collider.GetComponent<Object_Transfer>();
                 if (transferScript != null)
@@ -42,7 +40,6 @@ public class Detect_Objects : MonoBehaviour
                 Object_Transfer transferScript = collider.GetComponent<Object_Transfer>();
                 if (transferScript != null)
                 {
-                    Debug.Log($"物件 {collider.name} 離開視錐範圍，嘗試移動");
                     transferScript.OnExitView(teleportChance);
                 }
                 else
