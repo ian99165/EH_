@@ -132,7 +132,7 @@ public class Mouse : MonoBehaviour
             
             case InputMode._key_mod:
                     Debug.Log("Mouse Button");
-                    Ray ray_m = Camera.main.ScreenPointToRay(Input.mousePosition);
+                    Ray ray_m = Camera.main.ScreenPointToRay(cursorPos);
                     if (Physics.Raycast(ray_m, out RaycastHit hit_m))
                     {
                         Debug.Log(hit_m.collider.gameObject.name);
