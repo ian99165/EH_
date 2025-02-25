@@ -57,22 +57,15 @@ public class Inventory : MonoBehaviour
 
         // 創建對應的 UI 物品圖示
         GameObject newItem = Instantiate(itemIcons[itemName], itemsContainer);
+    
+        // 將物品顯示在物品欄的最前面
         newItem.transform.localPosition = lastItemPosition;
-
-        // 記錄行內的物品數量
-        currentColumn++;
-
-        if (currentColumn >= maxColumns)
-        {
-            lastItemPosition = new Vector3(startPosition.x, lastItemPosition.y + rowSpacing, startPosition.z);
-            currentColumn = 0;
-        }
-        else
-        {
-            lastItemPosition += new Vector3(itemSpacing, 0, 0);
-        }
-
-        itemList.Add(newItem);
+    
+        // 物品排列更新
+        itemList.Insert(0, newItem); // 將新物品加入到列表的最前面
+    
+        // 更新物品欄位置
+        UpdateInventoryPositions();
     }
 
     public void DropItem(GameObject selectedItem)
@@ -85,23 +78,57 @@ public class Inventory : MonoBehaviour
             return;
         }
 
-        // 直接刪除當前物件
-        itemList.Remove(selectedItem);
-        Destroy(selectedItem);
-        Debug.Log("已刪除物品");
-
-        // 生成對應的 3D 物品
+        // 取得物品名稱
         string itemName = selectedItem.name.Replace("(Clone)", "").Trim();
+    
+        // 確保有對應的 3D 預製物
         if (!itemPrefabs.ContainsKey(itemName))
         {
             Debug.LogWarning($"找不到對應的 3D 物品預製物: {itemName}");
             return;
         }
 
+        // 直接刪除當前物品
+        itemList.Remove(selectedItem);
+        Destroy(selectedItem);
+        Debug.Log("已刪除物品");
+
+        // 生成對應的 3D 物品
         Vector3 dropPosition = player.position + player.forward * dropDistance;
         Instantiate(itemPrefabs[itemName], dropPosition, Quaternion.identity);
         Debug.Log($"成功丟棄 {itemName}，生成於 {dropPosition}");
+
+        // 重新更新物品欄位置
+        UpdateInventoryPositions();
     }
+
+
+    private void UpdateInventoryPositions()
+    {
+        // 清空原來的位置
+        lastItemPosition = startPosition;
+        currentColumn = 0;
+
+        // 遍歷物品列表，重新計算每個物品的位置
+        foreach (var item in itemList)
+        {
+            item.transform.localPosition = lastItemPosition;
+
+            // 更新行內物品數量
+            currentColumn++;
+
+            if (currentColumn >= maxColumns)
+            {
+                lastItemPosition = new Vector3(startPosition.x, lastItemPosition.y + rowSpacing, startPosition.z);
+                currentColumn = 0;
+            }
+            else
+            {
+                lastItemPosition += new Vector3(itemSpacing, 0, 0);
+            }
+        }
+    }
+
 
     public void ClearInventory()
     {
