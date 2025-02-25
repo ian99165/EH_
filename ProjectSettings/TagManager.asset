@@ -8,13 +8,13 @@ TagManager:
   - NPC
   - Devices
   - UI_Meun
-  - UI_Object
   - UI_Button
   - UI
   - Key
   - Clockwork
   - Pages
   - Layd
+  - UI_Item
   layers:
   - Default
   - TransparentFX

@@ -4,179 +4,83 @@ using UnityEngine.InputSystem;
 public class Mouse : MonoBehaviour
 {
     [Header("虛擬搖桿滑鼠設置")]
-    public RectTransform virtualCursor; // 虛擬滑鼠的 UI 物件
-    public Canvas canvas;               // UI 所在 Canvas
-    public float cursorSpeed = 1000f;   // 滑鼠移動速度
+    public RectTransform virtualCursor;
+    public Canvas canvas;
+    public float cursorSpeed = 1000f;
 
-    private Vector2 cursorPos;          // 虛擬滑鼠位置
-    private PlayerInput playerInput;    // 新的 Input System
-    private InputAction moveAction;     // 右搖桿移動的 Action
-    private InputAction clickAction;    // 按鍵點擊的 Action
+    private Vector2 cursorPos;
     private PlayerControls controls;
+    private InputMode currentMode = InputMode._joy_mod;
+
+    private enum InputMode { _key_mod, _joy_mod }
     
-    private enum InputMode
-    {
-        _key_mod,
-        _joy_mod
-    }
-    private InputMode _mode;
+    private Inventory inventory;
 
     private void Awake()
     {
         controls = new PlayerControls();
-        controls.UI.anyKey.performed += ctx => KeyMod();
-        controls.UI.anyJoy.performed += ctx => JoyMod();
+        controls.UI.anyKey.performed += _ => SetMode(InputMode._key_mod);
+        controls.UI.anyJoy.performed += _ => SetMode(InputMode._joy_mod);
+        controls.Enable();
     }
 
-    void Start()
+    private void Start()
     {
-        controls.Enable();
-
-        playerInput = GetComponent<PlayerInput>();
-        if (playerInput == null)
+        inventory = FindObjectOfType<Inventory>();
+        if (inventory == null)
         {
-            enabled = false;
-            return;
+            Debug.LogError("找不到 Inventory 物件");
         }
-
-        // 綁定行為
-        moveAction = playerInput.actions["AsMouse"];
-        clickAction = playerInput.actions["Click"];
-        if (moveAction == null || clickAction == null)
-        {
-            enabled = false;
-            return;
-        }
-
         cursorPos = new Vector2(Screen.width / 2f, Screen.height / 2f);
         UpdateCursorPos();
-
-        if (virtualCursor == null)
-        {
-            enabled = false;
-            return;
-        }
-
-        if (canvas == null)
-        {
-            enabled = false;
-            return;
-        }
     }
 
-    void Update()
+    private void Update()
     {
-        Vector2 input = moveAction.ReadValue<Vector2>();
-        cursorPos += input * cursorSpeed * Time.deltaTime;
+        cursorPos += controls.Player.AsMouse.ReadValue<Vector2>() * cursorSpeed * Time.deltaTime;
+        cursorPos = new Vector2(Mathf.Clamp(cursorPos.x, 0, Screen.width), Mathf.Clamp(cursorPos.y, 0, Screen.height));
+        UpdateCursorPos();
 
-        // 限制滑鼠位置在螢幕內
-        cursorPos.x = Mathf.Clamp(cursorPos.x, 0, Screen.width);
-        cursorPos.y = Mathf.Clamp(cursorPos.y, 0, Screen.height);
-        
-        UpdateCursorPos();// 更新滑鼠 UI 的位置
-
-        if (clickAction.triggered)
-        {
+        if (controls.Player.Click.triggered)
             SimulateMouseClick();
-        }
     }
 
     private void UpdateCursorPos()
     {
-        // 將螢幕座標轉換為 Canvas 的局部座標
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            canvas.GetComponent<RectTransform>(),
-            cursorPos,
-            canvas.worldCamera,
-            out Vector2 localCursorPos
-        );
-
-        if (virtualCursor != null)
+        if (canvas && virtualCursor && RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                canvas.GetComponent<RectTransform>(), cursorPos, canvas.worldCamera, out Vector2 localCursorPos))
         {
             virtualCursor.anchoredPosition = localCursorPos;
         }
     }
 
-    private void SimulateMouseClick()//搖桿模擬鼠標
+    private void SimulateMouseClick()
     {
-        switch (_mode)
-        { 
-            case InputMode._joy_mod:                
-                Ray ray_j = Camera.main.ScreenPointToRay(cursorPos);
-                if (Physics.Raycast(ray_j, out RaycastHit hit_j))
-                {
-                    Debug.Log(hit_j.collider.gameObject.name);
-                    if (hit_j.collider.gameObject.CompareTag("UI_Meun")) //書本菜單點擊事件
-                    {
-                        Debug.Log("UI_Meun");
-                        switch (hit_j.collider.gameObject.name)
-                        {
-                            case "Button_Back":
-                                Debug.Log("Button_Back");
-                                break;
-                            case "Button_Exit":
-                                Debug.Log("Button_Exit");
-                                break;
-                            default:
-                                Debug.Log("Nothing");
-                                break;
-                        }
-                    }
-
-                    if (hit_j.collider.gameObject.CompareTag("UI_Button")) //拾取物件點擊事件
-                    {
-                        Debug.Log("UI_Button");
-                    }
-                }
-                break;
-            
-            case InputMode._key_mod:
-                    Debug.Log("Mouse Button");
-                    Ray ray_m = Camera.main.ScreenPointToRay(cursorPos);
-                    if (Physics.Raycast(ray_m, out RaycastHit hit_m))
-                    {
-                        Debug.Log(hit_m.collider.gameObject.name);
-                        if (hit_m.collider.gameObject.CompareTag("UI_Meun")) //書本菜單點擊事件
-                        {
-                            Debug.Log("UI_Meun");
-                            switch (hit_m.collider.gameObject.name)
-                            {
-                                case "Button_Back":
-                                    Debug.Log("Button_Back");
-                                    break;
-                                case "Button_Exit":
-                                    Debug.Log("Button_Exit");
-                                    break;
-                                default:
-                                    Debug.Log("Nothing");
-                                    break;
-                            }
-                        }
-
-                        if (hit_m.collider.gameObject.CompareTag("UI_Button")) //拾取物件點擊事件
-                        {
-                            Debug.Log("UI_Button");
-                        }
-                    }
-                break;
+        Ray ray = Camera.main.ScreenPointToRay(cursorPos);
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            Debug.Log(hit.collider.gameObject.tag);
+            Debug.Log(hit.collider.gameObject.name);
+            if (hit.collider.CompareTag("UI_Meun"))
+            {
+                if (hit.collider.name == "Button_Back") Debug.Log("Button_Back");
+                else if (hit.collider.name == "Button_Exit") Debug.Log("Button_Exit");
+                else Debug.Log("Nothing");
+            }
+            else if (hit.collider.CompareTag("UI_Button"))
+            {
+            }
+            else if (hit.collider.CompareTag("UI_Item"))
+            {
+                Debug.Log("丟棄");
+                inventory.DropItem(hit.collider.gameObject);
+            }
         }
     }
-    
-    private InputMode currentMode = InputMode._joy_mod;
 
-    private void KeyMod()//搖桿模式
+    private void SetMode(InputMode mode)
     {
-        if (currentMode != InputMode._key_mod)
-        {
-            currentMode = InputMode._key_mod;
-        }
-    }
-    
-    private void JoyMod()//鼠鍵模式
-    {
-        if (currentMode != InputMode._joy_mod)
-        {
-            currentMode = InputMode._joy_mod;
-        }
+        if (currentMode != mode)
+            currentMode = mode;
     }
 }
