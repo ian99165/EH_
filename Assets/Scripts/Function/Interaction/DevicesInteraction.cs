@@ -170,7 +170,7 @@ public class DevicesInteraction : MonoBehaviour
         {
             _can_move = false;
 
-            Debug.Log($"Rotate {rotationAxis} by {angle} degrees");
+            //Debug.Log($"Rotate {rotationAxis} by {angle} degrees");
 
             float elapsedTime = 0f;
             Quaternion startRotation = transform.rotation;

@@ -172,7 +172,7 @@ public class FirstPersonController : MonoBehaviour
                         case "SavePoint":
                             break;
                         default:
-                            Debug.Log("未識別的物件");
+                            //Debug.Log("未識別的物件");
                             break;
                     }
                 }
@@ -187,14 +187,14 @@ public class FirstPersonController : MonoBehaviour
             if (!_menu)
             {
                 _menu = true;
-                Debug.Log("呼叫選單");
+                //Debug.Log("呼叫選單");
                 _mousestate.MouseMode_II();
                 menubook.SetActive(true);
             }
             else
             {
                 _menu = false;
-                Debug.Log("關閉選單");
+                //Debug.Log("關閉選單");
                 _mousestate.MouseMode_I();
                 menubook.SetActive(false);
             }

@@ -63,9 +63,18 @@ public class Mouse : MonoBehaviour
             Debug.Log(hit.collider.gameObject.name);
             if (hit.collider.CompareTag("UI_Meun"))
             {
-                if (hit.collider.name == "Button_Back") Debug.Log("Button_Back");
-                else if (hit.collider.name == "Button_Exit") Debug.Log("Button_Exit");
-                else Debug.Log("Nothing");
+                switch (hit.collider.name)
+                {
+                    case "Button_Back":
+                        Debug.Log("Button_Back");
+                        break;
+                    case "Button_Exit":
+                        Debug.Log("Button_Exit");
+                        break;
+                    default:
+                        Debug.Log("Nothing");
+                        break;
+                }
             }
             else if (hit.collider.CompareTag("UI_Button"))
             {
