@@ -102,7 +102,6 @@ public class Inventory : MonoBehaviour
         UpdateInventoryPositions();
     }
 
-
     private void UpdateInventoryPositions()
     {
         // 清空原來的位置
