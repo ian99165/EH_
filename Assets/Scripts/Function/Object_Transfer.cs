@@ -23,12 +23,12 @@ public class Object_Transfer : MonoBehaviour
 
         if (meshRenderer == null)
         {
-            Debug.LogWarning($"物件 {name} 缺少 MeshRenderer，無法進行隱藏操作！");
+            //Debug.LogWarning($"物件 {name} 缺少 MeshRenderer，無法進行隱藏操作！");
         }
 
         if (playerCamera == null)
         {
-            Debug.LogError($"物件 {name} 未指定玩家相機！");
+            //Debug.LogError($"物件 {name} 未指定玩家相機！");
         }
     }
 
@@ -45,7 +45,7 @@ public class Object_Transfer : MonoBehaviour
                 ShowObject();
             }
 
-            Debug.Log($"物件 {name} 進入視線內，不進行移動或隱藏");
+            //Debug.Log($"物件 {name} 進入視線內，不進行移動或隱藏");
         }
     }
 
@@ -56,7 +56,7 @@ public class Object_Transfer : MonoBehaviour
         {
             isInView = false;
 
-            Debug.Log($"物件 {name} 離開視線，嘗試進行隨機行為...");
+            //Debug.Log($"物件 {name} 離開視線，嘗試進行隨機行為...");
 
             // 隨機決定是否進行隱藏或移動
             TryTeleport(teleportChance);
@@ -87,25 +87,25 @@ public class Object_Transfer : MonoBehaviour
                 // 檢查新位置是否在玩家視線內
                 if (!IsInPlayerView(newPosition))
                 {
-                    Debug.Log($"物件 {name} 移動成功！新位置為：{newPosition}");
+                    //Debug.Log($"物件 {name} 移動成功！新位置為：{newPosition}");
                     transform.position = newPosition;
                     validPosition = true;
                     break;
                 }
                 else
                 {
-                    Debug.Log($"物件 {name} 嘗試的新位置 {newPosition} 在玩家視線內，重新計算...");
+                    //Debug.Log($"物件 {name} 嘗試的新位置 {newPosition} 在玩家視線內，重新計算...");
                 }
             }
 
             if (!validPosition)
             {
-                Debug.LogWarning($"物件 {name} 無法找到適合的移動位置，移動取消");
+                //Debug.LogWarning($"物件 {name} 無法找到適合的移動位置，移動取消");
             }
         }
         else
         {
-            Debug.Log($"物件 {name} 移動未觸發");
+            //Debug.Log($"物件 {name} 移動未觸發");
         }
     }
 
@@ -114,12 +114,12 @@ public class Object_Transfer : MonoBehaviour
     {
         if (!isHidden && Random.value < hideChance)
         {
-            Debug.Log($"物件 {name} 被隱藏！");
+            //Debug.Log($"物件 {name} 被隱藏！");
             HideObject();
         }
         else
         {
-            Debug.Log($"物件 {name} 隱藏未觸發");
+            //Debug.Log($"物件 {name} 隱藏未觸發");
         }
     }
 
@@ -146,7 +146,7 @@ public class Object_Transfer : MonoBehaviour
             meshRenderer.enabled = true;
         }
 
-        Debug.Log($"物件 {name} 已重新顯示");
+        //Debug.Log($"物件 {name} 已重新顯示");
     }
 
     // 檢查位置是否在玩家視線內
