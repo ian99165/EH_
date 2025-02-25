@@ -23,7 +23,6 @@ public class BugAI : MonoBehaviour
 
     private NavMeshAgent agent;
     private float timeToChangePatrolPoint;
-    private bool isPaused = false;
     public bool isHostile = false;
 
     void Start()
