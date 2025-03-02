@@ -555,7 +555,7 @@ MonoBehaviour:
   mouseState: {fileID: 0}
   cursor: {fileID: 0}
   defaultCursor: {fileID: 21300000, guid: 40f8a3cf08859bb419ac01163e03c6a7, type: 3}
-  interactableCursor: {fileID: 21300000, guid: 5c0386b98e383b04f860272e1694ffdd, type: 3}
+  interactableCursor: {fileID: 21300000, guid: e210f2cd102ef274d9594065967747a5, type: 3}
   menubook: {fileID: 8904682636074001700}
   inventory: {fileID: 2511763642234592796}
 --- !u!114 &2175655990363074911

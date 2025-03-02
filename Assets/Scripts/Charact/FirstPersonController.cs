@@ -34,8 +34,8 @@ public class FirstPersonController : MonoBehaviour
     
     // Gravity Settings
     private PlayerControls controls;
-    private bool _menu = false;
-    private bool _talk = false;
+    public bool _menu;
+    public bool _talk;
     private Vector3 velocity; // 角色速度
     private float gravity = -9.81f; // 重力加速度
     private bool isGrounded; // 是否在地面
@@ -60,6 +60,9 @@ public class FirstPersonController : MonoBehaviour
 
     private void Start()
     {
+        _menu = false;
+        _talk = false;
+        
         controller = GetComponent<CharacterController>();
         
         menubook.SetActive(false);
@@ -224,6 +227,7 @@ public class FirstPersonController : MonoBehaviour
                     // 防止未定義的 Tag 報錯
                     if (IsInteractableTag(hit.collider.tag))
                     {
+                        Debug.Log("可互動");
                         cursor.sprite = interactableCursor; // 更改為可互動圖案
                     }
                     else
