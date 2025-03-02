@@ -7,7 +7,7 @@ public class InteractionController : MonoBehaviour
 {
     [Header("Interaction Settings")]
     [SerializeField] private float _maxDistance = 10f;
-    [SerializeField] private float _visionRadius = 1f;
+    [SerializeField] private float _visionRadius = 0.1f;
     [SerializeField] private LayerMask _layerMask;
     
     [Header("Throw Setting")]
@@ -51,6 +51,7 @@ public class InteractionController : MonoBehaviour
 
         if(!IsPickup && _item != null) Dropoff();
         
+        if (_item != null) return;
         if (Physics.SphereCast(_origin, _visionRadius, _direction, out _hit, _maxDistance, _layerMask))
         {
             if (_hit.transform.TryGetComponent(out IInteractable item) && IsPickup)

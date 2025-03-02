@@ -10,16 +10,19 @@ public class DevicesInteraction : MonoBehaviour
     {
         switch (Name)
         {
-            case "書桌抽屜" :
-                Debug.Log("物件移動");
+            case "M_u" :
                 StartCoroutine(Move_Up());
                 break;
-            case "物件旋轉_上":
-                Debug.Log("物件旋轉");
+            case "M_p" :
+                StartCoroutine(Move_Forward());
+                break;
+            case "M_r" :
+                StartCoroutine(Move_Right());
+                break;
+            case "R_u":
                 StartCoroutine(Rotate_Up());
                 break;
-            case "物件旋轉_右":
-                Debug.Log("物件旋轉");
+            case "R_r":
                 StartCoroutine(Rotate_Right());
                 break;
             default:

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4573737662678632740}
   - component: {fileID: 761637312842176019}
   m_Layer: 0
-  m_Name: "\u5C0F\u9CE5\u5728\u770B\u4F60"
+  m_Name: Clockwork
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
