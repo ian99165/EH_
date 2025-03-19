@@ -5,6 +5,7 @@ using UnityEngine;
 public class RotatableObject : MonoBehaviour
 {
     public float rotationSpeed = 300f;
+    public float mouseSpeed = 100f;
     private Vector3 lastMousePosition;
 
     void Update()
@@ -25,8 +26,8 @@ public class RotatableObject : MonoBehaviour
             if (Input.GetMouseButton(0))
             {
                 Vector3 delta = Input.mousePosition - lastMousePosition;
-                float rotationX = delta.x * rotationSpeed * Time.deltaTime;
-                float rotationY = delta.y * rotationSpeed * Time.deltaTime;
+                float rotationX = delta.x * mouseSpeed * Time.deltaTime;
+                float rotationY = delta.y * mouseSpeed * Time.deltaTime;
 
                 transform.Rotate(Vector3.up, -rotationX, Space.World);
                 transform.Rotate(Vector3.right, rotationY, Space.World);
