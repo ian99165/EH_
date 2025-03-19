@@ -544,7 +544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
       propertyPath: m_Name
-      value: 250218_finsh
+      value: Apt
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
       propertyPath: m_IsActive
@@ -932,9 +932,6 @@ PrefabInstance:
       addedObject: {fileID: 6152940559590042842}
     - targetCorrespondingSourceObject: {fileID: -4069067929549655379, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2723409315708126830}
-    - targetCorrespondingSourceObject: {fileID: -4069067929549655379, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2375856279678109579}
     - targetCorrespondingSourceObject: {fileID: -4069067929549655379, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
       insertIndex: -1
@@ -942,9 +939,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6600307557893057641, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2921077216538795870}
-    - targetCorrespondingSourceObject: {fileID: 6600307557893057641, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1809512535487635696}
     - targetCorrespondingSourceObject: {fileID: 6600307557893057641, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3510030046846351900}
@@ -956,9 +950,6 @@ PrefabInstance:
       addedObject: {fileID: 4233508548604622206}
     - targetCorrespondingSourceObject: {fileID: -4918820479218708201, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6664500862924244657}
-    - targetCorrespondingSourceObject: {fileID: -4918820479218708201, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 3609541523539929693}
     - targetCorrespondingSourceObject: {fileID: -4918820479218708201, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
       insertIndex: -1
@@ -966,9 +957,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1878460327361096757, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4765326369622114469}
-    - targetCorrespondingSourceObject: {fileID: 1878460327361096757, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2466258464379288869}
     - targetCorrespondingSourceObject: {fileID: 1878460327361096757, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7022606034896854936}
@@ -980,9 +968,6 @@ PrefabInstance:
       addedObject: {fileID: 2468222005649802558}
     - targetCorrespondingSourceObject: {fileID: -6336607494952705161, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5399825475983597582}
-    - targetCorrespondingSourceObject: {fileID: -6336607494952705161, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1506562556254692351}
     - targetCorrespondingSourceObject: {fileID: -6336607494952705161, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
       insertIndex: -1
@@ -992,9 +977,6 @@ PrefabInstance:
       addedObject: {fileID: 4424465941763411044}
     - targetCorrespondingSourceObject: {fileID: 5897084058041920802, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2122839312162623212}
-    - targetCorrespondingSourceObject: {fileID: 5897084058041920802, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 7475961479006683044}
     - targetCorrespondingSourceObject: {fileID: 5897084058041920802, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
       insertIndex: -1
@@ -1002,9 +984,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8343355067191003693, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 250461496327620339}
-    - targetCorrespondingSourceObject: {fileID: 8343355067191003693, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3595562984136293259}
     - targetCorrespondingSourceObject: {fileID: 8343355067191003693, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2973427552460064159}
@@ -1035,9 +1014,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4382980400077563192, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 872629174238784278}
-    - targetCorrespondingSourceObject: {fileID: 4382980400077563192, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7102355238728914037}
     - targetCorrespondingSourceObject: {fileID: 4382980400077563192, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6665064769288207386}
@@ -1085,10 +1061,19 @@ PrefabInstance:
       addedObject: {fileID: 597125176443752466}
     - targetCorrespondingSourceObject: {fileID: 6889757050849689968, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 615140786674942502}
+      addedObject: {fileID: 645779892470932212}
     - targetCorrespondingSourceObject: {fileID: 6889757050849689968, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 645779892470932212}
+      addedObject: {fileID: 4102360121602063593}
+    - targetCorrespondingSourceObject: {fileID: 6889757050849689968, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 980985131025075703}
+    - targetCorrespondingSourceObject: {fileID: 6889757050849689968, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4037779352193992771}
+    - targetCorrespondingSourceObject: {fileID: 6889757050849689968, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2767510938706512566}
     - targetCorrespondingSourceObject: {fileID: 3613121672410944938, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
       insertIndex: -1
       addedObject: {fileID: 444304508936564772}
@@ -2035,7 +2020,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &3937097114751358779
 MonoBehaviour:
@@ -2100,7 +2085,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &8636144120991912184
 MonoBehaviour:
@@ -2244,7 +2229,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &6938254793427988685
 MonoBehaviour:
@@ -2309,7 +2294,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &8219330613539073434
 MonoBehaviour:
@@ -2426,7 +2411,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &8995532755829487318
 MonoBehaviour:
@@ -2491,7 +2476,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &5402853217789103832
 MonoBehaviour:
@@ -2556,7 +2541,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &8193692989682166865
 MonoBehaviour:
@@ -2621,7 +2606,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &214505363859225626
 MonoBehaviour:
@@ -2665,7 +2650,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!64 &374510188520567033
 MeshCollider:
@@ -2757,7 +2742,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!64 &3974402363876516765
 MeshCollider:
@@ -2922,7 +2907,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &4684898202638075638
 MonoBehaviour:
@@ -2987,7 +2972,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &4184155227296305921
 MonoBehaviour:
@@ -3223,7 +3208,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &982950568124900685
 MonoBehaviour:
@@ -3314,7 +3299,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &751630812926290696
 MonoBehaviour:
@@ -3379,7 +3364,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &101274094062884050
 MonoBehaviour:
@@ -3721,7 +3706,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!64 &8343535001126427337
 MeshCollider:
@@ -3783,18 +3768,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 32.48135, y: 3.5276563, z: 23.797056}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3595562984136293259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1923346736834572216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b009bee6dfc137b438c669521c728107, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &2973427552460064159
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3820,7 +3793,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &7264848852596826744
 MonoBehaviour:
@@ -3885,7 +3858,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &8963312139756839151
 MonoBehaviour:
@@ -3950,7 +3923,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &1056433483555713396
 MonoBehaviour:
@@ -4015,7 +3988,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &1703776549892335850
 MonoBehaviour:
@@ -4080,7 +4053,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &8285141558091703756
 MonoBehaviour:
@@ -4203,7 +4176,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &7599410321832819356
 MonoBehaviour:
@@ -4268,7 +4241,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &6879530724830569674
 MonoBehaviour:
@@ -4333,7 +4306,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &144734917425242689
 MonoBehaviour:
@@ -4377,7 +4350,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!64 &5342271645623195462
 MeshCollider:
@@ -4486,7 +4459,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!64 &5854093866253416024
 MeshCollider:
@@ -4626,7 +4599,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &4232074366880362962
 MonoBehaviour:
@@ -4670,7 +4643,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!64 &318441715765124969
 MeshCollider:
@@ -4757,7 +4730,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &9176710136391723050
 MonoBehaviour:
@@ -4822,7 +4795,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &280548733272934956
 MonoBehaviour:
@@ -4887,7 +4860,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &3644685499514865959
 MonoBehaviour:
@@ -4980,18 +4953,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 32.48132, y: 3.5276563, z: 21.185057}
   m_Center: {x: 0.000030517578, y: 0.0000076293945, z: 0}
---- !u!114 &2723409315708126830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3386514328454453048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b009bee6dfc137b438c669521c728107, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &2375856279678109579
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5017,7 +4978,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &3269510430299514650
 MonoBehaviour:
@@ -5113,7 +5074,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &764049102802388645
 BoxCollider:
@@ -5199,7 +5160,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &1165091444849661002
 MonoBehaviour:
@@ -5239,18 +5200,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 25.49948, y: 32.481297, z: 5.9879146}
   m_Center: {x: 0.000030517578, y: 0.0000076293945, z: 0}
---- !u!114 &1809512535487635696
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3666374648184228348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b009bee6dfc137b438c669521c728107, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &3510030046846351900
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5276,7 +5225,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &8154111847968574384
 MonoBehaviour:
@@ -5341,7 +5290,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &9059182042287337423
 MonoBehaviour:
@@ -5490,7 +5439,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &597125176443752466
 MonoBehaviour:
@@ -5504,28 +5453,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b009bee6dfc137b438c669521c728107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!64 &615140786674942502
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3955780160676816101}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4269896525974275290, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
 --- !u!65 &645779892470932212
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5545,8 +5472,92 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 77.61059, y: 66.08382, z: 59.110733}
-  m_Center: {x: 8.0874405, y: -69.166435, z: -0.49757954}
+  m_Size: {x: 8.031761, y: 66.08382, z: 55.58414}
+  m_Center: {x: -26.701956, y: -69.166435, z: -0.6935119}
+--- !u!65 &4102360121602063593
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3955780160676816101}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 80.41254, y: 11.331647, z: 79.302666}
+  m_Center: {x: -2.145022, y: -36.831577, z: -0.00005960464}
+--- !u!65 &980985131025075703
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3955780160676816101}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 7.581913, y: 35.042355, z: 55.58414}
+  m_Center: {x: 34.256283, y: -53.645702, z: -0.30164716}
+--- !u!65 &4037779352193992771
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3955780160676816101}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.087088, y: 8.049296, z: 54.800507}
+  m_Center: {x: 47.077854, y: -98.18367, z: -0.30169484}
+--- !u!65 &2767510938706512566
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3955780160676816101}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 14.976095, y: 41.50292, z: 79.302666}
+  m_Center: {x: 36.058887, y: 21.747776, z: -0.00005960464}
 --- !u!1 &4033834304447998406 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2412915112380330925, guid: c5e1904ff81b55e43b505e25b35e75b8, type: 3}
@@ -5574,10 +5585,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!64 &4800546182418578999
 MeshCollider:
@@ -5664,7 +5675,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &8316500900946344755
 MonoBehaviour:
@@ -5708,7 +5719,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!64 &7459429953774387316
 MeshCollider:
@@ -5795,7 +5806,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &7533457743792466026
 MonoBehaviour:
@@ -5835,18 +5846,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 32.48132, y: 2.8878324, z: 23.796934}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2122839312162623212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4084257045899593911}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b009bee6dfc137b438c669521c728107, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &7475961479006683044
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5872,7 +5871,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &2723762320699753053
 MonoBehaviour:
@@ -5975,7 +5974,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &4272467197765119675 stripped
 GameObject:
@@ -6060,7 +6059,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!64 &5413981469100432789
 MeshCollider:
@@ -6147,7 +6146,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &2220758061739185062
 MonoBehaviour:
@@ -6212,7 +6211,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &1493969195831607200
 MonoBehaviour:
@@ -6289,7 +6288,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &4689649885380587060 stripped
 GameObject:
@@ -6395,7 +6394,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &8501931560636247221
 MonoBehaviour:
@@ -6435,18 +6434,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 29.449217, y: 36.70135, z: 6.624328}
   m_Center: {x: 0.000030517578, y: 0, z: -0.000061035156}
---- !u!114 &5399825475983597582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4717324477510862562}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b009bee6dfc137b438c669521c728107, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &1506562556254692351
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6472,7 +6459,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &7424399183143617607
 MonoBehaviour:
@@ -6589,7 +6576,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &236008580045296949
 MonoBehaviour:
@@ -6680,7 +6667,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &8972824098286808138
 MonoBehaviour:
@@ -6745,7 +6732,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &5692811262813272854
 MonoBehaviour:
@@ -6810,7 +6797,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &8182122134820891249
 MonoBehaviour:
@@ -6875,7 +6862,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &2739185538724895078
 MonoBehaviour:
@@ -6916,10 +6903,10 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!64 &4511790564318820425
 MeshCollider:
@@ -6985,7 +6972,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!64 &7411125064981633205
 MeshCollider:
@@ -7098,7 +7085,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &6939284199220250515
 MonoBehaviour:
@@ -7163,7 +7150,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &4145236072960810285
 MonoBehaviour:
@@ -7207,7 +7194,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!64 &6287723467103490849
 MeshCollider:
@@ -7294,7 +7281,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &3993290002306712258
 MonoBehaviour:
@@ -7359,7 +7346,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &4148241159662006475
 MonoBehaviour:
@@ -7447,18 +7434,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 27.756315, y: 4.8994746, z: 43.724422}
   m_Center: {x: 0, y: 0, z: -0.000061035156}
---- !u!114 &6664500862924244657
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5963964674898588802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b009bee6dfc137b438c669521c728107, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &3609541523539929693
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7484,7 +7459,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &925078158545813834
 MonoBehaviour:
@@ -7549,7 +7524,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &4189926006030964615
 MonoBehaviour:
@@ -7614,7 +7589,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &1734285093759691498
 MonoBehaviour:
@@ -7679,20 +7654,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7102355238728914037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6173289276106670253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b009bee6dfc137b438c669521c728107, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &6665064769288207386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7756,7 +7719,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &1859802097489990612
 MonoBehaviour:
@@ -7821,7 +7784,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &3484069089738497807
 MonoBehaviour:
@@ -7886,7 +7849,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &5598946460686896094
 MonoBehaviour:
@@ -7951,7 +7914,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &6267815490491438797
 MonoBehaviour:
@@ -8028,7 +7991,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &6496955244492038421 stripped
 GameObject:
@@ -8107,7 +8070,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &439639244049255785
 MonoBehaviour:
@@ -8198,7 +8161,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &5975689362046738511
 MonoBehaviour:
@@ -8263,7 +8226,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &6695218487700474804
 MonoBehaviour:
@@ -8381,7 +8344,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &6855272986370745046
 MonoBehaviour:
@@ -8472,7 +8435,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &7010538474697632403
 MonoBehaviour:
@@ -8537,7 +8500,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &184965483807559698
 MonoBehaviour:
@@ -8614,7 +8577,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &7049011134687619318 stripped
 GameObject:
@@ -8667,7 +8630,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &7596082551280814270
 MonoBehaviour:
@@ -8732,7 +8695,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &8249367362700252377
 MonoBehaviour:
@@ -8797,7 +8760,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &6101926352570830918
 MonoBehaviour:
@@ -8862,7 +8825,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &3321705738281936973
 MonoBehaviour:
@@ -8927,7 +8890,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &8587051713205086716
 MonoBehaviour:
@@ -8992,7 +8955,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &8701015320294226369
 MonoBehaviour:
@@ -9110,7 +9073,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &7024169728144581569
 MonoBehaviour:
@@ -9175,7 +9138,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &2409606704565210227
 MonoBehaviour:
@@ -9266,7 +9229,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &3776780552004003451
 MonoBehaviour:
@@ -9353,7 +9316,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &3244018211571718900
 MonoBehaviour:
@@ -9444,7 +9407,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &1557961064184628373
 MonoBehaviour:
@@ -9509,7 +9472,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &5908840377649155653
 MonoBehaviour:
@@ -9586,7 +9549,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &8051852050608306666 stripped
 GameObject:
@@ -9639,7 +9602,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &7291795627471565930
 MonoBehaviour:
@@ -9731,7 +9694,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &5653346331552220654
 MonoBehaviour:
@@ -9796,7 +9759,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &2157332187471092922
 MonoBehaviour:
@@ -9861,7 +9824,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &544167322188461754
 MonoBehaviour:
@@ -9995,7 +9958,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &2649267777165435790
 MonoBehaviour:
@@ -10035,18 +9998,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 25.49948, y: 32.48129, z: 5.9878535}
   m_Center: {x: 0.000030517578, y: 0.0000076293945, z: 0}
---- !u!114 &2466258464379288869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8316236629258520992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b009bee6dfc137b438c669521c728107, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &7022606034896854936
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10072,7 +10023,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &6203154373627334267
 MonoBehaviour:
@@ -10269,7 +10220,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &2753187582305590667
 MonoBehaviour:
@@ -10334,7 +10285,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &1946314993040281292
 MonoBehaviour:
@@ -10399,7 +10350,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &5437590022642288084
 MonoBehaviour:
@@ -10490,7 +10441,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!114 &3286713427323516785
 MonoBehaviour:

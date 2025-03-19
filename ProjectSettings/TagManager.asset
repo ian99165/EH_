@@ -15,6 +15,8 @@ TagManager:
   - Pages
   - Layd
   - UI_Item
+  - lock
+  - UI_Object
   layers:
   - Default
   - TransparentFX

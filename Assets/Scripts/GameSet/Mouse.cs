@@ -84,6 +84,15 @@ public class Mouse : MonoBehaviour
                 Debug.Log("丟棄");
                 inventory.DropItem(hit.collider.gameObject);
             }
+            else if (hit.collider.CompareTag("UI_Object"))
+            {
+                
+                var lockInteraction = hit.collider.GetComponent<LockInteraction>();
+                if (lockInteraction != null)
+                {
+                    lockInteraction.Interact_Devices();
+                }
+            }
         }
     }
 

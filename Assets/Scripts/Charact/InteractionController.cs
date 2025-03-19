@@ -11,7 +11,7 @@ public class InteractionController : MonoBehaviour
     [SerializeField] private LayerMask _layerMask;
     
     [Header("Throw Setting")]
-    [SerializeField]private Transform _target;
+    [SerializeField] private Transform _target;
 
     public bool IsPickup { get; set; }
     
@@ -22,25 +22,64 @@ public class InteractionController : MonoBehaviour
 
     private void Throw()
     {
+        if (_item == null) return;
+
+        Rigidbody rb = _item.GetComponent<Rigidbody>();
+        Collider[] colliders = _item.GetComponentsInChildren<Collider>();
+
+        if (rb != null)
+        {
+            rb.isKinematic = false;
+            rb.useGravity = true;
+        }
+
+        foreach (var col in colliders)
+        {
+            col.isTrigger = false; // 讓所有碰撞體恢復物理效果
+        }
+
         _item.position = _target.position;
-        _item.GetComponent<Rigidbody>().useGravity = true;
         _item.gameObject.SetActive(true);
         _item = null;
     }
 
+
+
     private void Dropoff()
     {
-        _item.GetComponent<Rigidbody>().useGravity = true;
+        if (_item == null) return;
+
+        Rigidbody rb = _item.GetComponent<Rigidbody>();
+        Collider[] colliders = _item.GetComponentsInChildren<Collider>(); // 取得所有 Collider
+
+        if (rb != null)
+        {
+            rb.isKinematic = false;
+            rb.useGravity = true;
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+
+        foreach (var col in colliders)
+        {
+            col.isTrigger = false; // 關閉 isTrigger，恢復物理碰撞
+        }
+
         _item = null;
     }
 
+
     private void FixedUpdate()
     {
-        float moveSpeed = 10f;
         if (_item != null)
         {
-            Vector3 newPos = Vector3.Lerp(_item.position, _target.position,Time.fixedDeltaTime * moveSpeed);
-            _item.GetComponent<Rigidbody>().MovePosition(newPos);
+            Rigidbody rb = _item.GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                rb.isKinematic = true;
+                Vector3 newPos = Vector3.Lerp(_item.position, _target.position, Time.fixedDeltaTime * 10f);
+                rb.MovePosition(newPos);
+            }
         }
     }
 
@@ -49,24 +88,45 @@ public class InteractionController : MonoBehaviour
         _origin = transform.position;
         _direction = transform.forward;
 
-        if(!IsPickup && _item != null) Dropoff();
-        
-        if (_item != null) return;
-        if (Physics.SphereCast(_origin, _visionRadius, _direction, out _hit, _maxDistance, _layerMask))
+        if (!IsPickup && _item != null)
+        {
+            Dropoff();
+        }
+
+        if (_item == null && Physics.SphereCast(_origin, _visionRadius, _direction, out _hit, _maxDistance, _layerMask))
         {
             if (_hit.transform.TryGetComponent(out IInteractable item) && IsPickup)
             {
                 _item = _hit.transform;
+                Rigidbody rb = _item.GetComponent<Rigidbody>();
+                Collider[] colliders = _item.GetComponentsInChildren<Collider>(); // 遍歷所有碰撞體
+
+                if (rb != null)
+                {
+                    rb.isKinematic = true; // 讓物品不受物理影響
+                }
+
+                foreach (var col in colliders)
+                {
+                    col.isTrigger = true; // 讓所有碰撞體變成觸發器，不影響玩家
+                }
+
                 item.Interact();
             }
         }
     }
     
-    //debug
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawRay(_origin, _direction * _hit.distance);
-        Gizmos.DrawWireSphere(_origin + _direction * _hit.distance , _visionRadius);
+        if (_hit.collider != null)
+        {
+            Gizmos.DrawRay(_origin, _direction * _hit.distance);
+            Gizmos.DrawWireSphere(_origin + _direction * _hit.distance, _visionRadius);
+        }
+        else
+        {
+            Gizmos.DrawRay(_origin, _direction * _maxDistance);
+        }
     }
 }

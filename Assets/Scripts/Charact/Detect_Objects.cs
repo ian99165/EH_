@@ -42,10 +42,6 @@ public class Detect_Objects : MonoBehaviour
                 {
                     transferScript.OnExitView(teleportChance);
                 }
-                else
-                {
-                    Debug.Log($"物件 {collider.name} 不包含 Object_Transfer 腳本");
-                }
             }
         }
     }

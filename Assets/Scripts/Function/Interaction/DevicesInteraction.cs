@@ -88,37 +88,7 @@ public class DevicesInteraction : MonoBehaviour
             _open = false;
         }
     }
-
-    public IEnumerator Move_Down() 
-    {
-        if (!_open)
-        {
-            yield return StartCoroutine(Move(Vector3.down));
-            _open = true;
-            yield break;
-        }
-        if (_open)
-        {
-            yield return StartCoroutine(Move(Vector3.up));
-            _open = false;
-        }
-    }
-
-    public IEnumerator Move_Left() 
-    {
-        if (!_open)
-        {
-            yield return StartCoroutine(Move(Vector3.left));
-            _open = true;
-            yield break;
-        }
-        if (_open)
-        {
-            yield return StartCoroutine(Move(Vector3.right));
-            _open = false;
-        }
-    }
-
+    
     public IEnumerator Move_Right()
     {
         if (!_open)
@@ -145,21 +115,6 @@ public class DevicesInteraction : MonoBehaviour
         if (_open)
         {
             yield return StartCoroutine(Move(Vector3.back));
-            _open = false;
-        }
-    }
-
-    public IEnumerator Move_Back()
-    {
-        if (!_open)
-        {
-            yield return StartCoroutine(Move(Vector3.back));
-            _open = true;
-            yield break;
-        }
-        if (_open)
-        {
-            yield return StartCoroutine(Move(Vector3.forward));
             _open = false;
         }
     }
@@ -194,23 +149,6 @@ public class DevicesInteraction : MonoBehaviour
         }
     }
 
-    public IEnumerator Rotate_Left()
-    {
-        if (!_open)
-        {
-            Debug.Log("旋轉物件到左邊");
-            yield return StartCoroutine(Rotate(Vector3.up, -rotationSpeed * movementDuration)); // Y軸反向旋轉
-            _open = true;
-            yield break;
-        }
-
-        if (_open)
-        {
-            yield return StartCoroutine(Rotate(Vector3.up, rotationSpeed * movementDuration)); // Y軸正向旋轉
-            _open = false;
-        }
-    }
-
     public IEnumerator Rotate_Right()
     {
         if (!_open)
@@ -240,22 +178,6 @@ public class DevicesInteraction : MonoBehaviour
         if (_open)
         {
             yield return StartCoroutine(Rotate(Vector3.right, rotationSpeed * movementDuration)); // X軸正向旋轉
-            _open = false;
-        }
-    }
-
-    public IEnumerator Rotate_Down()
-    {
-        if (!_open)
-        {
-            Debug.Log("旋轉物件到下面");
-            yield return StartCoroutine(Rotate(Vector3.right, rotationSpeed * movementDuration)); // X軸正向旋轉
-            _open = true;
-            yield break;
-        }
-        if (_open)
-        {
-            yield return StartCoroutine(Rotate(Vector3.right, -rotationSpeed * movementDuration)); // X軸反向旋轉
             _open = false;
         }
     }

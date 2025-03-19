@@ -5,25 +5,23 @@ using UnityEngine;
 public class RotatableObject : MonoBehaviour
 {
     public float rotationSpeed = 300f;
+    private Vector3 lastMousePosition;
 
     void Update()
     {
         RotateWithMouse();
-        RotateWithJoystick();
+        RotateWithArrowKeys(); // 方向鍵旋轉
     }
-    private Vector3 lastMousePosition;
 
-    public void RotateWithMouse()//滑鼠旋轉物件
+    public void RotateWithMouse() // 滑鼠旋轉物件
     {
-        if (gameObject.CompareTag("UI_Object"))
+        if (gameObject.CompareTag("Item"))
         {
-            // 檢測滑鼠按下事件
             if (Input.GetMouseButtonDown(0))
             {
                 lastMousePosition = Input.mousePosition;
             }
 
-            // 檢測滑鼠拖動事件
             if (Input.GetMouseButton(0))
             {
                 Vector3 delta = Input.mousePosition - lastMousePosition;
@@ -38,34 +36,36 @@ public class RotatableObject : MonoBehaviour
         }
     }
 
-    public void RotateWithJoystick()//搖桿旋轉物件
+    public void RotateWithArrowKeys() // 方向鍵旋轉物件
     {
-        if (gameObject.CompareTag("UI_Object"))
+        if (gameObject.CompareTag("Item"))
         {
-            float joystickX = Input.GetAxis("Horizontal");
-            float joystickY = Input.GetAxis("Vertical");
+            float rotationX = 0f;
+            float rotationY = 0f;
 
-            float rotationX = joystickX * rotationSpeed * Time.deltaTime;
-            float rotationY = joystickY * rotationSpeed * Time.deltaTime;
+            // 左右鍵旋轉 Y 軸
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                rotationX = -rotationSpeed * Time.deltaTime;
+            }
+            else if (Input.GetKey(KeyCode.RightArrow))
+            {
+                rotationX = rotationSpeed * Time.deltaTime;
+            }
 
-            transform.Rotate(Vector3.up, -rotationX, Space.World);
+            // 上下鍵旋轉 X 軸
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                rotationY = rotationSpeed * Time.deltaTime;
+            }
+            else if (Input.GetKey(KeyCode.DownArrow))
+            {
+                rotationY = -rotationSpeed * Time.deltaTime;
+            }
+
+            // 套用旋轉
+            transform.Rotate(Vector3.up, rotationX, Space.World);
             transform.Rotate(Vector3.right, rotationY, Space.World);
         }
     }
 }
-
-/*if (gameObject.CompareTag("UI_Meun"))
-{
-    Debug.Log("UI_Meun");
-}
-
-if (gameObject.CompareTag("UI_Button"))
-{
-    Debug.Log("UI_Button");
-}
-
-if (gameObject.CompareTag("UI_Object"))
-{
-    var rotatableObject = GetComponent<RotatableObject>();
-    //開關RotatableObject
-}*/

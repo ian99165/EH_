@@ -3,7 +3,7 @@ using UnityEngine;
 public class Object_Transfer : MonoBehaviour
 {
     [Header("移動範圍設定")]
-    public Vector3 teleportRange = new Vector3(5f, 0f, 5f); // 隨機移動範圍
+    public Vector3 teleportRange = new Vector3(0.1f, 0f, 0.1f); // 隨機移動範圍
 
     [Header("隱藏功能設定")]
     [Range(0f, 1f)] public float hideChance = 0.05f; // 隱藏機率
