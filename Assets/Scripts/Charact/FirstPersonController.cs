@@ -35,11 +35,11 @@ public class FirstPersonController : MonoBehaviour
     
     // Gravity Settings
     private PlayerControls controls;
-    private bool _lock;
-    private bool _menu;
-    private bool _talk;
-    private bool _item;
-    private bool _view;
+    public bool _lock;
+    public bool _menu;
+    public bool _talk;
+    public bool _item;
+    public bool _view;
 
     private Vector3 velocity; // 角色速度
     private float gravity = -9.81f; // 重力加速度
@@ -71,6 +71,7 @@ public class FirstPersonController : MonoBehaviour
         _talk = false;
         _lock = false;
         _item = false;
+        _view = false;
         
         controller = GetComponent<CharacterController>();
         
@@ -234,6 +235,24 @@ public class FirstPersonController : MonoBehaviour
             _mousestate.MouseMode_I();
             Lv1.SetActive(false);
         }
+        
+        if (_view)
+        {
+            _mousestate.MouseMode_I();
+            _item = true;
+            _view = false;
+            CanMove();
+
+            // **禁用當前拾取物件的 RotatableObject 腳本**
+            if (currentPickedObject != null)
+            {
+                var rotatable = currentPickedObject.GetComponent<RotatableObject>();
+                if (rotatable != null)
+                {
+                    rotatable.enabled = false;
+                }
+            }
+        }
     }
 
     private void OnEnable()
@@ -248,7 +267,7 @@ public class FirstPersonController : MonoBehaviour
 
     private void UpdateCursor()
     {
-        if (_view)
+        if (!_view)
         {
             if (!_item)
             {
@@ -283,39 +302,23 @@ public class FirstPersonController : MonoBehaviour
     
     private void View()
     {
-        if (_item)
+        if(!_menu)
         {
-            _mousestate.MouseMode_II();
-            _item = false;
-            _view = true;
-            CantMove();
-
-            // **啟用當前拾取物件的 RotatableObject 腳本**
-            if (currentPickedObject != null)
+            if (_item)
             {
-                var rotatable = currentPickedObject.GetComponent<RotatableObject>();
-                if (rotatable != null)
-                {
-                    rotatable.enabled = true;
-                }
-            }
-            return;
-        }
+                _mousestate.MouseMode_II();
+                _item = false;
+                _view = true;
+                CantMove();
 
-        if (_view)
-        {
-            _mousestate.MouseMode_I();
-            _item = true;
-            _view = false;
-            CanMove();
-
-            // **禁用當前拾取物件的 RotatableObject 腳本**
-            if (currentPickedObject != null)
-            {
-                var rotatable = currentPickedObject.GetComponent<RotatableObject>();
-                if (rotatable != null)
+                // **啟用當前拾取物件的 RotatableObject 腳本**
+                if (currentPickedObject != null)
                 {
-                    rotatable.enabled = false;
+                    var rotatable = currentPickedObject.GetComponent<RotatableObject>();
+                    if (rotatable != null)
+                    {
+                        rotatable.enabled = true;
+                    }
                 }
             }
         }
