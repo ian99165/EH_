@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1001 &59841562
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -422,6 +423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1001 &200031834
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -515,6 +517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!4 &240812053 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1897006564164771204, guid: 9ab76a1f5044573418312924c5e13e55, type: 3}
@@ -581,6 +584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1001 &298304262
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -791,6 +795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1 &361197963 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8337414834942662891, guid: 03a065d4b1dd0f4458cae654df18acbb, type: 3}
@@ -852,6 +857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1001 &366834817
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1028,6 +1034,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1 &418830820 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 755249138797245859, guid: ea728e79e93fb6347b432de81614d8f8, type: 3}
@@ -1176,6 +1183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!4 &449429074 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1897006564164771204, guid: 9ab76a1f5044573418312924c5e13e55, type: 3}
@@ -1214,6 +1222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1 &510316766 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 126260687538114777, guid: 03a065d4b1dd0f4458cae654df18acbb, type: 3}
@@ -1280,6 +1289,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1001 &522949905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1370,6 +1380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1001 &601709625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1555,6 +1566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1 &619718540 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7291338043037025703, guid: 03a065d4b1dd0f4458cae654df18acbb, type: 3}
@@ -1573,6 +1585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1001 &631581376
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1989,6 +2002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1 &802541738
 GameObject:
   m_ObjectHideFlags: 0
@@ -2129,6 +2143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1 &859986316 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2947842313256347150, guid: 03a065d4b1dd0f4458cae654df18acbb, type: 3}
@@ -2162,6 +2177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1 &882208961 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3519564078727250534, guid: 03a065d4b1dd0f4458cae654df18acbb, type: 3}
@@ -2180,6 +2196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1 &896644468 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4068065246843992676, guid: 03a065d4b1dd0f4458cae654df18acbb, type: 3}
@@ -2213,6 +2230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1001 &922958563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2456,6 +2474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1 &1021932230 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4431071361016394251, guid: 03a065d4b1dd0f4458cae654df18acbb, type: 3}
@@ -2474,6 +2493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1 &1025727068
 GameObject:
   m_ObjectHideFlags: 1
@@ -2804,6 +2824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1 &1158087248 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8305166713152294689, guid: 03a065d4b1dd0f4458cae654df18acbb, type: 3}
@@ -2822,6 +2843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1 &1165418037 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4978850358570794708, guid: 03a065d4b1dd0f4458cae654df18acbb, type: 3}
@@ -2840,6 +2862,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1 &1166154249
 GameObject:
   m_ObjectHideFlags: 0
@@ -2904,6 +2927,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1001 &1175836085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2992,6 +3016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1 &1200420436 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4717324477510862562, guid: 03a065d4b1dd0f4458cae654df18acbb, type: 3}
@@ -3010,6 +3035,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1001 &1209187385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3409,6 +3435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1 &1423339251 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7853352456399406376, guid: 03a065d4b1dd0f4458cae654df18acbb, type: 3}
@@ -3447,6 +3474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!4 &1465863137 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1897006564164771204, guid: 9ab76a1f5044573418312924c5e13e55, type: 3}
@@ -3470,6 +3498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1001 &1467400069
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3601,6 +3630,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1 &1508376195 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8634586316225075870, guid: 03a065d4b1dd0f4458cae654df18acbb, type: 3}
@@ -3619,6 +3649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1 &1530856879 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3293920759051513808, guid: 03a065d4b1dd0f4458cae654df18acbb, type: 3}
@@ -3652,6 +3683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1001 &1547891024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3797,6 +3829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1 &1668777741 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3955780160676816101, guid: 03a065d4b1dd0f4458cae654df18acbb, type: 3}
@@ -3836,6 +3869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1 &1683327587 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6719066789402337209, guid: 03a065d4b1dd0f4458cae654df18acbb, type: 3}
@@ -3854,6 +3888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1 &1691969700 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919685514320860445, guid: 3da89e9b4c31cb04a9fb0e7f52c0654d, type: 3}
@@ -3913,6 +3948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1001 &1752042194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4003,6 +4039,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1001 &1762154955
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4405,6 +4442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1001 &1826770023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4672,6 +4710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1 &1874829077
 GameObject:
   m_ObjectHideFlags: 0
@@ -4887,6 +4926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1 &1993589529 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 533392883901321863, guid: 03a065d4b1dd0f4458cae654df18acbb, type: 3}
@@ -4905,6 +4945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!4 &2024071647 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1897006564164771204, guid: 9ab76a1f5044573418312924c5e13e55, type: 3}
@@ -4928,6 +4969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1 &2077244709 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 274331274017805051, guid: 03a065d4b1dd0f4458cae654df18acbb, type: 3}
@@ -5004,6 +5046,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1 &2097373589 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3296307073788935474, guid: 03a065d4b1dd0f4458cae654df18acbb, type: 3}
@@ -5022,6 +5065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1001 &2101098047
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5305,6 +5349,10 @@ PrefabInstance:
     - target: {fileID: 5310758129093795973, guid: 03a065d4b1dd0f4458cae654df18acbb, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5950236216311164662, guid: 03a065d4b1dd0f4458cae654df18acbb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6496955244492038421, guid: 03a065d4b1dd0f4458cae654df18acbb, type: 3}
       propertyPath: m_TagString
@@ -5754,6 +5802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 300
+  mouseSpeed: 100
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
