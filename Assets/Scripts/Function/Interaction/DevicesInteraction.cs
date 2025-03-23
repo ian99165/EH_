@@ -184,4 +184,9 @@ public class DevicesInteraction : MonoBehaviour
             _open = false;
         }
     }
+    
+    public void Unlock()
+    {
+        _lockUp = false;
+    }
 }
