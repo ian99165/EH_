@@ -4,38 +4,44 @@ using UnityEngine;
 
 public class DevicesInteraction : MonoBehaviour
 {
-    public string Name = "Name";
-    
-    public void Interact_Devices()
-    {
-        switch (Name)
-        {
-            case "M_u" :
-                StartCoroutine(Move_Up());
-                break;
-            case "M_p" :
-                StartCoroutine(Move_Forward());
-                break;
-            case "M_r" :
-                StartCoroutine(Move_Right());
-                break;
-            case "R_u":
-                StartCoroutine(Rotate_Up());
-                break;
-            case "R_r":
-                StartCoroutine(Rotate_Right());
-                break;
-            default:
-                Debug.Log("No thing");
-                break;
-        }
-    }
-    
-    //移動
-    public float speed = 1f;
-    public float movementDuration = 3f; // 可控變數，默認為3秒
     private bool _can_move;
     private bool _open;
+    public bool _lockUp;
+    public string Name = "Name";
+    [Header("秒數")]
+    public float movementDuration = 3f; // 可控變數，默認為3秒
+    [Header("移動速度")]
+    public float speed = 1f;
+    [Header("旋轉速度")]
+    public float rotationSpeed = 45f; // 每秒旋轉的角度
+
+    public void Interact_Devices()
+    {
+        if (!_lockUp)
+        {
+            switch (Name)
+            {
+                case "M_u": //變數 正數上移 負數下移
+                    StartCoroutine(Move_Up());
+                    break;
+                case "M_p": //變數 正數推 負數拉
+                    StartCoroutine(Move_Forward());
+                    break;
+                case "M_r": //變數 正數右移 負數左移
+                    StartCoroutine(Move_Right());
+                    break;
+                case "R_u": //變數 正數轉上 負數轉下
+                    StartCoroutine(Rotate_Up());
+                    break;
+                case "R_r": //變數 正數轉右 負數轉左
+                    StartCoroutine(Rotate_Right());
+                    break;
+                default:
+                    Debug.Log("No thing");
+                    break;
+            }
+        }
+    }
 
     private void Start()
     {
@@ -118,9 +124,6 @@ public class DevicesInteraction : MonoBehaviour
             _open = false;
         }
     }
-    
-    //旋轉
-    public float rotationSpeed = 45f; // 每秒旋轉的角度
 
     private IEnumerator Rotate(Vector3 rotationAxis, float angle)
     {

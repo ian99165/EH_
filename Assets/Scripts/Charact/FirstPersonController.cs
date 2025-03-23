@@ -63,6 +63,8 @@ public class FirstPersonController : MonoBehaviour
         
         _interactionController = _mainCamera.GetComponent<InteractionController> ();
         _mousestate = mouseState.GetComponent<MouseState>();
+        
+        
     }
 
     private void Start()

@@ -14,7 +14,7 @@ public class Mouse : MonoBehaviour
 
     private enum InputMode { _key_mod, _joy_mod }
     
-    private Inventory inventory;
+    public Inventory inventory;
 
     private void Awake()
     {
@@ -26,11 +26,11 @@ public class Mouse : MonoBehaviour
 
     private void Start()
     {
-        inventory = FindObjectOfType<Inventory>();
         if (inventory == null)
         {
             Debug.LogError("找不到 Inventory 物件");
         }
+        
         cursorPos = new Vector2(Screen.width / 2f, Screen.height / 2f);
         UpdateCursorPos();
     }
