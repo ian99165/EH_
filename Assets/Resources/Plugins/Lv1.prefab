@@ -119,6 +119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: R_r
+  Number: 2
+  lockPassword: {fileID: 3429639051546066495}
   speed: 1
   movementDuration: 1
   rotationSpeed: 45
@@ -241,6 +243,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: R_r
+  Number: 4
+  lockPassword: {fileID: 3429639051546066495}
   speed: 1
   movementDuration: 1
   rotationSpeed: 45
@@ -352,6 +356,8 @@ MonoBehaviour:
   _three_a: 0
   _four_a: 0
   _five_a: 0
+  minValue: 0
+  maxValue: 9
 --- !u!1 &6272837109979921531
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,6 +560,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: R_r
+  Number: 3
+  lockPassword: {fileID: 3429639051546066495}
   speed: 1
   movementDuration: 1
   rotationSpeed: 45
@@ -676,6 +684,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: R_r
+  Number: 1
+  lockPassword: {fileID: 3429639051546066495}
   speed: 1
   movementDuration: 1
   rotationSpeed: 45

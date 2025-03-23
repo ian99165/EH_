@@ -1,9 +1,9 @@
 using UnityEngine;
 
-public class password : MonoBehaviour
+public class LockPassword : MonoBehaviour
 {
     public string Name = "Name";
-    public GameObject objectWithScript; // 將 object 改為 GameObject，方便存取其組件
+    public GameObject objectWithScript;
 
     public int _one_a;
     public int _two_a;
@@ -11,13 +11,47 @@ public class password : MonoBehaviour
     public int _four_a;
     public int _five_a;
 
-    private int _one;
-    private int _two;
-    private int _three;
-    private int _four;
-    private int _five;
+    public int _one;
+    public int _two;
+    public int _three;
+    public int _four;
+    public int _five;
 
-    private DevicesInteraction devicesInteraction; // 存取 DevicesInteraction 腳本的變數
+    private DevicesInteraction devicesInteraction;
+
+    // 新增的最大最小值設定
+    public int minValue = 0;
+    public int maxValue = 9;
+
+    public int One
+    {
+        get { return _one; }
+        set { _one = Mathf.Clamp(value, minValue, maxValue); } // 設定範圍
+    }
+
+    public int Two
+    {
+        get { return _two; }
+        set { _two = Mathf.Clamp(value, minValue, maxValue); } // 設定範圍
+    }
+
+    public int Three
+    {
+        get { return _three; }
+        set { _three = Mathf.Clamp(value, minValue, maxValue); } // 設定範圍
+    }
+
+    public int Four
+    {
+        get { return _four; }
+        set { _four = Mathf.Clamp(value, minValue, maxValue); } // 設定範圍
+    }
+
+    public int Five
+    {
+        get { return _five; }
+        set { _five = Mathf.Clamp(value, minValue, maxValue); } // 設定範圍
+    }
 
     public void Start()
     {
@@ -27,7 +61,6 @@ public class password : MonoBehaviour
         _four = 0;
         _five = 0;
 
-        // 嘗試從 objectWithScript 取得 DevicesInteraction 腳本
         if (objectWithScript != null)
         {
             devicesInteraction = objectWithScript.GetComponent<DevicesInteraction>();
@@ -40,11 +73,6 @@ public class password : MonoBehaviour
         {
             Debug.LogWarning("objectWithScript 尚未設定！");
         }
-    }
-
-    public void Update()
-    {
-        inspection();
     }
 
     public void inspection()
@@ -70,11 +98,9 @@ public class password : MonoBehaviour
                 break;
         }
 
-        // 當條件符合時，執行 Interact_Devices 方法
         if (conditionMet && devicesInteraction != null)
         {
             devicesInteraction.Unlock();
-            //devicesInteraction.Interact_Devices();
         }
     }
 }
