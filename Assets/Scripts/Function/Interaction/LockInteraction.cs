@@ -6,35 +6,42 @@ public class LockInteraction : MonoBehaviour
     public string Name = "Name";
     public string Number = "Number";
     public LockPassword lockPassword;
-
-    // 移動變數
-    public float speed = 1f;
-    public float movementDuration = 3f;
+    
     private bool _can_move;
 
-    // 旋轉變數
+    private bool _isInteracting = false;
+    
+    public FirstPersonController _playerController;
+    
+    [Header("秒數")]
+    public float movementDuration = 3f;
+    [Header("移動速度")]
+    public float speed = 1f;
+    [Header("旋轉速度")]
     public float rotationSpeed = 45f;
-
-    // 按鈕交互
-    private bool _isInteracting = false;  // 用來防止在進行動作時再次點擊
 
     private void Start()
     {
         _can_move = true;
+        
+        _playerController = FindObjectOfType<FirstPersonController>();
     }
 
-    // **互動動作完成後才執行檢查**
     public void Interact_Devices()
     {
-        // 確保在動作完成前不再觸發
         if (_isInteracting) return;
+        
+        if (_playerController != null)
+        {
+            _playerController.SetInteractLock(true); // 鎖住互動
+        }
         
         StartCoroutine(PerformInteraction());
     }
 
     private IEnumerator PerformInteraction()
     {
-        _isInteracting = true; // 設置為正在交互，防止重複點擊
+        _isInteracting = true;
 
         switch (Name)
         {
@@ -63,16 +70,19 @@ public class LockInteraction : MonoBehaviour
                 yield break;
         }
 
-        // **互動動作結束後執行檢查**
         if (lockPassword != null)
         {
             lockPassword.inspection();
         }
 
-        _isInteracting = false; // 動作完成，允許再次點擊
+        _isInteracting = false;
+
+        if (_playerController != null)
+        {
+            _playerController.SetInteractLock(false); // 解鎖互動
+        }
     }
 
-    // **移動函數**
     private IEnumerator Move(Vector3 direction)
     {
         if (_can_move)
@@ -154,7 +164,7 @@ public class LockInteraction : MonoBehaviour
         value++;
         if (value > maxValue)
         {
-            value = 0;  // 超過最大值時重置
+            value = 0;
         }
         return value;
     }

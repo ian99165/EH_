@@ -86,7 +86,7 @@ public class Mouse : MonoBehaviour
             }
             else if (hit.collider.CompareTag("UI_Object"))
             {
-                
+                Debug.Log("轉動");
                 var lockInteraction = hit.collider.GetComponent<LockInteraction>();
                 if (lockInteraction != null)
                 {

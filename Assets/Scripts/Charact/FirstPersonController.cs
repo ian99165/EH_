@@ -35,11 +35,12 @@ public class FirstPersonController : MonoBehaviour
     
     // Gravity Settings
     private PlayerControls controls;
-    public bool _lock;
-    public bool _menu;
-    public bool _talk;
-    public bool _item;
-    public bool _view;
+    private bool _lock;
+    private bool _menu;
+    private bool _talk;
+    private bool _item;
+    private bool _view;
+    private bool _interactLock;
 
     private Vector3 velocity; // 角色速度
     private float gravity = -9.81f; // 重力加速度
@@ -50,6 +51,11 @@ public class FirstPersonController : MonoBehaviour
     
     public Inventory inventory;
     private GameObject currentPickedObject;
+    
+    public void SetInteractLock(bool state)
+    {
+        _interactLock = state;
+    }
 
     private void Awake()
     {
@@ -208,6 +214,7 @@ public class FirstPersonController : MonoBehaviour
 
     public void OnMenu(InputValue value)
     {
+        if(_interactLock) return;
         if (!_lock)
         {
             if (!_talk)
@@ -215,7 +222,6 @@ public class FirstPersonController : MonoBehaviour
                 if (!_menu)
                 {
                     _menu = true;
-                    //Debug.Log("呼叫選單");
                     _mousestate.MouseMode_II();
                     menubook.SetActive(true);
                     return;
@@ -223,7 +229,6 @@ public class FirstPersonController : MonoBehaviour
                 else
                 {
                     _menu = false;
-                    //Debug.Log("關閉選單");
                     _mousestate.MouseMode_I();
                     menubook.SetActive(false);
                     return;
@@ -236,6 +241,16 @@ public class FirstPersonController : MonoBehaviour
             CanMove();
             _mousestate.MouseMode_I();
             Lv1.SetActive(false);
+
+            GameObject lockObject = GameObject.Find("lock");
+            if (lockObject != null)
+            {
+                var rotatable = lockObject.GetComponent<RotatableObject>();
+                if (rotatable != null)
+                {
+                    rotatable.enabled = true;
+                }
+            }
         }
         
         if (_view)
