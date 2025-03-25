@@ -2,14 +2,15 @@ using UnityEngine;
 
 public class LockPassword : MonoBehaviour
 {
-    public string Name = "Name";
+    [Header("解鎖物件")]
     public GameObject objectWithScript;
 
-    public int _one_a;
-    public int _two_a;
-    public int _three_a;
-    public int _four_a;
-    public int _five_a;
+    [Header("密碼")]
+    public int one;
+    public int two;
+    public int three;
+    public int four;
+    public int five;
 
     private int _one;
     private int _two;
@@ -19,38 +20,37 @@ public class LockPassword : MonoBehaviour
 
     private DevicesInteraction devicesInteraction;
 
-    // 新增的最大最小值設定
     public int minValue = 0;
     public int maxValue = 9;
 
     public int One
     {
         get { return _one; }
-        set { _one = Mathf.Clamp(value, minValue, maxValue); } // 設定範圍
+        set { _one = Mathf.Clamp(value, minValue, maxValue); }
     }
 
     public int Two
     {
         get { return _two; }
-        set { _two = Mathf.Clamp(value, minValue, maxValue); } // 設定範圍
+        set { _two = Mathf.Clamp(value, minValue, maxValue); }
     }
 
     public int Three
     {
         get { return _three; }
-        set { _three = Mathf.Clamp(value, minValue, maxValue); } // 設定範圍
+        set { _three = Mathf.Clamp(value, minValue, maxValue); }
     }
 
     public int Four
     {
         get { return _four; }
-        set { _four = Mathf.Clamp(value, minValue, maxValue); } // 設定範圍
+        set { _four = Mathf.Clamp(value, minValue, maxValue); }
     }
 
     public int Five
     {
         get { return _five; }
-        set { _five = Mathf.Clamp(value, minValue, maxValue); } // 設定範圍
+        set { _five = Mathf.Clamp(value, minValue, maxValue); }
     }
 
     public void Start()
@@ -78,25 +78,7 @@ public class LockPassword : MonoBehaviour
     public void inspection()
     {
         bool conditionMet = false;
-
-        switch (Name)
-        {
-            case "1":
-                conditionMet = (_one == _one_a);
-                break;
-            case "2":
-                conditionMet = (_one == _one_a && _two == _two_a);
-                break;
-            case "3":
-                conditionMet = (_one == _one_a && _two == _two_a && _three == _three_a);
-                break;
-            case "4":
-                conditionMet = (_one == _one_a && _two == _two_a && _three == _three_a && _four == _four_a);
-                break;
-            case "5":
-                conditionMet = (_one == _one_a && _two == _two_a && _three == _three_a && _four == _four_a && _five == _five_a);
-                break;
-        }
+        conditionMet = (_one == one && _two == two && three == _three && four == _four && _five == five);
 
         if (conditionMet && devicesInteraction != null)
         {
