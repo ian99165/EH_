@@ -5,6 +5,7 @@ using Fungus;
 
 public class NPCInteraction : MonoBehaviour
 {
+    public bool canInteract;
     public string Name = "Name";
     public int _talk;
     
@@ -12,6 +13,7 @@ public class NPCInteraction : MonoBehaviour
 
     public void Interact_NPC()
     {
+        if (!canInteract) return;
         switch (Name)
         {
             case "Doll" :
