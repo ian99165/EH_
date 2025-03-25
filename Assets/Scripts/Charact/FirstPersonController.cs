@@ -35,12 +35,12 @@ public class FirstPersonController : MonoBehaviour
     
     // Gravity Settings
     private PlayerControls controls;
-    private bool _lock;
-    private bool _menu;
-    private bool _talk;
-    private bool _item;
-    private bool _view;
-    private bool _interactLock;
+    public bool _lock;
+    public bool _menu;
+    public bool _talk;
+    public bool _item;
+    public bool _view;
+    public bool _interactLock;
 
     private Vector3 velocity; // 角色速度
     private float gravity = -9.81f; // 重力加速度
@@ -168,8 +168,6 @@ public class FirstPersonController : MonoBehaviour
                             if (npcInteractionScript != null)
                             {
                                 npcInteractionScript.Interact_NPC();
-                                _mousestate.MouseMode_II();
-                                _talk = true;
                             }
                             break;
                         case "Devices":
@@ -177,6 +175,13 @@ public class FirstPersonController : MonoBehaviour
                             if (devicesInteractionScript != null)
                             {
                                 devicesInteractionScript.Interact_Devices();
+                            }
+                            break;
+                        case "EleButton":
+                            var eleButton = hit.collider.GetComponent<EleButton>();
+                            if (eleButton != null)
+                            {
+                                eleButton.Interact_Devices();
                             }
                             break;
                         case "lock":
@@ -319,6 +324,24 @@ public class FirstPersonController : MonoBehaviour
     
     private void View()
     {
+        if (_view)
+        {
+            _mousestate.MouseMode_I();
+            _item = true;
+            _view = false;
+            CanMove();
+
+            // **禁用當前拾取物件的 RotatableObject 腳本**
+            if (currentPickedObject != null)
+            {
+                var rotatable = currentPickedObject.GetComponent<RotatableObject>();
+                if (rotatable != null)
+                {
+                    rotatable.enabled = false;
+                }
+            }
+            return;
+        }
         if(!_menu)
         {
             if (_item)
@@ -362,12 +385,20 @@ public class FirstPersonController : MonoBehaviour
                tag == "Devices" || tag == "Key" ||
                tag == "Door" || tag == "SavePoint"|| 
                tag == "Clockwork"|| tag == "Pages"|| 
-               tag == "lock"
+               tag == "lock" || tag == "EleButton";
                ;
     }
 
     public void TalkingSet()
     {
-        _talk = false;
+        if (!_talk)
+        {
+            _talk = true;
+            return;
+        }
+        else
+        {
+            _talk = false;
+        }
     }
 }
