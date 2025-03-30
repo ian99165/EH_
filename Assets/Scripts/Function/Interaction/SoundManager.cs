@@ -9,8 +9,10 @@ public class SoundManager : MonoBehaviour
     [Header("系統")]
     public AudioClip click;
     public AudioClip pickUp;
+    public AudioClip window;
     [Header("按鈕")]
-    public AudioClip pickDown;
+    public AudioClip buttonDown;
+    public AudioClip buttonUp;
     [Header("門")]
     public AudioClip lockDoor;
     public AudioClip openDoor;
@@ -19,11 +21,9 @@ public class SoundManager : MonoBehaviour
     public AudioClip lockCabinet;
     public AudioClip openCabinet;
     public AudioClip closeCabinet;
-    public AudioClip lockCabinetDrawer;
     public AudioClip openCabinetDrawer;
     public AudioClip closeCabinetDrawer;
     [Header("抽屜")]
-    public AudioClip lockDrawer;
     public AudioClip openDrawer;
     public AudioClip closeDrawer;
     

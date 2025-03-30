@@ -1440,10 +1440,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8561805388903483428, guid: a254f91418c7fa848baa54eaceac9618, type: 3}
+      propertyPath: m_Name
+      value: SoundManager
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8561805388903483428, guid: a254f91418c7fa848baa54eaceac9618, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1802824584}
   m_SourcePrefab: {fileID: 100100000, guid: a254f91418c7fa848baa54eaceac9618, type: 3}
 --- !u!1 &366834818 stripped
 GameObject:
@@ -7770,6 +7777,38 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4827101285503960077, guid: ef727d4f0b0fc3a409fa5b860f7bb820, type: 3}
+--- !u!1 &1802824581 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8561805388903483428, guid: a254f91418c7fa848baa54eaceac9618, type: 3}
+  m_PrefabInstance: {fileID: 366834817}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1802824584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802824581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 231860ec0d49f9940a991634d487e06a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  click: {fileID: 0}
+  pickUp: {fileID: 8300000, guid: f0dbfddf57f119f42b271bde9b1028c1, type: 3}
+  window: {fileID: 8300000, guid: 1fc2e555988556041817540d78f6df65, type: 3}
+  buttonDown: {fileID: 0}
+  buttonUp: {fileID: 0}
+  lockDoor: {fileID: 8300000, guid: e92fc2ba378063c4c9ea8bd5e1831f3f, type: 3}
+  openDoor: {fileID: 0}
+  closeDoor: {fileID: 0}
+  lockCabinet: {fileID: 0}
+  openCabinet: {fileID: 8300000, guid: 47c173e68d0e16e47a1af9ae5e13da99, type: 3}
+  closeCabinet: {fileID: 8300000, guid: baaf84e5e6931924999374db82ac0be2, type: 3}
+  openCabinetDrawer: {fileID: 8300000, guid: 9c085ff8131d4bc46abaa656136afe26, type: 3}
+  closeCabinetDrawer: {fileID: 8300000, guid: 7f4ec237e870c4a47a50c0082babf9a6, type: 3}
+  openDrawer: {fileID: 8300000, guid: f2f6c0364cef6b74eb608314dd15b0f9, type: 3}
+  closeDrawer: {fileID: 8300000, guid: b356239d1149c1f4a809f63beffdbec6, type: 3}
 --- !u!1001 &1822141390
 PrefabInstance:
   m_ObjectHideFlags: 0
