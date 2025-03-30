@@ -32,6 +32,7 @@ public class FirstPersonController : MonoBehaviour
 
     [Header("機關")]
     public GameObject Lv1;
+    public GameObject Lv2;
     
     // Gravity Settings
     private PlayerControls controls;
@@ -185,14 +186,25 @@ public class FirstPersonController : MonoBehaviour
                             }
                             break;
                         case "lock":
-                            CantMove();
-                            _mousestate.MouseMode_II();
+                            GameObject targetObj = null;
+
                             switch (hit.collider.gameObject.name)
                             {
-                                case "lock" :
-                                    Lv1.SetActive(true);
+                                case "Lv1":
+                                    targetObj = Lv1;
+                                    break;
+                                case "Lv2":
+                                    targetObj = Lv2;
                                     break;
                             }
+
+                            if (targetObj != null)
+                            {
+                                targetObj.SetActive(true);
+                                CantMove();
+                                _mousestate.MouseMode_II();
+                            }
+    
                             break;
                         case "Key":
                             inventory.AddItem("Key");
@@ -245,7 +257,7 @@ public class FirstPersonController : MonoBehaviour
         {
             CanMove();
             _mousestate.MouseMode_I();
-            Lv1.SetActive(false);
+            if (Lv1 != null) Lv1.SetActive(false);
 
             GameObject lockObject = GameObject.Find("lock");
             if (lockObject != null)
@@ -351,7 +363,7 @@ public class FirstPersonController : MonoBehaviour
                 _view = true;
                 CantMove();
 
-                // **啟用當前拾取物件的 RotatableObject 腳本**
+                // 啟用當前拾取物件的 RotatableObject 腳本
                 if (currentPickedObject != null)
                 {
                     var rotatable = currentPickedObject.GetComponent<RotatableObject>();
@@ -364,14 +376,14 @@ public class FirstPersonController : MonoBehaviour
         }
     }
 
-    private void CantMove()
+    public void CantMove()
     {
         _menu = true;
         _lock = true;
         _talk = true;
     }
 
-    private void CanMove()
+    public void CanMove()
     {
         _menu = false;
         _lock = false;

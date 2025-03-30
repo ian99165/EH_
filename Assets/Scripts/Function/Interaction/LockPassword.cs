@@ -3,7 +3,8 @@ using UnityEngine;
 public class LockPassword : MonoBehaviour
 {
     [Header("解鎖物件")]
-    public GameObject objectWithScript;
+    public GameObject Object1;
+    public GameObject Object2;
 
     [Header("密碼")]
     public int one;
@@ -19,9 +20,13 @@ public class LockPassword : MonoBehaviour
     private int _five;
 
     private DevicesInteraction devicesInteraction;
+    private SwitchState switchState;
 
     public int minValue = 0;
     public int maxValue = 9;
+    
+    public MouseState _mousestate;
+    public FirstPersonController _firstPersonController;
 
     public int One
     {
@@ -61,9 +66,17 @@ public class LockPassword : MonoBehaviour
         _four = 0;
         _five = 0;
 
-        if (objectWithScript != null)
+        if (Object1 != null)
         {
-            devicesInteraction = objectWithScript.GetComponent<DevicesInteraction>();
+            devicesInteraction = Object1.GetComponent<DevicesInteraction>();
+            if (devicesInteraction == null)
+            {
+                Debug.LogWarning("DevicesInteraction 腳本不存在於指定的物件上！");
+            }
+        }
+        if (Object2 != null)
+        {
+            switchState = Object2.GetComponent<SwitchState>();
             if (devicesInteraction == null)
             {
                 Debug.LogWarning("DevicesInteraction 腳本不存在於指定的物件上！");
@@ -71,7 +84,7 @@ public class LockPassword : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("objectWithScript 尚未設定！");
+            Debug.LogWarning("Object2 尚未設定！");
         }
     }
 
@@ -83,6 +96,10 @@ public class LockPassword : MonoBehaviour
         if (conditionMet && devicesInteraction != null)
         {
             devicesInteraction.Unlock();
+            switchState.switchState();
+            _mousestate.MouseMode_I();
+            _firstPersonController.CanMove();
+            Destroy(gameObject);
         }
     }
 }
