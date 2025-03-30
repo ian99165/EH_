@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,7 +22,7 @@ public class SwitchState : MonoBehaviour
         Rigidbody rb = GetComponent<Rigidbody>(); // 取得當前物件的 Rigidbody
         if (rb != null)
         {
-            rb.isKinematic = true; // 設定 Is Kinematic
+            rb.isKinematic = false; // 設定 Is Kinematic
         }
     }
 }
