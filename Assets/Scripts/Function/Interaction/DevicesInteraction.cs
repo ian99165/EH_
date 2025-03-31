@@ -1,192 +1,170 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DevicesInteraction : MonoBehaviour
 {
-    private bool _can_move;
-    private bool _open;
-    public bool _lockUp;
-    public string Name = "Name";
-    [Header("秒數")]
-    public float movementDuration = 3f; // 可控變數，默認為3秒
-    [Header("移動速度")]
-    public float speed = 1f;
-    [Header("旋轉速度")]
-    public float rotationSpeed = 45f; // 每秒旋轉的角度
+    // 物件狀態變數
+    private bool _canMove = true; // 是否可移動
+    private bool _isOpen = false; // 物件是否開啟
+    public bool _isLocked; // 是否鎖定
 
-    public void Interact_Devices()
-    {
-        if (!_lockUp)
-        {
-            switch (Name)
-            {
-                case "M_u": //變數 正數上移 負數下移
-                    StartCoroutine(Move_Up());
-                    break;
-                case "M_p": //變數 正數推 負數拉
-                    StartCoroutine(Move_Forward());
-                    break;
-                case "M_r": //變數 正數右移 負數左移
-                    StartCoroutine(Move_Right());
-                    break;
-                case "R_u": //變數 正數轉上 負數轉下
-                    StartCoroutine(Rotate_Up());
-                    break;
-                case "R_r": //變數 正數轉右 負數轉左
-                    StartCoroutine(Rotate_Right());
-                    break;
-                default:
-                    Debug.Log("No thing");
-                    break;
-            }
-        }
-    }
+    [Header("物件名稱")]
+    public string Name = "Name";  // 物件類型
+    public string ObjectName;     // 物件的名稱（用於音效）
+
+    [Header("控制參數")]
+    public float movementDuration = 3f;  // 移動持續時間
+    public float speed = 1f;             // 移動速度
+    public float rotationSpeed = 45f;    // 旋轉速度（每秒角度）
 
     private void Start()
     {
-        _can_move = true;
-        _open = false;
+        _canMove = true;
+        _isOpen = false;
     }
 
-    // 通用的移動函數
+    /// <summary>
+    /// 主要互動函數
+    /// </summary>
+    public void Interact_Devices()
+    {
+        PlayAudio();
+        if (_isLocked) return;
+
+        switch (Name)
+        {
+            case "M_u": StartCoroutine(ToggleMove(Vector3.up, Vector3.down)); break;
+            case "M_p": StartCoroutine(ToggleMove(Vector3.forward, Vector3.back)); break;
+            case "M_r": StartCoroutine(ToggleMove(Vector3.right, Vector3.left)); break;
+            case "R_u": StartCoroutine(ToggleRotate(Vector3.right)); break;
+            case "R_r": StartCoroutine(ToggleRotate(Vector3.up)); break;
+            default: Debug.Log("未定義的互動行為"); break;
+        }
+    }
+
+    /// <summary>
+    /// 切換移動狀態（開 → 關）
+    /// </summary>
+    private IEnumerator ToggleMove(Vector3 openDirection, Vector3 closeDirection)
+    {
+        if (_isOpen)
+        {
+            yield return Move(closeDirection);
+            _isOpen = false;
+        }
+        else
+        {
+            yield return Move(openDirection);
+            _isOpen = true;
+        }
+    }
+
+    /// <summary>
+    /// 通用的移動函數
+    /// </summary>
     private IEnumerator Move(Vector3 direction)
     {
-        if (_can_move)
+        if (!_canMove) yield break;
+        
+        _canMove = false;
+        Vector3 startPosition = transform.position;
+        Vector3 targetPosition = startPosition + direction * speed * movementDuration;
+
+        float elapsedTime = 0f;
+        while (elapsedTime < movementDuration)
         {
-            // 禁止再次移動
-            _can_move = false;
-
-            Debug.Log($"Move {direction}");
-
-            float elapsedTime = 0f;
-            Vector3 startPosition = transform.position;
-
-            // 移動到目標位置
-            while (elapsedTime < movementDuration)
-            {
-                transform.position = Vector3.Lerp(startPosition, startPosition + direction * speed * movementDuration,
-                    elapsedTime / movementDuration);
-                elapsedTime += Time.deltaTime;
-                yield return null;
-            }
-
-            // 確保到達精確的位置
-            transform.position = startPosition + direction * speed * movementDuration;
-
-            // 移動結束，允許再次移動
-            _can_move = true;
+            transform.position = Vector3.Lerp(startPosition, targetPosition, elapsedTime / movementDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
         }
+        transform.position = targetPosition;
+
+        _canMove = true;
     }
 
-    // 上下左右前後的移動，使用通用函數進行移動
-    public IEnumerator Move_Up() 
+    /// <summary>
+    /// 切換旋轉狀態（開 → 關）
+    /// </summary>
+    private IEnumerator ToggleRotate(Vector3 rotationAxis)
     {
-        if (!_open)
-        {
-            yield return StartCoroutine(Move(Vector3.up));
-            _open = true;
-            yield break;
-        }
-        if (_open)
-        {
-            yield return StartCoroutine(Move(Vector3.down));
-            _open = false;
-        }
+        float rotationAngle = _isOpen ? -rotationSpeed * movementDuration : rotationSpeed * movementDuration;
+        yield return Rotate(rotationAxis, rotationAngle);
+        _isOpen = !_isOpen;
     }
-    
-    public IEnumerator Move_Right()
+
+    /// <summary>
+    /// 通用的旋轉函數
+    /// </summary>
+    private IEnumerator Rotate(Vector3 axis, float angle)
     {
-        if (!_open)
+        if (!_canMove) yield break;
+
+        _canMove = false;
+        Quaternion startRotation = transform.rotation;
+        Quaternion targetRotation = startRotation * Quaternion.Euler(axis * angle);
+
+        float elapsedTime = 0f;
+        while (elapsedTime < movementDuration)
         {
-            yield return StartCoroutine(Move(Vector3.right));
-            _open = true;
-            yield break;
+            transform.rotation = Quaternion.Lerp(startRotation, targetRotation, elapsedTime / movementDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
         }
-        if (_open)
-        {
-            yield return StartCoroutine(Move(Vector3.left));
-            _open = false;
-        }
+        transform.rotation = targetRotation;
+
+        _canMove = true;
     }
 
-    public IEnumerator Move_Forward()
-    {
-        if (!_open)
-        {
-            yield return StartCoroutine(Move(Vector3.forward));
-            _open = true;
-            yield break;
-        }
-        if (_open)
-        {
-            yield return StartCoroutine(Move(Vector3.back));
-            _open = false;
-        }
-    }
-
-    private IEnumerator Rotate(Vector3 rotationAxis, float angle)
-    {
-        if (_can_move)
-        {
-            _can_move = false;
-
-            //Debug.Log($"Rotate {rotationAxis} by {angle} degrees");
-
-            float elapsedTime = 0f;
-            Quaternion startRotation = transform.rotation;
-
-            Quaternion targetRotation = startRotation * Quaternion.Euler(rotationAxis * angle);
-
-            while (elapsedTime < movementDuration)
-            {
-                float t = elapsedTime / movementDuration;
-                transform.rotation = Quaternion.Lerp(startRotation, targetRotation, t);
-                elapsedTime += Time.deltaTime;
-                yield return null;
-            }
-
-            transform.rotation = targetRotation;
-
-            _can_move = true;
-        }
-    }
-
-    public IEnumerator Rotate_Right()
-    {
-        if (!_open)
-        {
-            Debug.Log("旋轉物件到右邊");
-            yield return StartCoroutine(Rotate(Vector3.up, rotationSpeed * movementDuration)); // Y軸正向旋轉
-            _open = true;
-            yield break;
-        }
-
-        if (_open)
-        {
-            yield return StartCoroutine(Rotate(Vector3.up, -rotationSpeed * movementDuration)); // Y軸反向旋轉
-            _open = false;
-        }
-    }
-
-    public IEnumerator Rotate_Up()
-    {
-        if (!_open)
-        {
-            Debug.Log("旋轉物件到上面");
-            yield return StartCoroutine(Rotate(Vector3.right, -rotationSpeed * movementDuration)); // X軸反向旋轉
-            _open = true;
-            yield break;
-        }
-        if (_open)
-        {
-            yield return StartCoroutine(Rotate(Vector3.right, rotationSpeed * movementDuration)); // X軸正向旋轉
-            _open = false;
-        }
-    }
-    
+    /// <summary>
+    /// 解鎖物件，使其可互動
+    /// </summary>
     public void Unlock()
     {
-        _lockUp = false;
+        _isLocked = false;
+    }
+
+    /// <summary>
+    /// 播放對應音效
+    /// </summary>
+    private void PlayAudio()
+    {
+        if (SoundManager.Instance == null) return;
+
+        switch (ObjectName)
+        {
+            case "button":
+                SoundManager.Instance.PlaySound(SoundManager.Instance.button);
+                break;
+
+            case "Door":
+                if (_isLocked)
+                {
+                    SoundManager.Instance.PlaySound(SoundManager.Instance.lockDoor);
+                }
+                else
+                {
+                    SoundManager.Instance.PlaySound(_isOpen ? SoundManager.Instance.closeDoor : SoundManager.Instance.openDoor);
+                }
+                break;
+
+            case "Cabinet":
+                if (_isLocked)
+                {
+                    SoundManager.Instance.PlaySound(SoundManager.Instance.lockCabinet);
+                }
+                else
+                {
+                    SoundManager.Instance.PlaySound(_isOpen ? SoundManager.Instance.closeCabinet : SoundManager.Instance.openCabinet);
+                }
+                break;
+
+            case "CabinetDrawer":
+                SoundManager.Instance.PlaySound(_isOpen ? SoundManager.Instance.closeCabinetDrawer : SoundManager.Instance.openCabinetDrawer);
+                break;
+
+            case "Drawer":
+                SoundManager.Instance.PlaySound(_isOpen ? SoundManager.Instance.closeDrawer : SoundManager.Instance.openDrawer);
+                break;
+        }
     }
 }

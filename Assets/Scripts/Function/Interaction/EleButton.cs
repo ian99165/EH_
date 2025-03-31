@@ -38,7 +38,10 @@ public class EleButton : MonoBehaviour
         if (_can_move)
         {
             _can_move = false; // 禁止重複觸發
-
+            
+            
+            SoundManager.Instance.PlaySound(SoundManager.Instance.button);
+            
             Vector3 startPosition = transform.position;
             Vector3 targetPosition = startPosition + direction * speed * movementDuration;
 

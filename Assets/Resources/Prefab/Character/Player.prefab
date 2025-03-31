@@ -204,7 +204,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Book 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4449466595721513018, guid: 254d865b05da36b47a841b4f40137f76, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -219,17 +220,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 417751508961550892, guid: 254d865b05da36b47a841b4f40137f76, type: 3}
   m_PrefabInstance: {fileID: 6044709136370728246}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7952425267129873676 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4449466595721513018, guid: 254d865b05da36b47a841b4f40137f76, type: 3}
-  m_PrefabInstance: {fileID: 6044709136370728246}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3893742116752538962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c8f51886f49a504fafcc3826b337585, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8203995133961785094
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -689,13 +679,14 @@ MonoBehaviour:
   interactableCursor: {fileID: 21300000, guid: e210f2cd102ef274d9594065967747a5, type: 3}
   menubook: {fileID: 3893742116752538962}
   Lv1: {fileID: 0}
+  Lv2: {fileID: 0}
   _lock: 0
   _menu: 0
   _talk: 0
   _item: 0
   _view: 0
   _interactLock: 0
-  inventory: {fileID: 7952425267129873676}
+  inventory: {fileID: 0}
 --- !u!114 &2175655990363074911
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,14 +5,13 @@ public class SoundManager : MonoBehaviour
     public static SoundManager Instance;
     private AudioSource audioSource;
     
-//SoundManager.Instance.PlaySound(SoundManager.Instance.clickSound);
+//SoundManager.Instance.PlaySound(SoundManager.Instance.pickUp);
     [Header("系統")]
     public AudioClip click;
     public AudioClip pickUp;
     public AudioClip window;
     [Header("按鈕")]
-    public AudioClip buttonDown;
-    public AudioClip buttonUp;
+    public AudioClip button;
     [Header("門")]
     public AudioClip lockDoor;
     public AudioClip openDoor;
@@ -34,6 +33,12 @@ public class SoundManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+                audioSource = GetComponent<AudioSource>();
+            if (audioSource == null)
+            {
+                audioSource = gameObject.AddComponent<AudioSource>(); // 如果沒有 AudioSource，則新增一個
+            }
         }
         else
         {
@@ -41,6 +46,7 @@ public class SoundManager : MonoBehaviour
             return;
         }
     }
+
 
     // 播放單次音效
     public void PlaySound(AudioClip clip)

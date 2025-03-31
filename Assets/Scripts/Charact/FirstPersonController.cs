@@ -81,11 +81,22 @@ public class FirstPersonController : MonoBehaviour
         _lock = false;
         _item = false;
         _view = false;
-        
+    
         controller = GetComponent<CharacterController>();
-        
+    
         menubook.SetActive(false);
+
+        // **自動尋找場景中的 Inventory**
+        if (inventory == null)
+        {
+            inventory = FindObjectOfType<Inventory>();
+            if (inventory == null)
+            {
+                Debug.LogError("找不到 Inventory，請確保場景內有 Inventory 物件");
+            }
+        }
     }
+
 
     private void Update()
     {
@@ -159,6 +170,7 @@ public class FirstPersonController : MonoBehaviour
                     switch (hit.collider.tag)
                     {
                         case "Item":
+                            SoundManager.Instance.PlaySound(SoundManager.Instance.pickUp);
                             _interactionController.IsPickup = !_interactionController.IsPickup;
                             if (_item) { _item = false; return; }
                             _item = true;
@@ -179,6 +191,7 @@ public class FirstPersonController : MonoBehaviour
                             }
                             break;
                         case "EleButton":
+                            SoundManager.Instance.PlaySound(SoundManager.Instance.button);
                             var eleButton = hit.collider.GetComponent<EleButton>();
                             if (eleButton != null)
                             {
@@ -203,25 +216,25 @@ public class FirstPersonController : MonoBehaviour
                                 targetObj.SetActive(true);
                                 CantMove();
                                 _mousestate.MouseMode_II();
+                                SoundManager.Instance.PlaySound(SoundManager.Instance.window);
                             }
-    
                             break;
                         case "Key":
                             inventory.AddItem("Key");
                             Destroy(hit.collider.gameObject);
+                            SoundManager.Instance.PlaySound(SoundManager.Instance.pickUp);
                             break;
                         case "Clockwork":
                             inventory.AddItem("Clockwork");
                             Destroy(hit.collider.gameObject);
+                            SoundManager.Instance.PlaySound(SoundManager.Instance.pickUp);
                             break;
                         case "Pages":
                             inventory.AddItem("Pages");
                             Destroy(hit.collider.gameObject);
+                            SoundManager.Instance.PlaySound(SoundManager.Instance.pickUp);
                             break;
                         case "SavePoint":
-                            break;
-                        default:
-                            //Debug.Log("未識別的物件");
                             break;
                     }
                 }

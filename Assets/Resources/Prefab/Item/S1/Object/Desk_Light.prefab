@@ -60,9 +60,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8512900365236755246, guid: c2fc06b85707cbb4296936bc274be800, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -3469093699790967247, guid: c2fc06b85707cbb4296936bc274be800, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c2fc06b85707cbb4296936bc274be800, type: 3}
       propertyPath: m_Name
       value: Desk_Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2fc06b85707cbb4296936bc274be800, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c2fc06b85707cbb4296936bc274be800, type: 3}
+      propertyPath: m_TagString
+      value: Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 1925175283839168003, guid: c2fc06b85707cbb4296936bc274be800, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769828034012702420, guid: c2fc06b85707cbb4296936bc274be800, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9201941445937100311, guid: c2fc06b85707cbb4296936bc274be800, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -77,6 +105,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c2fc06b85707cbb4296936bc274be800, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7206353657207398702}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c2fc06b85707cbb4296936bc274be800, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7122756977107662559}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c2fc06b85707cbb4296936bc274be800, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7097599705022462396}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: c2fc06b85707cbb4296936bc274be800, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5758932240501147253}
     - targetCorrespondingSourceObject: {fileID: -3469093699790967247, guid: c2fc06b85707cbb4296936bc274be800, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4024428271717734362}
@@ -266,3 +303,56 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 24.091694, y: 20.93238, z: 20.991373}
   m_Center: {x: 5.214682, y: 37.7523, z: 1.1520237}
+--- !u!54 &7122756977107662559
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7217095821797941874}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &7097599705022462396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7217095821797941874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b009bee6dfc137b438c669521c728107, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5758932240501147253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7217095821797941874}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c67d5ff529e5c744389642ea8c74599b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 300
+  mouseSpeed: 100
