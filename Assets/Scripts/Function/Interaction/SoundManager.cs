@@ -37,7 +37,7 @@ public class SoundManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
-                audioSource = GetComponent<AudioSource>();
+            audioSource = GetComponent<AudioSource>();
             if (audioSource == null)
             {
                 audioSource = gameObject.AddComponent<AudioSource>(); // 如果沒有 AudioSource，則新增一個

@@ -36,9 +36,13 @@ public class Inventory : MonoBehaviour
 
     void Start()
     {
+        if (itemsContainer == null)
+        {
+            Debug.LogError("itemsContainer 未設置！請在 Inspector 中綁定物品欄容器。");
+        }
+
         lastItemPosition = startPosition;
 
-        // 初始化 UI 圖標對應的物品
         itemIcons = new Dictionary<string, GameObject>
         {
             { "Key", Key },
@@ -46,31 +50,69 @@ public class Inventory : MonoBehaviour
             { "Pages", Pages }
         };
 
-        // 初始化 3D 物品對應的物品
         itemPrefabs = new Dictionary<string, GameObject>
         {
             { "Key", Key3D },
             { "Clockwork", Clockwork3D },
             { "Pages", Pages3D }
         };
+
+        // 確保字典內的物品不為 null
+        foreach (var key in itemIcons.Keys)
+        {
+            if (itemIcons[key] == null)
+            {
+                Debug.LogError($"物品 {key} 未正確綁定 UI 圖標！");
+            }
+        }
+
+        foreach (var key in itemPrefabs.Keys)
+        {
+            if (itemPrefabs[key] == null)
+            {
+                Debug.LogError($"物品 {key} 未正確綁定 3D 物件！");
+            }
+        }
     }
 
     public void AddItem(string itemName)
     {
-        if (!itemIcons.ContainsKey(itemName)) return;
+        if (string.IsNullOrEmpty(itemName))
+        {
+            Debug.LogWarning("itemName 不能為空！");
+            return;
+        }
+
+        if (!itemIcons.ContainsKey(itemName))
+        {
+            Debug.LogWarning($"找不到 {itemName} 對應的 UI 物品圖示！");
+            return;
+        }
+
+        GameObject prefab = itemIcons[itemName];
+        if (prefab == null)
+        {
+            Debug.LogError($"物品 {itemName} 的圖示 Prefab 未設定，請檢查 Inspector！");
+            return;
+        }
+
+        if (itemsContainer == null)
+        {
+            Debug.LogError("itemsContainer 為空，請在 Inspector 綁定！");
+            return;
+        }
 
         // 創建對應的 UI 物品圖示
-        GameObject newItem = Instantiate(itemIcons[itemName], itemsContainer);
-    
-        // 將物品顯示在物品欄的最前面
+        GameObject newItem = Instantiate(prefab, itemsContainer);
         newItem.transform.localPosition = lastItemPosition;
-    
-        // 物品排列更新
-        itemList.Insert(0, newItem); // 將新物品加入到列表的最前面
-    
-        // 更新物品欄位置
+
+        // 插入物品到列表
+        itemList.Insert(0, newItem);
+
+        // 更新物品欄顯示
         UpdateInventoryPositions();
     }
+
 
     public void DropItem(GameObject selectedItem)
     {

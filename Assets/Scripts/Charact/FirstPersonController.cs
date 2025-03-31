@@ -86,15 +86,7 @@ public class FirstPersonController : MonoBehaviour
     
         menubook.SetActive(false);
 
-        // **自動尋找場景中的 Inventory**
-        if (inventory == null)
-        {
-            inventory = FindObjectOfType<Inventory>();
-            if (inventory == null)
-            {
-                Debug.LogError("找不到 Inventory，請確保場景內有 Inventory 物件");
-            }
-        }
+        inventory = menubook.GetComponent<Inventory>();
     }
 
 

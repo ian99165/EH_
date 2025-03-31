@@ -6,6 +6,8 @@ public class EleInteraction : MonoBehaviour
     public string Name = "p";
     public string ObjectName;
     private bool _can_move = true;
+    public GameObject EleDoorR;
+    public GameObject EleDoorL;
 
     [Header("移動秒數")]
     public float movementDuration = 0.5f;
@@ -36,27 +38,20 @@ public class EleInteraction : MonoBehaviour
 
     private IEnumerator Move_Button(Vector3 direction)
     {
-        if (_can_move)
-        {
-            _can_move = false; // 禁止重複觸發
-            
-            
-            SoundManager.Instance.PlaySound(SoundManager.Instance.eleButton);
-            
-            Vector3 startPosition = transform.position;
-            Vector3 targetPosition = startPosition + direction * speed * movementDuration;
+        _can_move = false;
+        
+        Vector3 startPosition = transform.position;
+        Vector3 targetPosition = startPosition + direction * speed * movementDuration;
 
-            // 移動到目標位置
-            yield return StartCoroutine(Move(startPosition, targetPosition));
+        yield return StartCoroutine(Move(startPosition, targetPosition));
 
-            // 停留指定時間
-            yield return new WaitForSeconds(stayDuration);
+        openEle();
 
-            // 回到原位
-            yield return StartCoroutine(Move(targetPosition, startPosition));
+        yield return new WaitForSeconds(stayDuration);
 
-            _can_move = true; // 允許再次觸發
-        }
+        yield return StartCoroutine(Move(targetPosition, startPosition));
+
+        _can_move = true;
     }
 
     private IEnumerator Move(Vector3 start, Vector3 end)
@@ -70,12 +65,25 @@ public class EleInteraction : MonoBehaviour
             yield return null;
         }
 
-        // 確保移動到最終位置
         transform.position = end;
     }
 
     public void openEle()
     {
-        
+        if (ObjectName == "open")
+        {
+            if (EleDoorL != null)
+            {
+                var eleButtonR = EleDoorL.GetComponent<EleInteraction>();
+                if (eleButtonR != null) eleButtonR.Interact_Devices();
+            }
+
+            if (EleDoorR != null)
+            {
+                var eleButtonL = EleDoorR.GetComponent<EleInteraction>();
+                if (eleButtonL != null) eleButtonL.Interact_Devices();
+            }
+            SoundManager.Instance.PlaySound(SoundManager.Instance.eleButton);
+        }
     }
 }
