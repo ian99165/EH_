@@ -133,7 +133,7 @@ public class DevicesInteraction : MonoBehaviour
         switch (ObjectName)
         {
             case "button":
-                SoundManager.Instance.PlaySound(SoundManager.Instance.button);
+                SoundManager.Instance.PlaySound(SoundManager.Instance.eleButton);
                 break;
 
             case "Door":
@@ -157,7 +157,9 @@ public class DevicesInteraction : MonoBehaviour
                     SoundManager.Instance.PlaySound(_isOpen ? SoundManager.Instance.closeCabinet : SoundManager.Instance.openCabinet);
                 }
                 break;
-
+            case "CabinetMove":
+                SoundManager.Instance.PlaySound(SoundManager.Instance.moveCabinet);
+                break;
             case "CabinetDrawer":
                 SoundManager.Instance.PlaySound(_isOpen ? SoundManager.Instance.closeCabinetDrawer : SoundManager.Instance.openCabinetDrawer);
                 break;

@@ -4,14 +4,16 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
     private AudioSource audioSource;
-    
-//SoundManager.Instance.PlaySound(SoundManager.Instance.pickUp);
+    /**
+    SoundManager.Instance.PlaySound(SoundManager.Instance.moveCabinet);
+    **/
     [Header("系統")]
     public AudioClip click;
     public AudioClip pickUp;
     public AudioClip window;
-    [Header("按鈕")]
-    public AudioClip button;
+    [Header("電梯")]
+    public AudioClip eleButton;
+    public AudioClip eleDoor;
     [Header("門")]
     public AudioClip lockDoor;
     public AudioClip openDoor;
@@ -22,6 +24,7 @@ public class SoundManager : MonoBehaviour
     public AudioClip closeCabinet;
     public AudioClip openCabinetDrawer;
     public AudioClip closeCabinetDrawer;
+    public AudioClip moveCabinet;
     [Header("抽屜")]
     public AudioClip openDrawer;
     public AudioClip closeDrawer;

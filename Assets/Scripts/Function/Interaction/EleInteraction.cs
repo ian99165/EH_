@@ -1,9 +1,10 @@
 using System.Collections;
 using UnityEngine;
 
-public class EleButton : MonoBehaviour
+public class EleInteraction : MonoBehaviour
 {
     public string Name = "p";
+    public string ObjectName;
     private bool _can_move = true;
 
     [Header("移動秒數")]
@@ -40,7 +41,7 @@ public class EleButton : MonoBehaviour
             _can_move = false; // 禁止重複觸發
             
             
-            SoundManager.Instance.PlaySound(SoundManager.Instance.button);
+            SoundManager.Instance.PlaySound(SoundManager.Instance.eleButton);
             
             Vector3 startPosition = transform.position;
             Vector3 targetPosition = startPosition + direction * speed * movementDuration;
@@ -71,5 +72,10 @@ public class EleButton : MonoBehaviour
 
         // 確保移動到最終位置
         transform.position = end;
+    }
+
+    public void openEle()
+    {
+        
     }
 }
