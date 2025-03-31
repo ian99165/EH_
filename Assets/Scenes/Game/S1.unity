@@ -3003,6 +3003,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: p
+  ObjectName: open
   movementDuration: 0.1
   stayDuration: 0.5
   speed: -0.1
@@ -3832,6 +3833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: r
+  ObjectName: 
   movementDuration: 1
   stayDuration: 5
   speed: -1
@@ -5834,6 +5836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: r
+  ObjectName: 
   movementDuration: 1
   stayDuration: 5
   speed: 1
@@ -6356,6 +6359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: p
+  ObjectName: 
   movementDuration: 0.1
   stayDuration: 0.5
   speed: -0.1
@@ -8819,7 +8823,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -218.68385
     y: 23.438751
-    width: 74.74226
+    width: 73.880585
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -9509,21 +9513,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 322.6034, y: 38.715813}
+  scrollPos: {x: 515.1768, y: 61.467854}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 538
-  zoom: 0.97
+  zoom: 0.6700003
   scrollViewRect:
     serializedVersion: 2
     x: -343
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 2047249743}
-  selectedCommands:
-  - {fileID: 8835275633223935244}
+  selectedBlocks: []
+  selectedCommands: []
   variables:
   - {fileID: 8835275633223935201}
   description: fungus
@@ -12876,7 +12878,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -215.49466
     y: 78.14513
-    width: 71.64948
+    width: 72.38805
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -13166,7 +13168,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -115.500656
     y: 22.55713
-    width: 89.175255
+    width: 87.313416
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -15170,7 +15172,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &8835275633223935244
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -15187,7 +15189,7 @@ MonoBehaviour:
   delay: 0
 --- !u!114 &8835275633223935245
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}

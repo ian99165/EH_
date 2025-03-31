@@ -192,7 +192,7 @@ public class FirstPersonController : MonoBehaviour
                             break;
                         case "EleButton":
                             SoundManager.Instance.PlaySound(SoundManager.Instance.eleButton);
-                            var eleButton = hit.collider.GetComponent<EleButton>();
+                            var eleButton = hit.collider.GetComponent<EleInteraction>();
                             if (eleButton != null)
                             {
                                 eleButton.Interact_Devices();
