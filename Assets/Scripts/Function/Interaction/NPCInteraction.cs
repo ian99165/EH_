@@ -21,5 +21,18 @@ public class NPCInteraction : MonoBehaviour
                 break;
         }
     }
+    
+    public void switchState()
+    {
+        if (canInteract)
+        {
+            canInteract = false;
+            return;
+        }
+        else
+        {
+            canInteract = true;
+        }
+    }
 }
 

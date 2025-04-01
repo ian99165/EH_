@@ -95,6 +95,7 @@ public class LockPassword : MonoBehaviour
 
         if (conditionMet && devicesInteraction != null)
         {
+            SoundManager.Instance.PlaySound(SoundManager.Instance.lockFall);
             devicesInteraction.Unlock();
             switchState.switchState();
             _mousestate.MouseMode_I();

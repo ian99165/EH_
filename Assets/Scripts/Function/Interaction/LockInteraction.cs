@@ -30,6 +30,7 @@ public class LockInteraction : MonoBehaviour
     public void Interact_Devices()
     {
         if (_isInteracting) return;
+        SoundManager.Instance.PlaySound(SoundManager.Instance.lockTurn);
         
         if (_playerController != null)
         {

@@ -1,19 +1,21 @@
 using UnityEngine;
 
+/**
+SoundManager.Instance.PlaySound(SoundManager.Instance.moveCabinet);
+**/
+
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
     private AudioSource audioSource;
-    /**
-    SoundManager.Instance.PlaySound(SoundManager.Instance.moveCabinet);
-    **/
     [Header("系統")]
     public AudioClip click;
     public AudioClip pickUp;
     public AudioClip window;
     [Header("電梯")]
     public AudioClip eleButton;
-    public AudioClip eleDoor;
+    public AudioClip eleDoorClosed;
+    public AudioClip eleDoorOpened;
     [Header("門")]
     public AudioClip lockDoor;
     public AudioClip openDoor;
@@ -28,6 +30,9 @@ public class SoundManager : MonoBehaviour
     [Header("抽屜")]
     public AudioClip openDrawer;
     public AudioClip closeDrawer;
+    [Header("鎖")]
+    public AudioClip lockFall;
+    public AudioClip lockTurn;
     
 
     void Awake()
@@ -40,7 +45,7 @@ public class SoundManager : MonoBehaviour
             audioSource = GetComponent<AudioSource>();
             if (audioSource == null)
             {
-                audioSource = gameObject.AddComponent<AudioSource>(); // 如果沒有 AudioSource，則新增一個
+                audioSource = gameObject.AddComponent<AudioSource>();
             }
         }
         else
@@ -50,8 +55,6 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-
-    // 播放單次音效
     public void PlaySound(AudioClip clip)
     {
         if (clip != null)

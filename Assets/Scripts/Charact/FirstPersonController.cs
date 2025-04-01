@@ -183,7 +183,6 @@ public class FirstPersonController : MonoBehaviour
                             }
                             break;
                         case "EleButton":
-                            SoundManager.Instance.PlaySound(SoundManager.Instance.eleButton);
                             var eleButton = hit.collider.GetComponent<EleInteraction>();
                             if (eleButton != null)
                             {
@@ -218,7 +217,9 @@ public class FirstPersonController : MonoBehaviour
                             break;
                         case "Clockwork":
                             inventory.AddItem("Clockwork");
-                            Destroy(hit.collider.gameObject);
+                            Destroy(hit.collider.gameObject);//NPCInteraction
+                            var npcInteraction= Lv2.GetComponent<NPCInteraction>();
+                            npcInteraction.switchState();
                             SoundManager.Instance.PlaySound(SoundManager.Instance.pickUp);
                             break;
                         case "Pages":
@@ -237,6 +238,7 @@ public class FirstPersonController : MonoBehaviour
     public void OnMenu(InputValue value)
     {
         if(_interactLock) return;
+        SoundManager.Instance.PlaySound(SoundManager.Instance.window);
         if (!_lock)
         {
             if (!_talk)
@@ -343,6 +345,7 @@ public class FirstPersonController : MonoBehaviour
     {
         if (_view)
         {
+            SoundManager.Instance.PlaySound(SoundManager.Instance.window);
             _mousestate.MouseMode_I();
             _item = true;
             _view = false;
@@ -363,6 +366,7 @@ public class FirstPersonController : MonoBehaviour
         {
             if (_item)
             {
+                SoundManager.Instance.PlaySound(SoundManager.Instance.window);
                 _mousestate.MouseMode_II();
                 _item = false;
                 _view = true;

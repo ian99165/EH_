@@ -6,6 +6,7 @@ public class EleInteraction : MonoBehaviour
     public string Name = "p";
     public string ObjectName;
     private bool _can_move = true;
+    private bool _open;
     public GameObject EleDoorR;
     public GameObject EleDoorL;
 
@@ -39,16 +40,17 @@ public class EleInteraction : MonoBehaviour
     private IEnumerator Move_Button(Vector3 direction)
     {
         _can_move = false;
-        
+        _open = true;
+        openEle();
         Vector3 startPosition = transform.position;
         Vector3 targetPosition = startPosition + direction * speed * movementDuration;
 
         yield return StartCoroutine(Move(startPosition, targetPosition));
 
-        openEle();
-
         yield return new WaitForSeconds(stayDuration);
 
+        _open = false;
+        if(ObjectName == "door")openEle();
         yield return StartCoroutine(Move(targetPosition, startPosition));
 
         _can_move = true;
@@ -70,20 +72,26 @@ public class EleInteraction : MonoBehaviour
 
     public void openEle()
     {
-        if (ObjectName == "open")
+        switch (ObjectName)
         {
-            if (EleDoorL != null)
-            {
-                var eleButtonR = EleDoorL.GetComponent<EleInteraction>();
-                if (eleButtonR != null) eleButtonR.Interact_Devices();
-            }
+            case "open":
+                if (EleDoorL != null)
+                {
+                    var eleButtonR = EleDoorL.GetComponent<EleInteraction>();
+                    if (eleButtonR != null) eleButtonR.Interact_Devices();
+                }
 
-            if (EleDoorR != null)
-            {
-                var eleButtonL = EleDoorR.GetComponent<EleInteraction>();
-                if (eleButtonL != null) eleButtonL.Interact_Devices();
-            }
-            SoundManager.Instance.PlaySound(SoundManager.Instance.eleButton);
+                if (EleDoorR != null)
+                {
+                    var eleButtonL = EleDoorR.GetComponent<EleInteraction>();
+                    if (eleButtonL != null) eleButtonL.Interact_Devices();
+                }
+                SoundManager.Instance.PlaySound(SoundManager.Instance.eleButton);
+                break;
+            case "door":
+                if (_open)SoundManager.Instance.PlaySound(SoundManager.Instance.eleDoorOpened);
+                if (!_open)SoundManager.Instance.PlaySound(SoundManager.Instance.eleDoorClosed);
+                break;
         }
     }
 }
