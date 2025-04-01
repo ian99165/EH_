@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.SceneManagement;
 public class Mouse : MonoBehaviour
 {
     [Header("虛擬搖桿滑鼠設置")]
@@ -68,8 +68,11 @@ public class Mouse : MonoBehaviour
                     case "Button_Back":
                         Debug.Log("Button_Back");
                         break;
+                    case "Button_Start":
+                        SceneManager.LoadScene("S1");
+                        break;
                     case "Button_Exit":
-                        Debug.Log("Button_Exit");
+                        Button_Exit();
                         break;
                     default:
                         Debug.Log("Nothing");
@@ -100,5 +103,13 @@ public class Mouse : MonoBehaviour
     {
         if (currentMode != mode)
             currentMode = mode;
+    }
+    
+    private void Button_Exit() //離開遊戲
+    {
+        Application.Quit();
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 }
