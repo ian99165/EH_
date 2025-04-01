@@ -71,7 +71,7 @@ PrefabInstance:
     - target: {fileID: -6439470479143510737, guid: f993ea692c1e14b458ac9026d8be6388, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: add21d27319210f45a54c385cd569816, type: 2}
+      objectReference: {fileID: 2100000, guid: dfb6aa44630a0d84fb494bb0c9b1d4ac, type: 2}
     - target: {fileID: -6281451178141705558, guid: f993ea692c1e14b458ac9026d8be6388, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
@@ -83,7 +83,7 @@ PrefabInstance:
     - target: {fileID: -6239926110345518443, guid: f993ea692c1e14b458ac9026d8be6388, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: add21d27319210f45a54c385cd569816, type: 2}
+      objectReference: {fileID: 2100000, guid: dfb6aa44630a0d84fb494bb0c9b1d4ac, type: 2}
     - target: {fileID: -5883999081835472059, guid: f993ea692c1e14b458ac9026d8be6388, type: 3}
       propertyPath: m_TagString
       value: UI_Object
@@ -135,7 +135,7 @@ PrefabInstance:
     - target: {fileID: -2574724311542637210, guid: f993ea692c1e14b458ac9026d8be6388, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: add21d27319210f45a54c385cd569816, type: 2}
+      objectReference: {fileID: 2100000, guid: dfb6aa44630a0d84fb494bb0c9b1d4ac, type: 2}
     - target: {fileID: -2123414531422873174, guid: f993ea692c1e14b458ac9026d8be6388, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -143,11 +143,11 @@ PrefabInstance:
     - target: {fileID: -1473790875704268822, guid: f993ea692c1e14b458ac9026d8be6388, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: add21d27319210f45a54c385cd569816, type: 2}
+      objectReference: {fileID: 2100000, guid: dfb6aa44630a0d84fb494bb0c9b1d4ac, type: 2}
     - target: {fileID: -803268273979593249, guid: f993ea692c1e14b458ac9026d8be6388, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: add21d27319210f45a54c385cd569816, type: 2}
+      objectReference: {fileID: 2100000, guid: dfb6aa44630a0d84fb494bb0c9b1d4ac, type: 2}
     - target: {fileID: -598697205206814355, guid: f993ea692c1e14b458ac9026d8be6388, type: 3}
       propertyPath: m_LocalPosition.y
       value: -3.44
@@ -199,7 +199,7 @@ PrefabInstance:
     - target: {fileID: 8740915913629354310, guid: f993ea692c1e14b458ac9026d8be6388, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: add21d27319210f45a54c385cd569816, type: 2}
+      objectReference: {fileID: 2100000, guid: dfb6aa44630a0d84fb494bb0c9b1d4ac, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -619,7 +619,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4db61791a9b575a46a1bf17bbe005ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectWithScript: {fileID: 0}
+  Object1: {fileID: 0}
+  Object2: {fileID: 0}
   one: 0
   two: 0
   three: 0
@@ -627,3 +628,5 @@ MonoBehaviour:
   five: 0
   minValue: 0
   maxValue: 9
+  _mousestate: {fileID: 0}
+  _firstPersonController: {fileID: 0}
