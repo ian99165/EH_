@@ -352,7 +352,7 @@ PrefabInstance:
       objectReference: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 1377284933930237227, guid: 9bb98818205163a4b9294c33d87d3060, type: 3}
       propertyPath: m_TagString
-      value: UI_Meun
+      value: UI_Menu
       objectReference: {fileID: 0}
     - target: {fileID: 4430793675315940567, guid: 9bb98818205163a4b9294c33d87d3060, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1005,7 +1005,7 @@ GameObject:
   - component: {fileID: 1232965143}
   m_Layer: 0
   m_Name: Button_Exit
-  m_TagString: UI_Meun
+  m_TagString: UI_Menu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1132,7 +1132,7 @@ GameObject:
   - component: {fileID: 1246247390}
   m_Layer: 0
   m_Name: Button_Start
-  m_TagString: UI_Meun
+  m_TagString: UI_Menu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
