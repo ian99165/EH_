@@ -7,7 +7,6 @@ TagManager:
   - Item
   - NPC
   - Devices
-  - UI_Meun
   - UI_Button
   - UI
   - Key
@@ -18,6 +17,7 @@ TagManager:
   - lock
   - UI_Object
   - EleButton
+  - UI_Menu
   layers:
   - Default
   - TransparentFX

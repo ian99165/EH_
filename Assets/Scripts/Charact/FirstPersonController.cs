@@ -12,7 +12,7 @@ public class FirstPersonController : MonoBehaviour
 
     [Header("Camera Settings")]
     public Transform playerCamera;
-    public float rotationSpeed = 200f;
+    public float rotationSpeed = 100f;
     private float xRotation = 0f;
     private Vector2 inputLook;
     private Vector2 inputMove;
