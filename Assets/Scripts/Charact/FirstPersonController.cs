@@ -191,7 +191,6 @@ public class FirstPersonController : MonoBehaviour
                             break;
                         case "lock":
                             GameObject targetObj = null;
-
                             switch (hit.collider.gameObject.name)
                             {
                                 case "Lv1":
@@ -209,6 +208,8 @@ public class FirstPersonController : MonoBehaviour
                                 _mousestate.MouseMode_II();
                                 SoundManager.Instance.PlaySound(SoundManager.Instance.window);
                             }
+                            break;
+                        case "Reverberation":
                             break;
                         case "Key":
                             inventory.AddItem("Key");

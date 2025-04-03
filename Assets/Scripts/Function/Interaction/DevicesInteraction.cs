@@ -28,7 +28,7 @@ public class DevicesInteraction : MonoBehaviour
     /// </summary>
     public void Interact_Devices()
     {
-        PlayAudio();
+        PlayLockAudio();
         if (_isLocked) return;
 
         switch (Name)
@@ -65,6 +65,7 @@ public class DevicesInteraction : MonoBehaviour
     private IEnumerator Move(Vector3 direction)
     {
         if (!_canMove) yield break;
+        PlayAudio();
         
         _canMove = false;
         Vector3 startPosition = transform.position;
@@ -166,6 +167,26 @@ public class DevicesInteraction : MonoBehaviour
 
             case "Drawer":
                 SoundManager.Instance.PlaySound(_isOpen ? SoundManager.Instance.closeDrawer : SoundManager.Instance.openDrawer);
+                break;
+        }
+    }
+    private void PlayLockAudio()
+    {
+        if (SoundManager.Instance == null) return;
+
+        switch (ObjectName)
+        {
+            case "Door":
+                if (_isLocked)
+                {
+                    SoundManager.Instance.PlaySound(SoundManager.Instance.lockDoor);
+                }
+                break;
+            case "Cabinet":
+                if (_isLocked)
+                {
+                    SoundManager.Instance.PlaySound(SoundManager.Instance.lockCabinet);
+                }
                 break;
         }
     }
