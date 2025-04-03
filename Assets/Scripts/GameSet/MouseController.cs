@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using System.Collections;
+
 
 public class MouseController : MonoBehaviour
 {
@@ -15,6 +17,8 @@ public class MouseController : MonoBehaviour
 
     private enum InputMode { _key_mod, _joy_mod } // 輸入模式（鍵鼠/手柄）
 
+    public GameObject CameraToHome;
+    public GameObject CameraToStart;
     private void Awake()
     {
         controls = new PlayerControls();
@@ -87,7 +91,7 @@ public class MouseController : MonoBehaviour
                         Debug.Log("Button_Back");
                         break;
                     case "Button_Start":
-                        SceneManager.LoadScene("S1");
+                        Button_Start(); 
                         break;
                     case "Button_Exit":
                         Button_Exit();
@@ -120,6 +124,20 @@ public class MouseController : MonoBehaviour
         {
             currentMode = mode;
         }
+    }
+    
+    private void Button_Start()
+    {
+        CameraToHome.SetActive(false);
+        StartCoroutine(WaitAndDisableHomeCamera());
+    }
+
+    private IEnumerator WaitAndDisableHomeCamera()
+    {
+        yield return new WaitForSeconds(2.1f);
+
+        CameraToStart.SetActive(false);
+        SceneManager.LoadScene("S1");
     }
 
     private void Button_Exit()
