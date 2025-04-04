@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 22bc71e400bc1eb429bc31d3f9fd1ae5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22bc71e400bc1eb429bc31d3f9fd1ae5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22bc71e400bc1eb429bc31d3f9fd1ae5, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 22bc71e400bc1eb429bc31d3f9fd1ae5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -100,6 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c61ae16503d10d642a41b311be570840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  floatSpeed: 1
+  floatAmplitude: 0.05
 --- !u!64 &-7060446237414612007
 MeshCollider:
   m_ObjectHideFlags: 0

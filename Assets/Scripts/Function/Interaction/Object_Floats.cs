@@ -1,23 +1,33 @@
 using UnityEngine;
 
-public class Object_Floats : MonoBehaviour
+public class FloatingItem : MonoBehaviour
 {
+    public Transform target; // 要跟隨的物件
     public float floatSpeed = 1f; // 晃動速度
     public float floatAmplitude = 0.2f; // 晃動幅度
 
-    private Vector3 startPos;
-
-    private bool _APT_1 = false, _APT_2 = false, _APT_3 = false;
-    private bool _Hospital_1 = false, _Hospital_2 = false, _Hospital_3 = false,_Hospital_4 = false, _Hospital_5 = false;
+    private Vector3 offset; // 與目標物件的初始偏移量
 
     void Start()
     {
-        startPos = transform.position;
+        if (target != null)
+        {
+            offset = transform.position - target.position; // 計算初始偏移量
+        }
     }
 
     void Update()
     {
-        float newY = startPos.y + Mathf.Sin(Time.time * floatSpeed) * floatAmplitude;
-        transform.position = new Vector3(startPos.x, newY, startPos.z);
+        if (target != null)
+        {
+            // 目標位置加上初始偏移
+            Vector3 targetPosition = target.position + offset;
+
+            // 計算晃動值（世界座標）
+            float newY = Mathf.Sin(Time.time * floatSpeed) * floatAmplitude;
+
+            // 更新物件位置（使用世界座標）
+            transform.position = new Vector3(targetPosition.x, targetPosition.y + newY, targetPosition.z);
+        }
     }
 }

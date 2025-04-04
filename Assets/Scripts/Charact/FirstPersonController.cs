@@ -210,6 +210,8 @@ public class FirstPersonController : MonoBehaviour
                             }
                             break;
                         case "Reverberation":
+                            Destroy(hit.collider.gameObject);
+                            Debug.Log("記憶碎片");
                             break;
                         case "Key":
                             inventory.AddItem("Key");
@@ -406,7 +408,7 @@ public class FirstPersonController : MonoBehaviour
         return tag == "Item" || tag == "NPC" ||
                tag == "Devices" || tag == "Key" ||
                tag == "Door" || tag == "SavePoint"|| 
-               tag == "Clockwork"|| tag == "Pages"|| 
+               tag == "Clockwork"|| tag == "Pages"|| tag == "Reverberation" ||
                tag == "lock" || tag == "EleButton";
                ;
     }
