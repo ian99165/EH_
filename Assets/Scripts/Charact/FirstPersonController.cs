@@ -209,13 +209,28 @@ public class FirstPersonController : MonoBehaviour
                                 SoundManager.Instance.PlaySound(SoundManager.Instance.window);
                             }
                             break;
-                        case "Reverberation":
+                        case "Reverberation": 
+                            switch (hit.collider.gameObject.name)
+                            {
+                                case "APT_1":
+                                case "APT_2":
+                                case "APT_3":
+                                    Reverberation.Instance.SetAPTState(hit.collider.gameObject.name, true);
+                                    Reverberation.Instance.fragments();
+                                    break;
+                            }
                             Destroy(hit.collider.gameObject);
                             Debug.Log("記憶碎片");
                             break;
+
                         case "Key":
                             //inventory.AddItem("Key");
                             Destroy(hit.collider.gameObject);
+                            var reverberation= hit.collider.GetComponent<Reverberation>();
+                            if (reverberation != null)
+                            {
+                                reverberation.fragments();
+                            }
                             SoundManager.Instance.PlaySound(SoundManager.Instance.pickUp);
                             break;
                         case "Clockwork":

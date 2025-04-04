@@ -128,6 +128,7 @@ public class MouseController : MonoBehaviour
     
     private void Button_Start()
     {
+        Reverberation.Instance.ResetAPTStates();
         CameraToHome.SetActive(false);
         StartCoroutine(WaitAndDisableHomeCamera());
     }
