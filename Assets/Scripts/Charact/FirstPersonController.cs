@@ -214,19 +214,19 @@ public class FirstPersonController : MonoBehaviour
                             Debug.Log("記憶碎片");
                             break;
                         case "Key":
-                            inventory.AddItem("Key");
+                            //inventory.AddItem("Key");
                             Destroy(hit.collider.gameObject);
                             SoundManager.Instance.PlaySound(SoundManager.Instance.pickUp);
                             break;
                         case "Clockwork":
-                            inventory.AddItem("Clockwork");
-                            Destroy(hit.collider.gameObject);//NPCInteraction
+                            //inventory.AddItem("Clockwork");
+                            Destroy(hit.collider.gameObject);
                             var npcInteraction= Lv2.GetComponent<NPCInteraction>();
                             npcInteraction.switchState();
                             SoundManager.Instance.PlaySound(SoundManager.Instance.pickUp);
                             break;
                         case "Pages":
-                            inventory.AddItem("Pages");
+                            //inventory.AddItem("Pages");
                             Destroy(hit.collider.gameObject);
                             SoundManager.Instance.PlaySound(SoundManager.Instance.pickUp);
                             break;
