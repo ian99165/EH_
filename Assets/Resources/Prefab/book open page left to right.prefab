@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3061877676828900, guid: a196e15afd7a06b4dbe6e1779bd0a246, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0bdc458c5b6ae434a80f65b97727632c, type: 2}
     - target: {fileID: 919132149155446097, guid: a196e15afd7a06b4dbe6e1779bd0a246, type: 3}
       propertyPath: m_Name
       value: book open page left to right
