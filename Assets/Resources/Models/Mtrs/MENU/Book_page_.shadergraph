@@ -7,12 +7,6 @@
             "m_Id": "7449dfda847f43acbc5caf043737b311"
         },
         {
-            "m_Id": "32ef998b8f3147a8b902b35e1a97faf5"
-        },
-        {
-            "m_Id": "6d982c09f61049c682652b66fcb5f1cf"
-        },
-        {
             "m_Id": "2f6375bb7593445cb11b460f05592177"
         },
         {
@@ -1220,34 +1214,6 @@
 }
 
 {
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
-    "m_ObjectId": "32ef998b8f3147a8b902b35e1a97faf5",
-    "m_Guid": {
-        "m_GuidSerialized": "d6671d50-035a-42fd-9aa5-86772ef53755"
-    },
-    "m_Name": "TexTiling",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "TexTiling",
-    "m_DefaultReferenceName": "_TexTiling",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": 0.5,
-    "m_FloatType": 0,
-    "m_RangeValues": {
-        "x": 0.0,
-        "y": 1.0
-    }
-}
-
-{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicValueMaterialSlot",
     "m_ObjectId": "37e3ac2be5a1491290679fda13b17f76",
@@ -1587,9 +1553,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1385.5999755859375,
-            "y": -1692.4000244140625,
-            "width": 132.4000244140625,
+            "x": -1297.5999755859375,
+            "y": -1648.39990234375,
+            "width": 132.39990234375,
             "height": 35.199951171875
         }
     },
@@ -1746,8 +1712,8 @@
     "m_ObjectId": "5b65fdc6d49d4a598d27a5ea679ae6c2",
     "m_Title": "Colour & Texture",
     "m_Position": {
-        "x": -1662.0,
-        "y": -1853.5999755859375
+        "x": -1322.71044921875,
+        "y": -1852.4605712890625
     }
 }
 
@@ -1811,10 +1777,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1093.199951171875,
-            "y": -1692.4000244140625,
-            "width": 208.7999267578125,
-            "height": 437.199951171875
+            "x": -1076.0,
+            "y": -1640.7999267578125,
+            "width": 208.79998779296876,
+            "height": 437.2000732421875
         }
     },
     "m_Slots": [
@@ -2021,34 +1987,6 @@
     },
     "m_Labels": [],
     "m_Space": 2
-}
-
-{
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
-    "m_ObjectId": "6d982c09f61049c682652b66fcb5f1cf",
-    "m_Guid": {
-        "m_GuidSerialized": "eaa74668-3569-466d-86fb-839a909bd449"
-    },
-    "m_Name": "Offest",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Offest",
-    "m_DefaultReferenceName": "_Offest",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": 0.5,
-    "m_FloatType": 0,
-    "m_RangeValues": {
-        "x": 0.0,
-        "y": 1.0
-    }
 }
 
 {
@@ -2298,10 +2236,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -988.7999877929688,
-            "y": -1795.2000732421875,
-            "width": 134.0,
-            "height": 35.2000732421875
+            "x": -988.800048828125,
+            "y": -1794.39990234375,
+            "width": 134.00006103515626,
+            "height": 35.199951171875
         }
     },
     "m_Slots": [
@@ -3832,12 +3770,6 @@
         },
         {
             "m_Id": "2f6375bb7593445cb11b460f05592177"
-        },
-        {
-            "m_Id": "32ef998b8f3147a8b902b35e1a97faf5"
-        },
-        {
-            "m_Id": "6d982c09f61049c682652b66fcb5f1cf"
         },
         {
             "m_Id": "3a8e4d634eb74529ab72d1998bfd1beb"
