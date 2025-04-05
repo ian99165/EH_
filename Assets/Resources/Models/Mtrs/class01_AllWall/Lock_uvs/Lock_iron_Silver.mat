@@ -20,9 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Bed_bro
-  m_Shader: {fileID: -6465566751694194690, guid: 2075ffd55bdc4f04eb8304df01e147db,
-    type: 3}
+  m_Name: Lock_iron_Silver
+  m_Shader: {fileID: -6465566751694194690, guid: 2075ffd55bdc4f04eb8304df01e147db, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -63,6 +62,6 @@ Material:
     - _Shadow_Brightness: 0.5
     m_Colors:
     - _Highlight_Color: {r: 0.626415, g: 0.54899955, b: 0.31675327, a: 1}
-    - _Main_Color: {r: 0.5622641, g: 0.4823712, b: 0.24612315, a: 0}
+    - _Main_Color: {r: 0.56078434, g: 0.47461346, b: 0.24705881, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
