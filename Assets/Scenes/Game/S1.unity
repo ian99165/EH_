@@ -7246,6 +7246,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -678297114873584350, guid: ef727d4f0b0fc3a409fa5b860f7bb820, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 73210aea3c3ff7a49822f0fb720abde1, type: 2}
     - target: {fileID: -627342673397347036, guid: ef727d4f0b0fc3a409fa5b860f7bb820, type: 3}
       propertyPath: m_TagString
       value: Devices
@@ -8367,8 +8371,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1961279957}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.24948587, y: 0.15692453, z: -0.041017428, w: -0.95469844}
-  m_LocalPosition: {x: 0.8371551, y: 0.06520745, z: 1.1220226}
+  m_LocalRotation: {x: 0.08913671, y: -0.828725, z: 0.13797224, w: 0.53500766}
+  m_LocalPosition: {x: -2.066176, y: 0.07878716, z: 9.091649}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

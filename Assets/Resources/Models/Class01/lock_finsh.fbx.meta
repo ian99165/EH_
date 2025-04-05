@@ -3,7 +3,17 @@ guid: 427cf041ae6a5e44ab1779b0e0616715
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lock2_mtrs
+    second: {fileID: 2100000, guid: 65e81b6293b40f04fa9e5aff538a5dbd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lock_mtrs
+    second: {fileID: 2100000, guid: 9ba4bdf3a34fa194f97e48afbfe27263, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
