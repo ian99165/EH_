@@ -21,8 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: DeskChair
-  m_Shader: {fileID: -6465566751694194690, guid: 25fbd7a710e5fb446bee9b81ca988882,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 25fbd7a710e5fb446bee9b81ca988882, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -62,7 +61,7 @@ Material:
     - _QueueOffset: 0
     - _Shadow_Brightness: 0.46
     m_Colors:
-    - _Highlight_Color: {r: 0.554717, g: 0.41865435, b: 0.3035244, a: 1}
+    - _Highlight_Color: {r: 0.3056603, g: 0.23151605, b: 0.16609466, a: 1}
     - _Main_Color: {r: 0.39999992, g: 0.30188674, b: 0.21886788, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

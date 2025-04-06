@@ -21,8 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Wood
-  m_Shader: {fileID: -6465566751694194690, guid: 367b88e550e681748b2ee737a663b377,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 367b88e550e681748b2ee737a663b377, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -64,6 +63,6 @@ Material:
     - _Shadow_Brightness: 0.78
     m_Colors:
     - _Highlight_Color: {r: 0.4264151, g: 0.31159335, b: 0.2478035, a: 1}
-    - _Main_Color: {r: 0.20754719, g: 0.14561869, b: 0.11121396, a: 0}
+    - _Main_Color: {r: 0.18490559, g: 0.12953159, b: 0.098383725, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

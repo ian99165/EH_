@@ -21,8 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: LockIronSilver
-  m_Shader: {fileID: -6465566751694194690, guid: 7349a9eb6e87c314982d409ea09b8fdd,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 7349a9eb6e87c314982d409ea09b8fdd, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -62,7 +61,7 @@ Material:
     - _QueueOffset: 0
     - _Shadow_Brightness: 0.36
     m_Colors:
-    - _Highlight_Color: {r: 0.5056603, g: 0.5056603, b: 0.5056603, a: 1}
-    - _Main_Color: {r: 0.33207542, g: 0.33207542, b: 0.33207542, a: 0}
+    - _Highlight_Color: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
+    - _Main_Color: {r: 0.2603773, g: 0.2603773, b: 0.2603773, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
