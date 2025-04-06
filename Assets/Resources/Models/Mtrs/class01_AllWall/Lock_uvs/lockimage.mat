@@ -49,7 +49,7 @@ Material:
     - _Shadow_Brightness: 0.5
     m_Colors:
     - _Highlight_Color: {r: 1, g: 1, b: 1, a: 0}
-    - _Main_Color: {r: 0.81886786, g: 0.7146502, b: 0.47896045, a: 1}
+    - _Main_Color: {r: 0.735849, g: 0.68328154, b: 0.5664649, a: 1}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5966606949189171953
