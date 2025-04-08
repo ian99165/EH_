@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5637516199206102811, guid: 2c0652ee126183a4c83843a3c975b781, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f366506ac9a2e054c8063454bf4beaa0, type: 2}
     - target: {fileID: -4878203197085407396, guid: 2c0652ee126183a4c83843a3c975b781, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -100,6 +104,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -783634677385109254, guid: 2c0652ee126183a4c83843a3c975b781, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d4896daddd3ceb849b089e36912389e8, type: 2}
     - target: {fileID: 919132149155446097, guid: 2c0652ee126183a4c83843a3c975b781, type: 3}
       propertyPath: m_Name
       value: Book03
@@ -112,10 +120,18 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Item
       objectReference: {fileID: 0}
+    - target: {fileID: 2015998775999842064, guid: 2c0652ee126183a4c83843a3c975b781, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8dd1448553d82b14e85affb2c143e254, type: 2}
     - target: {fileID: 2564692301518459815, guid: 2c0652ee126183a4c83843a3c975b781, type: 3}
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 3874532106457777636, guid: 2c0652ee126183a4c83843a3c975b781, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f366506ac9a2e054c8063454bf4beaa0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
