@@ -92,6 +92,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: -783634677385109254, guid: 554beeb833eb7ec4ea4ba693509ed593, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c3dc02b5be72384daa716d33d5f9742, type: 2}
     - target: {fileID: 919132149155446097, guid: 554beeb833eb7ec4ea4ba693509ed593, type: 3}
       propertyPath: m_Name
       value: Book05
@@ -104,6 +108,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Item
       objectReference: {fileID: 0}
+    - target: {fileID: 2015998775999842064, guid: 554beeb833eb7ec4ea4ba693509ed593, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8dd1448553d82b14e85affb2c143e254, type: 2}
     - target: {fileID: 2564692301518459815, guid: 554beeb833eb7ec4ea4ba693509ed593, type: 3}
       propertyPath: m_Layer
       value: 9
