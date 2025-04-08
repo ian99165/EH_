@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BookBrown
+  m_Name: HeartBreaken
   m_Shader: {fileID: -6465566751694194690, guid: ecc3f1410b6ba224fa8d2825587df284, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -65,7 +65,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Main_Tex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: d539eb851f9532643b399dc71c745989, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -115,11 +115,11 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Highlight_Cutoff: 0.94
+    - _Highlight_Cutoff: 1
     - _Lighting_Cutoff: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _OutlineSize: 0.8
+    - _OutlineSize: 0
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -137,8 +137,8 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Highlight_Color: {r: 0.27169812, g: 0.17053758, b: 0.11995728, a: 1}
-    - _Main_Color: {r: 0.18490559, g: 0.12722434, b: 0.098383725, a: 1}
+    - _Highlight_Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Main_Color: {r: 1, g: 1, b: 1, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
