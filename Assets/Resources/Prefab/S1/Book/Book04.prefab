@@ -132,9 +132,6 @@ PrefabInstance:
       addedObject: {fileID: 6529737078870735653}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a53bde2a0ddee6940a38a9a81e4aa209, type: 3}
       insertIndex: -1
-      addedObject: {fileID: -2991510952449031187}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a53bde2a0ddee6940a38a9a81e4aa209, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 5172585472502634746}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a53bde2a0ddee6940a38a9a81e4aa209, type: 3}
       insertIndex: -1
@@ -184,21 +181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b009bee6dfc137b438c669521c728107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-2991510952449031187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2461019697617639082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dee7fac9fa25bf6459350113f9095470, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  teleportRange: {x: 0.1, y: 0, z: 0.1}
-  hideChance: 0.05
-  playerCamera: {fileID: 0}
 --- !u!114 &5172585472502634746
 MonoBehaviour:
   m_ObjectHideFlags: 0
