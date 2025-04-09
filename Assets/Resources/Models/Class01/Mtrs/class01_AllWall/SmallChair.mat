@@ -8,8 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SmallChair
-  m_Shader: {fileID: -6465566751694194690, guid: 7ff68933273751c4fac8a855fde5fa47,
-    type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 7ff68933273751c4fac8a855fde5fa47, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -49,7 +48,7 @@ Material:
     - _QueueOffset: 0
     - _Shadow_Brightness: 0.5
     m_Colors:
-    - _Highlight_Color: {r: 0.17358482, g: 0.07336415, b: 0.07336415, a: 1}
+    - _Highlight_Color: {r: 0.22264141, g: 0.091577046, b: 0.091577046, a: 1}
     - _Main_Color: {r: 0.4528302, g: 0.18625848, b: 0.18625848, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
