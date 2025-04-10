@@ -48,6 +48,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7945118970339130228, guid: 897a467928efcab4ebd5c993bd309a96, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: -7945118970339130228, guid: 897a467928efcab4ebd5c993bd309a96, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: -7583379181706064495, guid: 897a467928efcab4ebd5c993bd309a96, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.695251
+      objectReference: {fileID: 0}
+    - target: {fileID: -7583379181706064495, guid: 897a467928efcab4ebd5c993bd309a96, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10.000122
+      objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 897a467928efcab4ebd5c993bd309a96, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -123,6 +139,14 @@ PrefabInstance:
     - target: {fileID: 2564692301518459815, guid: 897a467928efcab4ebd5c993bd309a96, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698536746106419217, guid: 897a467928efcab4ebd5c993bd309a96, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -197.25568
+      objectReference: {fileID: 0}
+    - target: {fileID: 6698536746106419217, guid: 897a467928efcab4ebd5c993bd309a96, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1307.154
       objectReference: {fileID: 0}
     - target: {fileID: 9173961907036603374, guid: 897a467928efcab4ebd5c993bd309a96, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -222,5 +246,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1844.4408, y: 2584.777, z: 329.18555}
-  m_Center: {x: -953.56274, y: 1282.4143, z: -0.62891245}
+  m_Size: {x: 1838.4956, y: 2600.411, z: 367.2717}
+  m_Center: {x: 28.153992, y: -21.043015, z: -3.2474458}

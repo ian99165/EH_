@@ -572,8 +572,19 @@
                 },
                 {
                     "name": "",
+                    "id": "51d9e1c5-9b40-4331-9703-c6ff32b8cd80",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "View",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "bcbe5006-67f8-4045-bf9b-02004dece5cb",
-                    "path": "<Gamepad>/buttonWest",
+                    "path": "<Gamepad>/rightTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
