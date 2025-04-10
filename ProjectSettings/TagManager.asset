@@ -19,6 +19,7 @@ TagManager:
   - EleButton
   - UI_Menu
   - Reverberation
+  - EleDoor
   layers:
   - Default
   - TransparentFX

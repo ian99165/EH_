@@ -7,6 +7,7 @@ public class EleInteraction : MonoBehaviour
     public string ObjectName;
     private bool _can_move = true;
     private bool _open;
+    
     public GameObject EleDoorR;
     public GameObject EleDoorL;
 
@@ -18,6 +19,8 @@ public class EleInteraction : MonoBehaviour
 
     [Header("移動速度")]
     public float speed = 0.01f;
+    
+    public InteractionHandler interactionHandler;
 
     public void Interact_Devices()
     {
@@ -50,10 +53,13 @@ public class EleInteraction : MonoBehaviour
         yield return new WaitForSeconds(stayDuration);
 
         _open = false;
-        if(ObjectName == "door")openEle();
+        if (ObjectName == "door") openEle();
         yield return StartCoroutine(Move(targetPosition, startPosition));
 
         _can_move = true;
+
+        // 延遲 15 秒後改變門的狀態
+        StartCoroutine(ChangeDoorStateAfterDelay(15f));
     }
 
     private IEnumerator Move(Vector3 start, Vector3 end)
@@ -89,9 +95,19 @@ public class EleInteraction : MonoBehaviour
                 SoundManager.Instance.PlaySound(SoundManager.Instance.eleButton);
                 break;
             case "door":
-                if (_open)SoundManager.Instance.PlaySound(SoundManager.Instance.eleDoorOpened);
-                if (!_open)SoundManager.Instance.PlaySound(SoundManager.Instance.eleDoorClosed);
+                if (_open) SoundManager.Instance.PlaySound(SoundManager.Instance.eleDoorOpened);
+                if (!_open) SoundManager.Instance.PlaySound(SoundManager.Instance.eleDoorClosed);
                 break;
+        }
+    }
+
+    private IEnumerator ChangeDoorStateAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (interactionHandler != null)
+        {
+            interactionHandler.SetDoorClosed(!_open);
         }
     }
 }

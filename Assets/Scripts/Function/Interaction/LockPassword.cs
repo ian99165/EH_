@@ -13,11 +13,11 @@ public class LockPassword : MonoBehaviour
     public int four;
     public int five;
 
-    private int _one;
-    private int _two;
-    private int _three;
-    private int _four;
-    private int _five;
+    public int _one;
+    public int _two;
+    public int _three;
+    public int _four;
+    public int _five;
 
     private DevicesInteraction devicesInteraction;
     private SwitchState switchState;

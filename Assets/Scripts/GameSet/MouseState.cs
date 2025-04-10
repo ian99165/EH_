@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MouseState : MonoBehaviour
 {
-    private int _mouse_state = 0 ;
+    public int _mouse_state = 0 ;
     public GameObject CanvaMode_I;
     public GameObject CanvaMode_II;
     void Start()

@@ -116,6 +116,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Zoom"",
+                    ""type"": ""Value"",
+                    ""id"": ""a38caf7e-c406-4658-acb3-6da729330a92"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -595,21 +604,10 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""51d9e1c5-9b40-4331-9703-c6ff32b8cd80"",
-                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""View"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""bcbe5006-67f8-4045-bf9b-02004dece5cb"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
                     ""action"": ""View"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -633,6 +631,39 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Close"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""43a3e2a8-fc83-4617-ae00-98837ede768e"",
+                    ""path"": ""<Mouse>/scroll"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=0.1)"",
+                    ""groups"": """",
+                    ""action"": ""Zoom"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4169dbd3-a68b-4430-bd5a-78dd06afcbcc"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale(factor=-1)"",
+                    ""groups"": """",
+                    ""action"": ""Zoom"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9533a55b-0713-4ea1-a182-5acd8648f7e7"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": ""Scale"",
+                    ""groups"": """",
+                    ""action"": ""Zoom"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -993,6 +1024,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Player_AsMouse = m_Player.FindAction("AsMouse", throwIfNotFound: true);
         m_Player_View = m_Player.FindAction("View", throwIfNotFound: true);
         m_Player_Close = m_Player.FindAction("Close", throwIfNotFound: true);
+        m_Player_Zoom = m_Player.FindAction("Zoom", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_anyJoy = m_UI.FindAction("anyJoy", throwIfNotFound: true);
@@ -1068,6 +1100,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_AsMouse;
     private readonly InputAction m_Player_View;
     private readonly InputAction m_Player_Close;
+    private readonly InputAction m_Player_Zoom;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -1082,6 +1115,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @AsMouse => m_Wrapper.m_Player_AsMouse;
         public InputAction @View => m_Wrapper.m_Player_View;
         public InputAction @Close => m_Wrapper.m_Player_Close;
+        public InputAction @Zoom => m_Wrapper.m_Player_Zoom;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1121,6 +1155,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Close.started += instance.OnClose;
             @Close.performed += instance.OnClose;
             @Close.canceled += instance.OnClose;
+            @Zoom.started += instance.OnZoom;
+            @Zoom.performed += instance.OnZoom;
+            @Zoom.canceled += instance.OnZoom;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -1155,6 +1192,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Close.started -= instance.OnClose;
             @Close.performed -= instance.OnClose;
             @Close.canceled -= instance.OnClose;
+            @Zoom.started -= instance.OnZoom;
+            @Zoom.performed -= instance.OnZoom;
+            @Zoom.canceled -= instance.OnZoom;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -1283,6 +1323,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnAsMouse(InputAction.CallbackContext context);
         void OnView(InputAction.CallbackContext context);
         void OnClose(InputAction.CallbackContext context);
+        void OnZoom(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

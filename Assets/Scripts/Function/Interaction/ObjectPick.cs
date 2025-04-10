@@ -21,5 +21,4 @@ public class ObjectPick : MonoBehaviour, IInteractable
     {
         Grab();
     }
-    
 }

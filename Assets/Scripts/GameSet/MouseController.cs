@@ -77,7 +77,22 @@ public class MouseController : MonoBehaviour
 
     private void SimulateMouseClick()
     {
+        // 確保 Camera.main 不為 null
+        if (Camera.main == null)
+        {
+            Debug.LogError("Main camera not found!");
+            return;
+        }
+
+        // 確保 cursorPos 被初始化
+        if (cursorPos == null)
+        {
+            Debug.LogError("cursorPos is not initialized!");
+            return;
+        }
+
         Ray ray = Camera.main.ScreenPointToRay(cursorPos);
+    
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
             Debug.Log(hit.collider.gameObject.tag);
@@ -91,10 +106,13 @@ public class MouseController : MonoBehaviour
                         Debug.Log("Button_Back");
                         break;
                     case "Button_Start":
-                        Button_Start(); 
+                        Button_Start();
                         break;
                     case "Button_Exit":
                         Button_Exit();
+                        break;
+                    case "Button_Reset":
+                        SceneManager.LoadScene("S0");
                         break;
                     default:
                         Debug.Log("無");
@@ -117,6 +135,7 @@ public class MouseController : MonoBehaviour
             }
         }
     }
+
 
     private void SetMode(InputMode mode)
     {

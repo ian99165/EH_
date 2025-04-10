@@ -8,7 +8,7 @@ public class Reverberation : MonoBehaviour
 
     public GameObject playerPrefs;
     public GameObject Videoplayer;
-    private DelayedExecutor executor; // 儲存 DelayedExecutor 的引用
+    private DelayedExecutor executor;
 
     private Dictionary<string, bool> APTStates = new Dictionary<string, bool>
     {
