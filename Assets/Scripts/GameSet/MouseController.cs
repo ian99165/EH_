@@ -19,6 +19,10 @@ public class MouseController : MonoBehaviour
 
     public GameObject CameraToHome;
     public GameObject CameraToStart;
+
+    [Header("之後要改zzz")]
+    public GameObject 隱藏打開1;
+    public GameObject 隱藏打開2;
     private void Awake()
     {
         controls = new PlayerControls();
@@ -103,7 +107,12 @@ public class MouseController : MonoBehaviour
                 switch (hit.collider.name)
                 {
                     case "Button_Back":
-                        Debug.Log("Button_Back");
+                        隱藏打開1.SetActive(false);
+                        隱藏打開2.SetActive(false);
+                        break;
+                    case "Button_Exit_Q":
+                        隱藏打開1.SetActive(true);
+                        隱藏打開2.SetActive(true);
                         break;
                     case "Button_Start":
                         Button_Start();
