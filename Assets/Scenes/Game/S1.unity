@@ -3055,6 +3055,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lv1
       objectReference: {fileID: 0}
+    - target: {fileID: 3670409913621951671, guid: d9eefafc225a8494bb6c6edb8980d6f9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4153509568257879565, guid: d9eefafc225a8494bb6c6edb8980d6f9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 53.06186
@@ -24064,7 +24068,7 @@ Canvas:
   m_GameObject: {fileID: 2119677879}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
