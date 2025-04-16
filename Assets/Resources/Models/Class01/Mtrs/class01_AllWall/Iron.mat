@@ -106,7 +106,7 @@ Material:
     - _Lighting_Cutoff: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _OutlineSize: 0.98
+    - _OutlineSize: 0.9
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
