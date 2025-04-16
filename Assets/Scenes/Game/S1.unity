@@ -312,6 +312,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3670409913621951671, guid: d9eefafc225a8494bb6c6edb8980d6f9, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 4153509568257879565, guid: d9eefafc225a8494bb6c6edb8980d6f9, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -24064,7 +24068,7 @@ Canvas:
   m_GameObject: {fileID: 2119677879}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -25677,7 +25681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8efb30199ec77f641b7e70926c2f91ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 3
   runSpeed: 8
   crouchSpeed: 1
   playerCamera: {fileID: 3551213847993038241}
