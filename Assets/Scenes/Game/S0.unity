@@ -792,6 +792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 300
   mouseSpeed: 100
+  moveAction: {fileID: 0}
 --- !u!114 &61785809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19803,6 +19804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 300
   mouseSpeed: 100
+  moveAction: {fileID: 0}
 --- !u!114 &1764548371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21932,13 +21934,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6327179368408986100, guid: 254d865b05da36b47a841b4f40137f76, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6883104706103212798, guid: 254d865b05da36b47a841b4f40137f76, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7343760472651087972, guid: 254d865b05da36b47a841b4f40137f76, type: 3}
       propertyPath: m_Name
       value: Book
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4449466595721513018, guid: 254d865b05da36b47a841b4f40137f76, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6883104706103212798, guid: 254d865b05da36b47a841b4f40137f76, type: 3}
+    - {fileID: 6327179368408986100, guid: 254d865b05da36b47a841b4f40137f76, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 417751508961550892, guid: 254d865b05da36b47a841b4f40137f76, type: 3}
       insertIndex: -1
