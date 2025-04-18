@@ -43,7 +43,7 @@ Material:
     m_Floats:
     - _Highlight_Cutoff: 1
     - _Lighting_Cutoff: 0
-    - _OutlineSize: 0.75
+    - _OutlineSize: 0.1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Shadow_Brightness: 0.5
