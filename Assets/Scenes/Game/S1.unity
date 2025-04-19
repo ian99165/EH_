@@ -23065,7 +23065,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 300
   mouseSpeed: 100
-  moveAction: {fileID: 0}
+  moveAction: {fileID: 6596907681156926788, guid: 91e863ac21fd14445bc2e8f1fbc5000f, type: 3}
 --- !u!1001 &1756519799
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30933,6 +30933,10 @@ PrefabInstance:
     - target: {fileID: 417751508961550892, guid: 254d865b05da36b47a841b4f40137f76, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 819056799258337887, guid: 254d865b05da36b47a841b4f40137f76, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4449466595721513018, guid: 254d865b05da36b47a841b4f40137f76, type: 3}
       propertyPath: player
