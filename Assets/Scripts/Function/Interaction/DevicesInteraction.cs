@@ -47,6 +47,8 @@ public class DevicesInteraction : MonoBehaviour
     /// </summary>
     private IEnumerator ToggleMove(Vector3 openDirection, Vector3 closeDirection)
     {
+        if (!_canMove) yield break; // 加入這行防止重複點擊問題
+
         if (_isOpen)
         {
             yield return Move(closeDirection);
@@ -58,6 +60,8 @@ public class DevicesInteraction : MonoBehaviour
             _isOpen = true;
         }
     }
+
+
 
     /// <summary>
     /// 通用的移動函數
@@ -88,10 +92,14 @@ public class DevicesInteraction : MonoBehaviour
     /// </summary>
     private IEnumerator ToggleRotate(Vector3 rotationAxis)
     {
+        if (!_canMove) yield break; // 防止重複點擊問題
+
         float rotationAngle = _isOpen ? -rotationSpeed * movementDuration : rotationSpeed * movementDuration;
         yield return Rotate(rotationAxis, rotationAngle);
         _isOpen = !_isOpen;
     }
+
+
 
     /// <summary>
     /// 通用的旋轉函數
