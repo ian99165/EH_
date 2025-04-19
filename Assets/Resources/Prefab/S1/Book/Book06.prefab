@@ -223,6 +223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 300
   mouseSpeed: 100
+  moveAction: {fileID: 6596907681156926788, guid: 91e863ac21fd14445bc2e8f1fbc5000f, type: 3}
 --- !u!65 &3790664956680056638
 BoxCollider:
   m_ObjectHideFlags: 0
